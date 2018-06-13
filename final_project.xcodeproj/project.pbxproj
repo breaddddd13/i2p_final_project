@@ -35,6 +35,7 @@
 		8174247D20D1850A00BC35F7 /* liballegro_main.5.2.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8174247020D1850A00BC35F7 /* liballegro_main.5.2.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8174247E20D1850A00BC35F7 /* liballegro_color.5.2.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8174247120D1850A00BC35F7 /* liballegro_color.5.2.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8174247F20D1850A00BC35F7 /* liballegro.5.2.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8174247220D1850A00BC35F7 /* liballegro.5.2.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		8174248120D18C1400BC35F7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8174248020D18C1400BC35F7 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -94,6 +95,7 @@
 		8174247020D1850A00BC35F7 /* liballegro_main.5.2.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liballegro_main.5.2.4.dylib; path = ../../../../usr/local/Cellar/allegro/5.2.4.0/lib/liballegro_main.5.2.4.dylib; sourceTree = "<group>"; };
 		8174247120D1850A00BC35F7 /* liballegro_color.5.2.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liballegro_color.5.2.4.dylib; path = ../../../../usr/local/Cellar/allegro/5.2.4.0/lib/liballegro_color.5.2.4.dylib; sourceTree = "<group>"; };
 		8174247220D1850A00BC35F7 /* liballegro.5.2.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liballegro.5.2.4.dylib; path = ../../../../usr/local/Cellar/allegro/5.2.4.0/lib/liballegro.5.2.4.dylib; sourceTree = "<group>"; };
+		8174248020D18C1400BC35F7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				8174243E20D17C8300BC35F7 /* MainMenu.xib */,
 				8174244120D17C8300BC35F7 /* Info.plist */,
 				8174244420D17C8300BC35F7 /* final_project.entitlements */,
+				8174248020D18C1400BC35F7 /* main.cpp */,
 			);
 			path = final_project;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8174248120D18C1400BC35F7 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
