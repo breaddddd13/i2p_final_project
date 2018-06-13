@@ -9,6 +9,6 @@
 #include <stdio.h>
 
 int main(){
-    printf("fuck\n");
+    printf("fuck");
     return 0;
 }
