@@ -83,7 +83,6 @@
 		B206E56920D18CCB00E4D2B1 /* liballegro_main.5.2.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liballegro_main.5.2.4.dylib; sourceTree = "<group>"; };
 		B206E56A20D18CCB00E4D2B1 /* liballegro_color.5.2.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liballegro_color.5.2.4.dylib; sourceTree = "<group>"; };
 		B206E56B20D18CCB00E4D2B1 /* liballegro.5.2.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liballegro.5.2.4.dylib; sourceTree = "<group>"; };
-		B206E57920D18D1C00E4D2B1 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +155,6 @@
 		8174243820D17C8100BC35F7 /* final_project */ = {
 			isa = PBXGroup;
 			children = (
-				B206E57920D18D1C00E4D2B1 /* Button.h */,
 				8174243C20D17C8300BC35F7 /* Assets.xcassets */,
 				8174243E20D17C8300BC35F7 /* MainMenu.xib */,
 				8174244120D17C8300BC35F7 /* Info.plist */,
