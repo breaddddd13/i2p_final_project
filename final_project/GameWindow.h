@@ -45,11 +45,14 @@ public:
     void game_reset();
     void game_play();
     void game_begin();
+/*ToDo: 景僕
+ remember to insert the function below on the right space.
+ 
     void game_start_scene();
     void game_setting();
     void game_win();
-    void game_over();
-    
+    void game_finish();
+*/
     int game_run();
     int game_update();
     
@@ -63,8 +66,6 @@ public:
     int process_event();
     // detect if mouse hovers over a rectangle
     bool mouse_hover(int, int, int, int);
-    // detect if a tower will be constructed on road
-    bool isOnRoad();
     
 //    Tower* create_tower(int);
 //    Monster* create_monster();
@@ -89,8 +90,7 @@ private:
     ALLEGRO_EVENT_QUEUE *event_queue = NULL;
     ALLEGRO_EVENT event;
     ALLEGRO_TIMER *timer = NULL;
-    ALLEGRO_TIMER *monster_pro = NULL;
-    ALLEGRO_TIMER *dragon_pro = NULL;
+
     
     ALLEGRO_SAMPLE *sample = NULL;
     ALLEGRO_SAMPLE_INSTANCE *startSound = NULL;
