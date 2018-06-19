@@ -4,13 +4,13 @@
 #include <allegro5/allegro_font.h>
 
 #define font_size 12
-#define grid_width 40
-#define grid_height 40
+#define grid_width 100
+#define grid_height 100
 
-#define window_width 800
-#define window_height 600
-#define field_width 600
-#define field_height 600
+#define window_width 1920
+#define window_height 1440
+#define field_width 1500
+#define field_height 1300
 
 #define Num_TowerType 6
 #define Num_MonsterType 4
