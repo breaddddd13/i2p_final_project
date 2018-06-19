@@ -8,20 +8,9 @@
 #include <time.h>
 #include "Menu.h"
 #include "Level.h"
-#include "WolfKnight.h"
-#include "CaveMan.h"
-#include "Wolf.h"
-#include "DemonNijia.h"
-#include "Arcane.h"
-#include "Archer.h"
-#include "Canon.h"
-#include "Poison.h"
-#include "Storm.h"
 #include "Attack.h"
 #include "Slider.h"
-#include "Magma.h"
 #include "Button.h"
-#include "Dragon.h"
 
 
 #define GAME_INIT -1
@@ -77,8 +66,8 @@ public:
     // detect if a tower will be constructed on road
     bool isOnRoad();
     
-    Tower* create_tower(int);
-    Monster* create_monster();
+//    Tower* create_tower(int);
+//    Monster* create_monster();
     
 public:
     bool initial = true;
@@ -115,12 +104,11 @@ private:
     
     
     
-    std::vector<Monster*> monsterSet;
-    std::list<Tower*> towerSet;
+//    std::vector<Monster*> monsterSet;
+//    std::list<Tower*> towerSet;
     
     int Coin_Inc_Count = 0;
     int mouse_x, mouse_y;
-    int selectedTower = -1, lastClicked = -1;
     int levelNum = 1;
     
     bool redraw = false;

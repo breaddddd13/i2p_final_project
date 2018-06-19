@@ -42,6 +42,17 @@
 		B2CBF5B020D956CB006DAFA4 /* Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5AF20D956CB006DAFA4 /* Slider.cpp */; };
 		B2CBF5B420D95789006DAFA4 /* Attack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5B320D95789006DAFA4 /* Attack.cpp */; };
 		B2CBF5B820D958A6006DAFA4 /* Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5B720D958A6006DAFA4 /* Menu.cpp */; };
+		B2CBF5BB20D95BA5006DAFA4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF5BA20D95BA5006DAFA4 /* icon.png */; };
+		B2CBF5BD20D95BBC006DAFA4 /* StartBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF5BC20D95BBC006DAFA4 /* StartBackground.jpg */; };
+		B2CBF5C620D95BF7006DAFA4 /* Arrow.wav in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF5C220D95BF6006DAFA4 /* Arrow.wav */; };
+		B2CBF5C720D95BF7006DAFA4 /* level_fail.wav in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF5C320D95BF6006DAFA4 /* level_fail.wav */; };
+		B2CBF5C820D95BF7006DAFA4 /* growl.wav in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF5C420D95BF7006DAFA4 /* growl.wav */; };
+		B2CBF5C920D95BF7006DAFA4 /* level_clear.wav in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF5C520D95BF7006DAFA4 /* level_clear.wav */; };
+		B2CBF5CF20D95C1D006DAFA4 /* LEVEL4.txt in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF5CB20D95C1C006DAFA4 /* LEVEL4.txt */; };
+		B2CBF5D020D95C1D006DAFA4 /* LEVEL3.txt in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF5CC20D95C1C006DAFA4 /* LEVEL3.txt */; };
+		B2CBF5D120D95C1D006DAFA4 /* LEVEL1.txt in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF5CD20D95C1D006DAFA4 /* LEVEL1.txt */; };
+		B2CBF5D220D95C1D006DAFA4 /* LEVEL2.txt in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF5CE20D95C1D006DAFA4 /* LEVEL2.txt */; };
+		B2CBF5D420D95C63006DAFA4 /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5D320D95C63006DAFA4 /* Level.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -103,6 +114,23 @@
 		B2CBF5B620D95802006DAFA4 /* Object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
 		B2CBF5B720D958A6006DAFA4 /* Menu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Menu.cpp; sourceTree = "<group>"; };
 		B2CBF5B920D958BE006DAFA4 /* Menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
+		B2CBF5BA20D95BA5006DAFA4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		B2CBF5BC20D95BBC006DAFA4 /* StartBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = StartBackground.jpg; sourceTree = "<group>"; };
+		B2CBF5BE20D95BE1006DAFA4 /* Caviar_Dreams_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Caviar_Dreams_Bold.ttf; sourceTree = "<group>"; };
+		B2CBF5BF20D95BE1006DAFA4 /* Dancing.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dancing.otf; sourceTree = "<group>"; };
+		B2CBF5C020D95BE1006DAFA4 /* pirulen.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pirulen.ttf; sourceTree = "<group>"; };
+		B2CBF5C120D95BE2006DAFA4 /* Bebas.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bebas.ttf; sourceTree = "<group>"; };
+		B2CBF5C220D95BF6006DAFA4 /* Arrow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Arrow.wav; sourceTree = "<group>"; };
+		B2CBF5C320D95BF6006DAFA4 /* level_fail.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = level_fail.wav; sourceTree = "<group>"; };
+		B2CBF5C420D95BF7006DAFA4 /* growl.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = growl.wav; sourceTree = "<group>"; };
+		B2CBF5C520D95BF7006DAFA4 /* level_clear.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = level_clear.wav; sourceTree = "<group>"; };
+		B2CBF5CA20D95C00006DAFA4 /* BackgroundMusic.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = BackgroundMusic.ogg; sourceTree = "<group>"; };
+		B2CBF5CB20D95C1C006DAFA4 /* LEVEL4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LEVEL4.txt; sourceTree = "<group>"; };
+		B2CBF5CC20D95C1C006DAFA4 /* LEVEL3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LEVEL3.txt; sourceTree = "<group>"; };
+		B2CBF5CD20D95C1D006DAFA4 /* LEVEL1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LEVEL1.txt; sourceTree = "<group>"; };
+		B2CBF5CE20D95C1D006DAFA4 /* LEVEL2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LEVEL2.txt; sourceTree = "<group>"; };
+		B2CBF5D320D95C63006DAFA4 /* Level.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Level.cpp; sourceTree = "<group>"; };
+		B2CBF5D520D95C7C006DAFA4 /* Level.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +207,7 @@
 				B2CBF5AC20D9568A006DAFA4 /* Circle.cpp */,
 				B2CBF5A620D955E7006DAFA4 /* GameWindow.cpp */,
 				B2CBF5A920D9563C006DAFA4 /* global.cpp */,
+				B2CBF5D320D95C63006DAFA4 /* Level.cpp */,
 				8174248020D18C1400BC35F7 /* main.cpp */,
 				B2CBF5B720D958A6006DAFA4 /* Menu.cpp */,
 				B2CBF5AF20D956CB006DAFA4 /* Slider.cpp */,
@@ -188,10 +217,26 @@
 				B2CBF5AE20D956A4006DAFA4 /* Circle.h */,
 				B2CBF5A820D95608006DAFA4 /* GameWindow.h */,
 				B2CBF5AB20D95654006DAFA4 /* global.h */,
+				B2CBF5D520D95C7C006DAFA4 /* Level.h */,
 				B2CBF5B920D958BE006DAFA4 /* Menu.h */,
 				B2CBF5B620D95802006DAFA4 /* Object.h */,
 				B2CBF5B120D956DE006DAFA4 /* Slider.h */,
+				B2CBF5BC20D95BBC006DAFA4 /* StartBackground.jpg */,
+				B2CBF5CA20D95C00006DAFA4 /* BackgroundMusic.ogg */,
+				B2CBF5BF20D95BE1006DAFA4 /* Dancing.otf */,
 				8174244120D17C8300BC35F7 /* Info.plist */,
+				B2CBF5BA20D95BA5006DAFA4 /* icon.png */,
+				B2CBF5C120D95BE2006DAFA4 /* Bebas.ttf */,
+				B2CBF5BE20D95BE1006DAFA4 /* Caviar_Dreams_Bold.ttf */,
+				B2CBF5C020D95BE1006DAFA4 /* pirulen.ttf */,
+				B2CBF5CD20D95C1D006DAFA4 /* LEVEL1.txt */,
+				B2CBF5CE20D95C1D006DAFA4 /* LEVEL2.txt */,
+				B2CBF5CC20D95C1C006DAFA4 /* LEVEL3.txt */,
+				B2CBF5CB20D95C1C006DAFA4 /* LEVEL4.txt */,
+				B2CBF5C220D95BF6006DAFA4 /* Arrow.wav */,
+				B2CBF5C420D95BF7006DAFA4 /* growl.wav */,
+				B2CBF5C520D95BF7006DAFA4 /* level_clear.wav */,
+				B2CBF5C320D95BF6006DAFA4 /* level_fail.wav */,
 				8174243C20D17C8300BC35F7 /* Assets.xcassets */,
 				8174243E20D17C8300BC35F7 /* MainMenu.xib */,
 			);
@@ -276,8 +321,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2CBF5BD20D95BBC006DAFA4 /* StartBackground.jpg in Resources */,
+				B2CBF5D120D95C1D006DAFA4 /* LEVEL1.txt in Resources */,
+				B2CBF5C920D95BF7006DAFA4 /* level_clear.wav in Resources */,
+				B2CBF5CF20D95C1D006DAFA4 /* LEVEL4.txt in Resources */,
+				B2CBF5C620D95BF7006DAFA4 /* Arrow.wav in Resources */,
+				B2CBF5C820D95BF7006DAFA4 /* growl.wav in Resources */,
 				8174243D20D17C8300BC35F7 /* Assets.xcassets in Resources */,
 				8174244020D17C8300BC35F7 /* MainMenu.xib in Resources */,
+				B2CBF5BB20D95BA5006DAFA4 /* icon.png in Resources */,
+				B2CBF5C720D95BF7006DAFA4 /* level_fail.wav in Resources */,
+				B2CBF5D220D95C1D006DAFA4 /* LEVEL2.txt in Resources */,
+				B2CBF5D020D95C1D006DAFA4 /* LEVEL3.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +345,7 @@
 			files = (
 				8174248120D18C1400BC35F7 /* main.cpp in Sources */,
 				B2CBF5AD20D9568A006DAFA4 /* Circle.cpp in Sources */,
+				B2CBF5D420D95C63006DAFA4 /* Level.cpp in Sources */,
 				B2CBF5A720D955E7006DAFA4 /* GameWindow.cpp in Sources */,
 				B2CBF5B020D956CB006DAFA4 /* Slider.cpp in Sources */,
 				B2CBF5B820D958A6006DAFA4 /* Menu.cpp in Sources */,
