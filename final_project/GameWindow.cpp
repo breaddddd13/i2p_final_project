@@ -330,18 +330,13 @@ GameWindow::process_event()
         switch(event.keyboard.keycode) {
                 
             case ALLEGRO_KEY_P:
-                /*
+                /* ToDo
                  * You can add some variable to control if game is paused.
                  * e.g: pause
                  * In addition to add variable, you also have to modify draw_running_map() and game_update()
                  * Or, monsters and towers can still work without being paused
                  */
-                pause = !pause;
-                if (pause) {
-                    al_stop_timer(monster_pro);
-                } else {
-                    al_resume_timer(monster_pro);
-                }
+                
                 
                 break;
             case ALLEGRO_KEY_M:
