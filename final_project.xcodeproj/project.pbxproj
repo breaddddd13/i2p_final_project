@@ -36,6 +36,12 @@
 		B206E57620D18CCC00E4D2B1 /* liballegro_main.5.2.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B206E56920D18CCB00E4D2B1 /* liballegro_main.5.2.4.dylib */; };
 		B206E57720D18CCC00E4D2B1 /* liballegro_color.5.2.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B206E56A20D18CCB00E4D2B1 /* liballegro_color.5.2.4.dylib */; };
 		B206E57820D18CCC00E4D2B1 /* liballegro.5.2.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B206E56B20D18CCB00E4D2B1 /* liballegro.5.2.4.dylib */; };
+		B2CBF5A720D955E7006DAFA4 /* GameWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5A620D955E7006DAFA4 /* GameWindow.cpp */; };
+		B2CBF5AA20D9563C006DAFA4 /* global.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5A920D9563C006DAFA4 /* global.cpp */; };
+		B2CBF5AD20D9568A006DAFA4 /* Circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5AC20D9568A006DAFA4 /* Circle.cpp */; };
+		B2CBF5B020D956CB006DAFA4 /* Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5AF20D956CB006DAFA4 /* Slider.cpp */; };
+		B2CBF5B420D95789006DAFA4 /* Attack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5B320D95789006DAFA4 /* Attack.cpp */; };
+		B2CBF5B820D958A6006DAFA4 /* Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5B720D958A6006DAFA4 /* Menu.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -83,6 +89,20 @@
 		B206E56920D18CCB00E4D2B1 /* liballegro_main.5.2.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liballegro_main.5.2.4.dylib; sourceTree = "<group>"; };
 		B206E56A20D18CCB00E4D2B1 /* liballegro_color.5.2.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liballegro_color.5.2.4.dylib; sourceTree = "<group>"; };
 		B206E56B20D18CCB00E4D2B1 /* liballegro.5.2.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liballegro.5.2.4.dylib; sourceTree = "<group>"; };
+		B2CBF5A620D955E7006DAFA4 /* GameWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameWindow.cpp; sourceTree = "<group>"; };
+		B2CBF5A820D95608006DAFA4 /* GameWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameWindow.h; sourceTree = "<group>"; };
+		B2CBF5A920D9563C006DAFA4 /* global.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = global.cpp; sourceTree = "<group>"; };
+		B2CBF5AB20D95654006DAFA4 /* global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
+		B2CBF5AC20D9568A006DAFA4 /* Circle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Circle.cpp; sourceTree = "<group>"; };
+		B2CBF5AE20D956A4006DAFA4 /* Circle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
+		B2CBF5AF20D956CB006DAFA4 /* Slider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Slider.cpp; sourceTree = "<group>"; };
+		B2CBF5B120D956DE006DAFA4 /* Slider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Slider.h; sourceTree = "<group>"; };
+		B2CBF5B220D9570F006DAFA4 /* Button.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
+		B2CBF5B320D95789006DAFA4 /* Attack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Attack.cpp; sourceTree = "<group>"; };
+		B2CBF5B520D9579D006DAFA4 /* Attack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Attack.h; sourceTree = "<group>"; };
+		B2CBF5B620D95802006DAFA4 /* Object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+		B2CBF5B720D958A6006DAFA4 /* Menu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Menu.cpp; sourceTree = "<group>"; };
+		B2CBF5B920D958BE006DAFA4 /* Menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +159,8 @@
 				B206E56120D18CCA00E4D2B1 /* liballegro_video.5.2.4.dylib */,
 				B206E56B20D18CCB00E4D2B1 /* liballegro.5.2.4.dylib */,
 				8174243820D17C8100BC35F7 /* final_project */,
-				8174243720D17C8100BC35F7 /* Products */,
 				8174244A20D184D900BC35F7 /* Frameworks */,
+				8174243720D17C8100BC35F7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,11 +175,25 @@
 		8174243820D17C8100BC35F7 /* final_project */ = {
 			isa = PBXGroup;
 			children = (
+				B2CBF5B320D95789006DAFA4 /* Attack.cpp */,
+				B2CBF5AC20D9568A006DAFA4 /* Circle.cpp */,
+				B2CBF5A620D955E7006DAFA4 /* GameWindow.cpp */,
+				B2CBF5A920D9563C006DAFA4 /* global.cpp */,
+				8174248020D18C1400BC35F7 /* main.cpp */,
+				B2CBF5B720D958A6006DAFA4 /* Menu.cpp */,
+				B2CBF5AF20D956CB006DAFA4 /* Slider.cpp */,
+				8174244420D17C8300BC35F7 /* final_project.entitlements */,
+				B2CBF5B520D9579D006DAFA4 /* Attack.h */,
+				B2CBF5B220D9570F006DAFA4 /* Button.h */,
+				B2CBF5AE20D956A4006DAFA4 /* Circle.h */,
+				B2CBF5A820D95608006DAFA4 /* GameWindow.h */,
+				B2CBF5AB20D95654006DAFA4 /* global.h */,
+				B2CBF5B920D958BE006DAFA4 /* Menu.h */,
+				B2CBF5B620D95802006DAFA4 /* Object.h */,
+				B2CBF5B120D956DE006DAFA4 /* Slider.h */,
+				8174244120D17C8300BC35F7 /* Info.plist */,
 				8174243C20D17C8300BC35F7 /* Assets.xcassets */,
 				8174243E20D17C8300BC35F7 /* MainMenu.xib */,
-				8174244120D17C8300BC35F7 /* Info.plist */,
-				8174244420D17C8300BC35F7 /* final_project.entitlements */,
-				8174248020D18C1400BC35F7 /* main.cpp */,
 			);
 			path = final_project;
 			sourceTree = "<group>";
@@ -255,6 +289,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8174248120D18C1400BC35F7 /* main.cpp in Sources */,
+				B2CBF5AD20D9568A006DAFA4 /* Circle.cpp in Sources */,
+				B2CBF5A720D955E7006DAFA4 /* GameWindow.cpp in Sources */,
+				B2CBF5B020D956CB006DAFA4 /* Slider.cpp in Sources */,
+				B2CBF5B820D958A6006DAFA4 /* Menu.cpp in Sources */,
+				B2CBF5AA20D9563C006DAFA4 /* global.cpp in Sources */,
+				B2CBF5B420D95789006DAFA4 /* Attack.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
