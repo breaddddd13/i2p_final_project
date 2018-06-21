@@ -53,6 +53,8 @@
 		B2CBF5D120D95C1D006DAFA4 /* LEVEL1.txt in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF5CD20D95C1D006DAFA4 /* LEVEL1.txt */; };
 		B2CBF5D220D95C1D006DAFA4 /* LEVEL2.txt in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF5CE20D95C1D006DAFA4 /* LEVEL2.txt */; };
 		B2CBF5D420D95C63006DAFA4 /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5D320D95C63006DAFA4 /* Level.cpp */; };
+		B2CBF67620DBFDE3006DAFA4 /* BlueTank in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF67420DBFDE3006DAFA4 /* BlueTank */; };
+		B2CBF67720DBFDE3006DAFA4 /* RedTank in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF67520DBFDE3006DAFA4 /* RedTank */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -131,6 +133,8 @@
 		B2CBF5CE20D95C1D006DAFA4 /* LEVEL2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LEVEL2.txt; sourceTree = "<group>"; };
 		B2CBF5D320D95C63006DAFA4 /* Level.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Level.cpp; sourceTree = "<group>"; };
 		B2CBF5D520D95C7C006DAFA4 /* Level.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
+		B2CBF67420DBFDE3006DAFA4 /* BlueTank */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueTank; sourceTree = "<group>"; };
+		B2CBF67520DBFDE3006DAFA4 /* RedTank */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RedTank; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,8 @@
 		8174242D20D17C8100BC35F7 = {
 			isa = PBXGroup;
 			children = (
+				B2CBF67420DBFDE3006DAFA4 /* BlueTank */,
+				B2CBF67520DBFDE3006DAFA4 /* RedTank */,
 				B206E56820D18CCB00E4D2B1 /* liballegro_acodec.5.2.4.dylib */,
 				B206E56220D18CCA00E4D2B1 /* liballegro_audio.5.2.4.dylib */,
 				B206E56A20D18CCB00E4D2B1 /* liballegro_color.5.2.4.dylib */,
@@ -321,6 +327,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2CBF67620DBFDE3006DAFA4 /* BlueTank in Resources */,
+				B2CBF67720DBFDE3006DAFA4 /* RedTank in Resources */,
 				B2CBF5BD20D95BBC006DAFA4 /* StartBackground.jpg in Resources */,
 				B2CBF5D120D95C1D006DAFA4 /* LEVEL1.txt in Resources */,
 				B2CBF5C920D95BF7006DAFA4 /* level_clear.wav in Resources */,
