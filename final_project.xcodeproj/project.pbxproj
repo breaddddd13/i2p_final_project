@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		810D703220DD017400EE8C46 /* obstacle in Resources */ = {isa = PBXBuildFile; fileRef = 810D703120DD017400EE8C46 /* obstacle */; };
+		810D703420DD1CDD00EE8C46 /* obstacle in Resources */ = {isa = PBXBuildFile; fileRef = 810D703320DD1CDD00EE8C46 /* obstacle */; };
 		8174243D20D17C8300BC35F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8174243C20D17C8300BC35F7 /* Assets.xcassets */; };
 		8174244020D17C8300BC35F7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8174243E20D17C8300BC35F7 /* MainMenu.xib */; };
 		8174245820D184D900BC35F7 /* liballegro_image.5.2.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8174244B20D184D900BC35F7 /* liballegro_image.5.2.4.dylib */; };
@@ -72,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		810D703120DD017400EE8C46 /* obstacle */ = {isa = PBXFileReference; lastKnownFileType = folder; name = obstacle; path = ../../Desktop/obstacle; sourceTree = "<group>"; };
+		810D703320DD1CDD00EE8C46 /* obstacle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = obstacle; sourceTree = "<group>"; };
 		8174243620D17C8100BC35F7 /* final_project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = final_project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8174243C20D17C8300BC35F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8174243F20D17C8300BC35F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -180,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				810D703120DD017400EE8C46 /* obstacle */,
+				810D703320DD1CDD00EE8C46 /* obstacle */,
 				B2CBF67420DBFDE3006DAFA4 /* BlueTank */,
 				B2CBF67520DBFDE3006DAFA4 /* RedTank */,
 				B206E56820D18CCB00E4D2B1 /* liballegro_acodec.5.2.4.dylib */,
@@ -330,7 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				810D703220DD017400EE8C46 /* obstacle in Resources */,
+				810D703420DD1CDD00EE8C46 /* obstacle in Resources */,
 				B2CBF67620DBFDE3006DAFA4 /* BlueTank in Resources */,
 				B2CBF67720DBFDE3006DAFA4 /* RedTank in Resources */,
 				B2CBF5BD20D95BBC006DAFA4 /* StartBackground.jpg in Resources */,
