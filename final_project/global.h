@@ -12,16 +12,7 @@
 #define field_width 1500
 #define field_height 1300
 
-#define Num_TowerType 6
-#define Num_MonsterType 4
-#define NumOfGrid (field_width / grid_width) * (field_height / grid_height)
-
-extern int TowerRadius[];
-extern char TowerClass[][20];
-extern int TowerWidth[];
-extern int TowerHeight[];
-
-enum {ARCANE = 0, ARCHER, CANON, POISON, STORM, MAGMA};
-enum {WOLF = 0, WOLFKNIGHT, DEMONNIJIA, CAVEMAN};
+#define Num_TankType 4
+#define NumOfGrid (field_width / grid_width) * (field_height / grid_height) // 15 * 13 = 195
 
 #endif // GLOBAL_H_INCLUDED
