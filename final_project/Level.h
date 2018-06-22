@@ -26,7 +26,7 @@ public:
     //void search_destination();
     std::vector<int> ReturnPath() { return road_grid; }
     
-    int MonsterNum[Num_MonsterType];
+//    int MonsterNum[Num_MonsterType];
     
     
 private:

@@ -83,13 +83,13 @@ Menu::Draw()
     }
 }
 
-//int
-//Menu::MouseIn(int mouse_x, int mouse_y)
-//{
-//    
-//    
-//    
-//}
+int
+Menu::MouseIn(int mouse_x, int mouse_y)
+{
+    
+    
+    return 1;
+}
 
 bool
 Menu::Subtract_HP(int escapeNum)

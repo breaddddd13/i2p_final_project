@@ -375,7 +375,7 @@ GameWindow::process_event()
             
             
         } else if (event.mouse.button == 2) {
-            menu->Change_Coin(100);
+            
             return GAME_CONTINUE;
         }
     }
@@ -407,19 +407,19 @@ GameWindow::draw_running_map()
     al_clear_to_color(al_map_rgb(100, 100, 100));
     al_draw_bitmap(background, 0, 0, 0);
     
-    for(i = 0; i < field_height/40; i++)
-    {
-        for(j = 0; j < field_width/40; j++)
-        {
-            char buffer[50];
-            sprintf(buffer, "%d", i*15 + j);
-            if(level->isRoad(i*15 + j)) {
-                al_draw_filled_rectangle(j*40, i*40, j*40+40, i*40+40, al_map_rgb(255, 244, 173));
-            }
-            // For debug usage, if you want to create a new map, you may turn off this comment.
-            // al_draw_text(font, al_map_rgb(0, 0, 0), j*40 + 20, i*40 + 14, ALLEGRO_ALIGN_CENTER, buffer);
-        }
-    }
+//    for(i = 0; i < field_height/40; i++)
+//    {
+//        for(j = 0; j < field_width/40; j++)
+//        {
+//            char buffer[50];
+//            sprintf(buffer, "%d", i*15 + j);
+//            if(level->isRoad(i*15 + j)) {
+//                al_draw_filled_rectangle(j*40, i*40, j*40+40, i*40+40, al_map_rgb(255, 244, 173));
+//            }
+//            // For debug usage, if you want to create a new map, you may turn off this comment.
+//            // al_draw_text(font, al_map_rgb(0, 0, 0), j*40 + 20, i*40 + 14, ALLEGRO_ALIGN_CENTER, buffer);
+//        }
+//    }
     
     
     
