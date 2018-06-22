@@ -48,8 +48,8 @@ GameWindow::game_init()
     al_set_sample_instance_playmode(backgroundSound, ALLEGRO_PLAYMODE_ONCE);
     al_attach_sample_instance_to_mixer(backgroundSound, al_get_default_mixer());
     
-//    level = new LEVEL(1);
-//    menu = new Menu();
+    level = new LEVEL(1);
+    menu = new Menu();
     
 }
 
@@ -152,7 +152,7 @@ GameWindow::GameWindow()
     //
     
     display = al_create_display(window_width, window_height);
-    al_resize_display(display, window_width/2, window_height/2);
+    
     event_queue = al_create_event_queue();
     
     /*
@@ -426,7 +426,7 @@ GameWindow::draw_running_map()
     
     al_draw_filled_rectangle(field_width, 0, window_width, window_height, al_map_rgb(100, 100, 100));
     
-    menu->Draw();
+//    menu->Draw();
     
     
     al_flip_display();
