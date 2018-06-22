@@ -141,7 +141,7 @@ GameWindow::GameWindow()
 {
     if (!al_init())
         show_err_msg(-1);
-    printf("Game Initializing...\n");
+//    printf("Game Initializing...\n");
     printf("Game Initializing...\n");
     //    ALLEGRO_DISPLAY       *display = NULL;
     //    ALLEGRO_DISPLAY_MODE   disp_data;
