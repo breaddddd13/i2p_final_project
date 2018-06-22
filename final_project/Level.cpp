@@ -4,14 +4,15 @@ LEVEL::LEVEL(const int level) {
     char buffer[50];
     
     setLevel(level);
+    
 }
 
 LEVEL::~LEVEL()
 {
-    for(int i=0;i < NumOfGrid;i++)
-    {
-        levelMap[i].roadPoint = false;
-    }
+//    for(int i=0;i < NumOfGrid;i++)
+//    {
+//        levelMap[i].roadPoint = false;
+//    }
 }
 
 void
@@ -26,23 +27,26 @@ LEVEL::setLevel(const int level)
     this->level = level;
     this->road_grid.clear();
     
-    for(int i = 0; i < NumOfGrid; i++)
-    {
-        this->levelMap[i].roadPoint = false;
-    }
+//    for(int i = 0; i < NumOfGrid; i++)
+//    {
+//        this->levelMap[i].roadPoint = false;
+//    }
     
-    fscanf(file, "%s", buffer);
-    Monster_MAX = atoi(buffer);
+//    fscanf(file, "%s", buffer);
+//    Monster_MAX = atoi(buffer);
     
-    for(int i=0; i < Num_MonsterType; i++)
-    {
-        fscanf(file, "%s", buffer);
-        MonsterNum[i] = atoi(buffer);
-    }
+//    for(int i=0; i < Num_MonsterType; i++)
+//    {
+//        fscanf(file, "%s", buffer);
+//        MonsterNum[i] = atoi(buffer);
+//    }
     
     while(fscanf(file, "%s", buffer) != EOF) {
-        this->levelMap[atoi(buffer)].roadPoint = true;
-        road_grid.push_back(atoi(buffer));
+        for (int i = 0; i < field_height/grid_height; i++) {
+            for (int j = 0; j < field_width/grid_width; j++) {
+                levelMap[i][j].roadPoint = buffer[j];
+            }
+        }
     }
     
     fclose(file);

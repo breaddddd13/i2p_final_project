@@ -10,7 +10,7 @@
 
 typedef struct Node {
     int h, g, f;
-    bool roadPoint;
+    int roadPoint;
 }Node;
 
 class LEVEL {
@@ -19,7 +19,8 @@ public:
     ~LEVEL();
     
     void setLevel(const int);
-    bool isRoad(int index) { return levelMap[index].roadPoint; }
+//    bool isRoad(int index) { return levelMap[index].roadPoint; }
+    int isObstacle(int i,int j) {return levelMap[i][j].roadPoint; }
     int getMonsterSpeed() { return MonsterSpeed; }
     int getLevel() { return level; }
     //void search_destination();
@@ -27,8 +28,9 @@ public:
     
     int MonsterNum[Num_MonsterType];
     
+    
 private:
-    Node levelMap[NumOfGrid];
+    Node levelMap[field_height/grid_height][field_width/grid_width];
     std::vector<int> road_grid;
     // current level number
     int level = 1;
