@@ -76,7 +76,7 @@ public:
     
 private:
     ALLEGRO_BITMAP *icon;
-    ALLEGRO_BITMAP *tower[Num_TowerType];
+    ALLEGRO_BITMAP *tower[Num_TankType];
     ALLEGRO_BITMAP *background = NULL;
     ALLEGRO_BITMAP *startBGD = NULL;
     ALLEGRO_BITMAP *overBGD = NULL;
