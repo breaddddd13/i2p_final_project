@@ -11,6 +11,7 @@
 #include "Attack.h"
 #include "Slider.h"
 #include "Button.h"
+#include "Player1.h"
 //#include "BaseTank.h"
 
 

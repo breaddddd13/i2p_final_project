@@ -140,6 +140,7 @@
 		B2CBF67520DBFDE3006DAFA4 /* RedTank */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RedTank; sourceTree = "<group>"; };
 		B2CBF67820DEC060006DAFA4 /* BaseTank.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTank.h; sourceTree = "<group>"; };
 		B2CBF67920DED676006DAFA4 /* BaseTank.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BaseTank.cpp; sourceTree = "<group>"; };
+		B2CBF67B20DEEE18006DAFA4 /* Player1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player1.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,9 +183,6 @@
 		8174242D20D17C8100BC35F7 = {
 			isa = PBXGroup;
 			children = (
-				E781800A20DEC45700EAE12F /* startmusic.wav */,
-				E781800820DEC3A900EAE12F /* startbackground.png */,
-				E781800120DE534000EAE12F /* Cardiff.ttf */,
 				810D703320DD1CDD00EE8C46 /* obstacle */,
 				B2CBF67420DBFDE3006DAFA4 /* BlueTank */,
 				B2CBF67520DBFDE3006DAFA4 /* RedTank */,
@@ -219,13 +217,13 @@
 			isa = PBXGroup;
 			children = (
 				B2CBF5B320D95789006DAFA4 /* Attack.cpp */,
+				B2CBF67920DED676006DAFA4 /* BaseTank.cpp */,
 				B2CBF5AC20D9568A006DAFA4 /* Circle.cpp */,
 				B2CBF5A620D955E7006DAFA4 /* GameWindow.cpp */,
 				B2CBF5A920D9563C006DAFA4 /* global.cpp */,
 				B2CBF5D320D95C63006DAFA4 /* Level.cpp */,
 				8174248020D18C1400BC35F7 /* main.cpp */,
 				B2CBF5B720D958A6006DAFA4 /* Menu.cpp */,
-				B2CBF67920DED676006DAFA4 /* BaseTank.cpp */,
 				B2CBF5AF20D956CB006DAFA4 /* Slider.cpp */,
 				8174244420D17C8300BC35F7 /* final_project.entitlements */,
 				B2CBF5B520D9579D006DAFA4 /* Attack.h */,
@@ -237,6 +235,7 @@
 				B2CBF5D520D95C7C006DAFA4 /* Level.h */,
 				B2CBF5B920D958BE006DAFA4 /* Menu.h */,
 				B2CBF5B620D95802006DAFA4 /* Object.h */,
+				B2CBF67B20DEEE18006DAFA4 /* Player1.h */,
 				B2CBF5B120D956DE006DAFA4 /* Slider.h */,
 				B2CBF5BC20D95BBC006DAFA4 /* StartBackground.jpg */,
 				B2CBF5CA20D95C00006DAFA4 /* BackgroundMusic.ogg */,
@@ -338,9 +337,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E781800B20DEC45700EAE12F /* startmusic.wav in Resources */,
-				E781800920DEC3A900EAE12F /* startbackground.png in Resources */,
-				E781800220DE534000EAE12F /* Cardiff.ttf in Resources */,
 				810D703420DD1CDD00EE8C46 /* obstacle in Resources */,
 				B2CBF67620DBFDE3006DAFA4 /* BlueTank in Resources */,
 				B2CBF67720DBFDE3006DAFA4 /* RedTank in Resources */,
@@ -366,7 +362,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E781800320DE7E2900EAE12F /* Button.h in Sources */,
 				8174248120D18C1400BC35F7 /* main.cpp in Sources */,
 				B2CBF5AD20D9568A006DAFA4 /* Circle.cpp in Sources */,
 				B2CBF5D420D95C63006DAFA4 /* Level.cpp in Sources */,
