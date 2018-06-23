@@ -51,7 +51,7 @@ GameWindow::game_init()
     
     sample = al_load_sample("startmusic.wav");
     startBGM = al_create_sample_instance(sample);
-    al_set_sample_instance_playmode(startBGM, ALLEGRO_PLAYMODE_ONCE);
+    al_set_sample_instance_playmode(startBGM, ALLEGRO_PLAYMODE_LOOP);
     al_attach_sample_instance_to_mixer(startBGM, al_get_default_mixer());
     
     level = new LEVEL(1);
@@ -440,7 +440,7 @@ GameWindow::draw_running_map()
 void GameWindow::game_start()
 {
     int flag=0;
-    draw_start_scene();
+    
     while(flag==0)
     {
         flag = draw_start_scene();
@@ -449,28 +449,38 @@ void GameWindow::game_start()
 
 int GameWindow::draw_start_scene()
 {
-    //static Button start(window_width/2, 2*window_height/2);
+    static Button start(window_width-350, window_height-600 ,300, 100, "START");
+    static Button setting(window_width-350, window_height-450 ,300, 100, "SETTING");
     //al_clear_to_color(WHITE);
     al_draw_bitmap(startBGD, 0, 0, 0);
     al_draw_text(startFont, WHITE, window_width/2, 2*window_height/3+130, ALLEGRO_ALIGN_CENTER, "Tank Game");
-    //start.Draw();
     al_play_sample_instance(startBGM);
+    start.Draw();
+    setting.Draw();
     al_flip_display();
     al_wait_for_event(event_queue, &event);
     
     if(event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) exit(9);
-    /*else if(event.type == ALLEGRO_EVENT_MOUSE_AXES)
+    else if(event.type == ALLEGRO_EVENT_MOUSE_AXES)
     {
         if(start.selectButton(event.mouse.x, event.mouse.y))
-            start.setColor(BLUE);
+            start.setColor(BLACK);
         
         else start.setColor(WHITE);
-        start.Draw();
+        //al_flip_display();
+        if(setting.selectButton(event.mouse.x, event.mouse.y))
+            setting.setColor(BLACK);
+        
+        else setting.setColor(WHITE);
     }
     else if(event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN)
     {
         if(start.selectButton(event.mouse.x, event.mouse.y))
             return 1;
-    }*/
+    }
+    
+    start.Draw();
+    setting.Draw();
+    //al_flip_display();
     return 0;
 }

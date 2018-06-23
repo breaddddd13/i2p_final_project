@@ -2,7 +2,7 @@
 #define GLOBAL_H_INCLUDED
 
 #include <allegro5/allegro_font.h>
-
+#include <string>
 #define font_size 12
 #define grid_width 100
 #define grid_height 100
