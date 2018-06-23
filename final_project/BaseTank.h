@@ -28,6 +28,7 @@ public:
     // Draw image per frame
     // override virtual function "Object::Draw"
     void Draw();
+    
     // Load bitmaps of animation image into container "moveImg"
     void Load_Move();
     // Update monster position per frame

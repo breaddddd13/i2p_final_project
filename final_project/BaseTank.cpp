@@ -67,6 +67,7 @@ BaseTank::Load_Move()
 void
 BaseTank::Draw()
 {
+    
     int w, h;
     int offset = 0;
     
