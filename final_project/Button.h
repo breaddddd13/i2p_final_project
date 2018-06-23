@@ -39,7 +39,10 @@ public:
         textColor = ORANGE_LIGHT;
         font = al_load_ttf_font("pirulen.ttf", 12, 0);
     };
-    ~Button();
+    ~Button()
+    {
+        
+    }
     void setWH(float Width, float Height){
         width = Width;
         height = Height;

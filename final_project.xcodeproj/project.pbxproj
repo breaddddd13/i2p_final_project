@@ -56,6 +56,10 @@
 		B2CBF5D420D95C63006DAFA4 /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5D320D95C63006DAFA4 /* Level.cpp */; };
 		B2CBF67620DBFDE3006DAFA4 /* BlueTank in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF67420DBFDE3006DAFA4 /* BlueTank */; };
 		B2CBF67720DBFDE3006DAFA4 /* RedTank in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF67520DBFDE3006DAFA4 /* RedTank */; };
+		E781800220DE534000EAE12F /* Cardiff.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E781800120DE534000EAE12F /* Cardiff.ttf */; };
+		E781800320DE7E2900EAE12F /* Button.h in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5B220D9570F006DAFA4 /* Button.h */; };
+		E781800920DEC3A900EAE12F /* startbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = E781800820DEC3A900EAE12F /* startbackground.png */; };
+		E781800B20DEC45700EAE12F /* startmusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = E781800A20DEC45700EAE12F /* startmusic.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -137,6 +141,9 @@
 		B2CBF5D520D95C7C006DAFA4 /* Level.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		B2CBF67420DBFDE3006DAFA4 /* BlueTank */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueTank; sourceTree = "<group>"; };
 		B2CBF67520DBFDE3006DAFA4 /* RedTank */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RedTank; sourceTree = "<group>"; };
+		E781800120DE534000EAE12F /* Cardiff.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Cardiff.ttf; path = final_project/Cardiff.ttf; sourceTree = "<group>"; };
+		E781800820DEC3A900EAE12F /* startbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = startbackground.png; path = Background/startbackground.png; sourceTree = "<group>"; };
+		E781800A20DEC45700EAE12F /* startmusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = startmusic.wav; path = music/startmusic.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +186,9 @@
 		8174242D20D17C8100BC35F7 = {
 			isa = PBXGroup;
 			children = (
+				E781800A20DEC45700EAE12F /* startmusic.wav */,
+				E781800820DEC3A900EAE12F /* startbackground.png */,
+				E781800120DE534000EAE12F /* Cardiff.ttf */,
 				810D703320DD1CDD00EE8C46 /* obstacle */,
 				B2CBF67420DBFDE3006DAFA4 /* BlueTank */,
 				B2CBF67520DBFDE3006DAFA4 /* RedTank */,
@@ -330,6 +340,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E781800B20DEC45700EAE12F /* startmusic.wav in Resources */,
+				E781800920DEC3A900EAE12F /* startbackground.png in Resources */,
+				E781800220DE534000EAE12F /* Cardiff.ttf in Resources */,
 				810D703420DD1CDD00EE8C46 /* obstacle in Resources */,
 				B2CBF67620DBFDE3006DAFA4 /* BlueTank in Resources */,
 				B2CBF67720DBFDE3006DAFA4 /* RedTank in Resources */,
@@ -355,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E781800320DE7E2900EAE12F /* Button.h in Sources */,
 				8174248120D18C1400BC35F7 /* main.cpp in Sources */,
 				B2CBF5AD20D9568A006DAFA4 /* Circle.cpp in Sources */,
 				B2CBF5D420D95C63006DAFA4 /* Level.cpp in Sources */,
