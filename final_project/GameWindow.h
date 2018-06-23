@@ -11,8 +11,7 @@
 #include "Attack.h"
 #include "Slider.h"
 #include "Button.h"
-#include "Player1.h"
-//#include "BaseTank.h"
+#include "BlueRoy.h"
 
 
 #define GAME_INIT -1
@@ -111,6 +110,7 @@ private:
     
 //    std::vector<Monster*> monsterSet;
 //    std::list<Tower*> towerSet;
+    BaseTank *P1 = NULL;
     
     int Coin_Inc_Count = 0;
     int mouse_x, mouse_y;

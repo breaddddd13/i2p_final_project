@@ -55,7 +55,7 @@ BaseTank::Load_Move()
         for(int j=0; j<direction_count[i]; j++)
         {
             ALLEGRO_BITMAP *img;
-            sprintf(buffer, "./%s/%d_%s.png", class_name, j, direction_name[i]);
+            sprintf(buffer, "./%s/%s_%d.png", class_name, direction_name[i], j);
             
             img = al_load_bitmap(buffer);
             if(img)

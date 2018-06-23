@@ -9,6 +9,7 @@
 #define ORANGE_DARK al_map_rgb(255, 142, 71)
 #define PURPLE al_map_rgb(149, 128, 255)
 #define BLUE al_map_rgb(77, 129, 179)
+#define KHAKI al_map_rgb(189,183,107)
 
 #define min(a, b) ((a) < (b)? (a) : (b))
 #define max(a, b) ((a) > (b)? (a) : (b))
@@ -118,7 +119,7 @@ GameWindow::game_play()
      *     You may add some function to create starting scene before calling game_begin
      *     e.g: game_start_scene()
      */
-    game_start();
+    //game_start();
     game_begin();
     
     /*
@@ -162,7 +163,6 @@ GameWindow::GameWindow()
     /*
      * Create two timers to control different parts of tower game:
      *    a. timer: control the animation of each object, stopped when game doesn't run.
-     *    b. monster_pro: control the production of monster, stopped when there is no need to produce monster.
      */
     timer = al_create_timer(1.0 / FPS);
     
@@ -203,6 +203,7 @@ void
 GameWindow::game_begin()
 {
     printf(">>> Start Level[%d]\n", level->getLevel());
+    P1 = new BlueRoy(0, 0);
     draw_running_map();
     
     al_play_sample_instance(startSound);
@@ -410,7 +411,8 @@ GameWindow::draw_running_map()
 {
     unsigned int i, j;
     al_clear_to_color(al_map_rgb(100, 100, 100));
-    al_draw_bitmap(background, 0, 0, 0);
+    //al_draw_bitmap(background, 0, 0, 0);
+    al_draw_filled_rectangle(70, 70, 1640, 1370, KHAKI);
     
 //    for(i = 0; i < field_height/40; i++)
 //    {
@@ -426,7 +428,7 @@ GameWindow::draw_running_map()
 //        }
 //    }
     
-    
+    P1->Draw();
     
     
     al_draw_filled_rectangle(field_width, 0, window_width, window_height, al_map_rgb(100, 100, 100));
