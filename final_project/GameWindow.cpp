@@ -1,6 +1,7 @@
 #include "GameWindow.h"
 #include "global.h"
 #include <iostream>
+#include "Button.h"
 
 #define WHITE al_map_rgb(255, 255, 255)
 #define BLACK al_map_rgb(0, 0, 0)
@@ -27,8 +28,8 @@ GameWindow::game_init()
     
     icon = al_load_bitmap("./icon.png");
     background = al_load_bitmap("./StartBackground.jpg");
-    
-    
+    startBGD = al_load_bitmap("./startbackground.png");
+    if(!startBGD)std::cout<<"failed"<<std::endl;
 //    for(int i = 0; i < Num_TowerType; i++)
 //    {
 //        sprintf(buffer, "./Tower/%s.png", TowerClass[i]);
@@ -36,7 +37,7 @@ GameWindow::game_init()
 //    }
     
     al_set_display_icon(display, icon);
-    al_reserve_samples(3);
+    al_reserve_samples(5);
     
     sample = al_load_sample("growl.wav");
     startSound = al_create_sample_instance(sample);
@@ -47,6 +48,11 @@ GameWindow::game_init()
     backgroundSound = al_create_sample_instance(sample);
     al_set_sample_instance_playmode(backgroundSound, ALLEGRO_PLAYMODE_ONCE);
     al_attach_sample_instance_to_mixer(backgroundSound, al_get_default_mixer());
+    
+    sample = al_load_sample("startmusic.wav");
+    startBGM = al_create_sample_instance(sample);
+    al_set_sample_instance_playmode(startBGM, ALLEGRO_PLAYMODE_LOOP);
+    al_attach_sample_instance_to_mixer(startBGM, al_get_default_mixer());
     
     level = new LEVEL(1);
     menu = new Menu();
@@ -112,7 +118,7 @@ GameWindow::game_play()
      *     You may add some function to create starting scene before calling game_begin
      *     e.g: game_start_scene()
      */
-    
+    game_start();
     game_begin();
     
     /*
@@ -142,7 +148,6 @@ GameWindow::GameWindow()
     if (!al_init())
         show_err_msg(-1);
     printf("Game Initializing...\n");
-    printf("Game Initializing...\n");
     //    ALLEGRO_DISPLAY       *display = NULL;
     //    ALLEGRO_DISPLAY_MODE   disp_data;
     //    al_get_display_mode(al_get_num_display_modes() - 1, &disp_data);
@@ -152,7 +157,6 @@ GameWindow::GameWindow()
     //
     
     display = al_create_display(window_width, window_height);
-    
     event_queue = al_create_event_queue();
     
     /*
@@ -182,6 +186,8 @@ GameWindow::GameWindow()
     Medium_font = al_load_ttf_font("Caviar_Dreams_Bold.ttf",24,0); //load medium font
     Large_font = al_load_ttf_font("Caviar_Dreams_Bold.ttf",36,0); //load large font
     
+    startFont = al_load_font("Cardiff.ttf", 280, 0);
+    if(!startFont) std::cout<<"fuck\n";
     al_register_event_source(event_queue, al_get_display_event_source(display));
     al_register_event_source(event_queue, al_get_keyboard_event_source());
     al_register_event_source(event_queue, al_get_mouse_event_source());
@@ -403,7 +409,6 @@ void
 GameWindow::draw_running_map()
 {
     unsigned int i, j;
-    
     al_clear_to_color(al_map_rgb(100, 100, 100));
     al_draw_bitmap(background, 0, 0, 0);
     
@@ -430,4 +435,52 @@ GameWindow::draw_running_map()
     
     
     al_flip_display();
+}
+
+void GameWindow::game_start()
+{
+    int flag=0;
+    
+    while(flag==0)
+    {
+        flag = draw_start_scene();
+    }
+}
+
+int GameWindow::draw_start_scene()
+{
+    static Button start(window_width-350, window_height-600 ,300, 100, "START");
+    static Button setting(window_width-350, window_height-450 ,300, 100, "SETTING");
+    //al_clear_to_color(WHITE);
+    al_draw_bitmap(startBGD, 0, 0, 0);
+    al_draw_text(startFont, WHITE, window_width/2, 2*window_height/3+130, ALLEGRO_ALIGN_CENTER, "Tank Game");
+    al_play_sample_instance(startBGM);
+    start.Draw();
+    setting.Draw();
+    al_flip_display();
+    al_wait_for_event(event_queue, &event);
+    
+    if(event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) exit(9);
+    else if(event.type == ALLEGRO_EVENT_MOUSE_AXES)
+    {
+        if(start.selectButton(event.mouse.x, event.mouse.y))
+            start.setColor(BLACK);
+        
+        else start.setColor(WHITE);
+        //al_flip_display();
+        if(setting.selectButton(event.mouse.x, event.mouse.y))
+            setting.setColor(BLACK);
+        
+        else setting.setColor(WHITE);
+    }
+    else if(event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN)
+    {
+        if(start.selectButton(event.mouse.x, event.mouse.y))
+            return 1;
+    }
+    
+    start.Draw();
+    setting.Draw();
+    //al_flip_display();
+    return 0;
 }

@@ -25,21 +25,26 @@
 class Button
 {
 public:
-    Button(float Width, float Height){
-        topLeft_x = 0.0;
-        topLeft_y = 0.0;
+    Button(float x, float y, float Width, float Height, char* word){
+        center_x = x;
+        center_y = y;
+        topLeft_x = x - width/2;;
+        topLeft_y = y - height/2;
         width = Width;
         height = Height;
         bottomRight_x = topLeft_x + width;
         bottomRight_y = topLeft_y + height;
         center_x = topLeft_x + width/2;
         center_y = topLeft_y + height/2;
-        strcpy(text, "fatGua");
+        strcpy(text, word);
         color = al_map_rgb(255, 255, 255);
         textColor = ORANGE_LIGHT;
-        font = al_load_ttf_font("pirulen.ttf", 12, 0);
+        font = al_load_ttf_font("Cardiff.ttf", 70, 0);
     };
-    ~Button();
+    ~Button()
+    {
+        
+    }
     void setWH(float Width, float Height){
         width = Width;
         height = Height;

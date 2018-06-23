@@ -70,6 +70,8 @@ public:
     
 //    Tower* create_tower(int);
 //    Monster* create_monster();
+    void game_start();
+    int draw_start_scene();
     
 public:
     bool initial = true;
@@ -94,6 +96,7 @@ private:
 
     
     ALLEGRO_SAMPLE *sample = NULL;
+    ALLEGRO_SAMPLE_INSTANCE *startBGM = NULL;
     ALLEGRO_SAMPLE_INSTANCE *startSound = NULL;
     ALLEGRO_SAMPLE_INSTANCE *clearSound = NULL;
     ALLEGRO_SAMPLE_INSTANCE *failSound = NULL;

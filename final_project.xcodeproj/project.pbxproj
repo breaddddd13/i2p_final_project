@@ -182,6 +182,9 @@
 		8174242D20D17C8100BC35F7 = {
 			isa = PBXGroup;
 			children = (
+				E781800A20DEC45700EAE12F /* startmusic.wav */,
+				E781800820DEC3A900EAE12F /* startbackground.png */,
+				E781800120DE534000EAE12F /* Cardiff.ttf */,
 				810D703320DD1CDD00EE8C46 /* obstacle */,
 				B2CBF67420DBFDE3006DAFA4 /* BlueTank */,
 				B2CBF67520DBFDE3006DAFA4 /* RedTank */,
@@ -335,6 +338,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E781800B20DEC45700EAE12F /* startmusic.wav in Resources */,
+				E781800920DEC3A900EAE12F /* startbackground.png in Resources */,
+				E781800220DE534000EAE12F /* Cardiff.ttf in Resources */,
 				810D703420DD1CDD00EE8C46 /* obstacle in Resources */,
 				B2CBF67620DBFDE3006DAFA4 /* BlueTank in Resources */,
 				B2CBF67720DBFDE3006DAFA4 /* RedTank in Resources */,
@@ -360,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E781800320DE7E2900EAE12F /* Button.h in Sources */,
 				8174248120D18C1400BC35F7 /* main.cpp in Sources */,
 				B2CBF5AD20D9568A006DAFA4 /* Circle.cpp in Sources */,
 				B2CBF5D420D95C63006DAFA4 /* Level.cpp in Sources */,
