@@ -73,6 +73,9 @@ public:
     void game_start();
     int draw_start_scene();
     
+    void game_over();
+    int draw_over_scene();
+    
 public:
     bool initial = true;
     
@@ -89,6 +92,7 @@ private:
     ALLEGRO_FONT *Medium_font = NULL;
     ALLEGRO_FONT *Large_font = NULL;
     ALLEGRO_FONT *startFont = NULL;
+    ALLEGRO_FONT *overFont = NULL;
     
     ALLEGRO_EVENT_QUEUE *event_queue = NULL;
     ALLEGRO_EVENT event;
@@ -101,6 +105,7 @@ private:
     ALLEGRO_SAMPLE_INSTANCE *clearSound = NULL;
     ALLEGRO_SAMPLE_INSTANCE *failSound = NULL;
     ALLEGRO_SAMPLE_INSTANCE *backgroundSound = NULL;
+    ALLEGRO_SAMPLE_INSTANCE *word_appear = NULL;
     
     LEVEL *level = NULL;
     Menu *menu = NULL;

@@ -30,12 +30,14 @@ GameWindow::game_init()
     icon = al_load_bitmap("./icon.png");
     background = al_load_bitmap("./StartBackground.jpg");
     startBGD = al_load_bitmap("./Background/startbackground.png");
+    overBGD = al_load_bitmap("./Background/over_background.jpg");
+    
     if(!startBGD)std::cout<<"failed"<<std::endl;
-//    for(int i = 0; i < Num_TowerType; i++)
-//    {
-//        sprintf(buffer, "./Tower/%s.png", TowerClass[i]);
-//        tower[i] = al_load_bitmap(buffer);
-//    }
+    //    for(int i = 0; i < Num_TowerType; i++)
+    //    {
+    //        sprintf(buffer, "./Tower/%s.png", TowerClass[i]);
+    //        tower[i] = al_load_bitmap(buffer);
+    //    }
     
     al_set_display_icon(display, icon);
     al_reserve_samples(5);
@@ -54,6 +56,12 @@ GameWindow::game_init()
     startBGM = al_create_sample_instance(sample);
     al_set_sample_instance_playmode(startBGM, ALLEGRO_PLAYMODE_LOOP);
     al_attach_sample_instance_to_mixer(startBGM, al_get_default_mixer());
+    
+    sample = al_load_sample("./music/word_appear.wav");
+    word_appear = al_create_sample_instance(sample);
+    al_set_sample_instance_playmode(word_appear, ALLEGRO_PLAYMODE_ONCE);
+    al_set_sample_instance_gain(word_appear, 0.5);
+    al_attach_sample_instance_to_mixer(word_appear, al_get_default_mixer());
     
     level = new LEVEL(1);
     menu = new Menu();
@@ -119,7 +127,8 @@ GameWindow::game_play()
      *     You may add some function to create starting scene before calling game_begin
      *     e.g: game_start_scene()
      */
-    game_start();
+    game_over();
+    //game_start();
     game_begin();
     
     /*
@@ -188,12 +197,15 @@ GameWindow::GameWindow()
     
     startFont = al_load_font("./Font/Cardiff.ttf", 280, 0);
     if(!startFont) std::cout<<"fuck\n";
+    
+    overFont = al_load_font("./Font/BLKCHCRY.TTF", 120, 0);
+    
     al_register_event_source(event_queue, al_get_display_event_source(display));
     al_register_event_source(event_queue, al_get_keyboard_event_source());
     al_register_event_source(event_queue, al_get_mouse_event_source());
     
     al_register_event_source(event_queue, al_get_timer_event_source(timer));
-
+    
     
     // Initializing resources that tower game needs.
     game_init();
@@ -242,12 +254,12 @@ GameWindow::game_update()
     // update every monster
     // check if it is destroyed or reaches end point
     
-        
-        /*TODO:*/
-        /*1. For each tower, traverse its attack set*/
-        /*2. If the monster collide with any attack, reduce the HP of the monster*/
-        /*3. Remember to set isDestroyed to "true" if monster is killed*/
-        /*Hint: Tower::TriggerAttack*/
+    
+    /*TODO:*/
+    /*1. For each tower, traverse its attack set*/
+    /*2. If the monster collide with any attack, reduce the HP of the monster*/
+    /*3. Remember to set isDestroyed to "true" if monster is killed*/
+    /*Hint: Tower::TriggerAttack*/
     
     
     /*TODO:*/
@@ -276,7 +288,7 @@ GameWindow::game_reset()
     
     // stop timer
     al_stop_timer(timer);
-
+    
 }
 
 void
@@ -335,7 +347,7 @@ GameWindow::process_event()
     }
     else if(event.type == ALLEGRO_EVENT_KEY_DOWN) {
         switch(event.keyboard.keycode) {
-            
+                
             case ALLEGRO_KEY_P:
                 /* ToDo
                  * You can add some variable to control if game is paused.
@@ -397,7 +409,7 @@ GameWindow::process_event()
             
             
             
-
+            
             
             
             /*
@@ -446,26 +458,26 @@ GameWindow::draw_running_map()
     //al_draw_bitmap(background, 0, 0, 0);
     al_draw_filled_rectangle(70, 70, 1640, 1370, KHAKI);
     
-//    for(i = 0; i < field_height/40; i++)
-//    {
-//        for(j = 0; j < field_width/40; j++)
-//        {
-//            char buffer[50];
-//            sprintf(buffer, "%d", i*15 + j);
-//            if(level->isRoad(i*15 + j)) {
-//                al_draw_filled_rectangle(j*40, i*40, j*40+40, i*40+40, al_map_rgb(255, 244, 173));
-//            }
-//            // For debug usage, if you want to create a new map, you may turn off this comment.
-//            // al_draw_text(font, al_map_rgb(0, 0, 0), j*40 + 20, i*40 + 14, ALLEGRO_ALIGN_CENTER, buffer);
-//        }
-//    }
+    //    for(i = 0; i < field_height/40; i++)
+    //    {
+    //        for(j = 0; j < field_width/40; j++)
+    //        {
+    //            char buffer[50];
+    //            sprintf(buffer, "%d", i*15 + j);
+    //            if(level->isRoad(i*15 + j)) {
+    //                al_draw_filled_rectangle(j*40, i*40, j*40+40, i*40+40, al_map_rgb(255, 244, 173));
+    //            }
+    //            // For debug usage, if you want to create a new map, you may turn off this comment.
+    //            // al_draw_text(font, al_map_rgb(0, 0, 0), j*40 + 20, i*40 + 14, ALLEGRO_ALIGN_CENTER, buffer);
+    //        }
+    //    }
     
     P1->Draw();
     
     
     al_draw_filled_rectangle(field_width, 0, window_width, window_height, al_map_rgb(100, 100, 100));
     
-//    menu->Draw();
+    //    menu->Draw();
     
     
     al_flip_display();
@@ -481,43 +493,7 @@ void GameWindow::game_start()
     }
 }
 
-//int GameWindow::draw_start_scene()
-//{
-//    static Button start(window_width-350, window_height-600 ,300, 100, "START");
-//    static Button setting(window_width-350, window_height-450 ,300, 100, "SETTING");
-//    //al_clear_to_color(WHITE);
-//    al_draw_bitmap(startBGD, 0, 0, 0);
-//    al_draw_text(startFont, WHITE, window_width/2, 2*window_height/3+130, ALLEGRO_ALIGN_CENTER, "Tank Game");
-//    al_play_sample_instance(startBGM);
-//    start.Draw();
-//    setting.Draw();
-//    al_flip_display();
-//    al_wait_for_event(event_queue, &event);
-//
-//    if(event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) exit(9);
-//    else if(event.type == ALLEGRO_EVENT_MOUSE_AXES)
-//    {
-//        if(start.selectButton(event.mouse.x, event.mouse.y))
-//            start.setColor(BLACK);
-//
-//        else start.setColor(WHITE);
-//        //al_flip_display();
-//        if(setting.selectButton(event.mouse.x, event.mouse.y))
-//            setting.setColor(BLACK);
-//
-//        else setting.setColor(WHITE);
-//    }
-//    else if(event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN)
-//    {
-//        if(start.selectButton(event.mouse.x, event.mouse.y))
-//            return 1;
-//    }
-//
-//    start.Draw();
-//    setting.Draw();
-//    //al_flip_display();
-//    return 0;
-//}
+
 
 int GameWindow::draw_start_scene()
 {
@@ -609,5 +585,67 @@ int GameWindow::draw_start_scene()
     start.Draw();
     setting.Draw();
     
+    return 0;
+}
+
+void GameWindow::game_over()
+{
+    int flag=0;
+    
+    while(flag==0)
+    {
+        flag = draw_over_scene();
+    }
+}
+
+int GameWindow::draw_over_scene()
+{
+    static unsigned long long int counter=0;
+    static bool canDo = false;
+    static bool play1 = true;
+    static bool play2 = true;
+    static bool play3 = true;
+    al_draw_bitmap(overBGD, 0, 0, 0);
+    if(counter>=600)
+    {
+        al_draw_text(overFont, WHITE, window_width/2, 50, ALLEGRO_ALIGN_CENTER, "SCORE");
+        if(play1)
+        {
+            al_play_sample_instance(word_appear);
+            play1 = false;
+        }
+        if(counter>=1000)
+        {
+            al_draw_text(overFont, WHITE, 100, 300, ALLEGRO_ALIGN_CENTER, "p1:");
+            if(play2)
+            {
+                al_play_sample_instance(word_appear);
+                play2 = false;
+            }
+            if(counter>=1400)
+            {
+                al_draw_text(overFont, WHITE, 100, 700, ALLEGRO_ALIGN_CENTER, "p2:");
+                if(play3)
+                {
+                    al_play_sample_instance(word_appear);
+                    play3 = false;
+                }
+                canDo = true;
+            }
+            //canDo = true;
+        }
+        
+    }
+    if(counter == 3000000) counter = 3000000;
+    else counter++;
+    al_flip_display();
+    if(canDo)
+    {
+        al_wait_for_event(event_queue, &event);
+        if(event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) exit(9);
+        else if(event.type == ALLEGRO_EVENT_KEY_DOWN)
+            if(event.keyboard.keycode == ALLEGRO_KEY_ENTER)
+                return 1;
+    }
     return 0;
 }
