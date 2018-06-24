@@ -62,6 +62,7 @@
 		E781803D20E0081000EAE12F /* Missile in Resources */ = {isa = PBXBuildFile; fileRef = E781803920E0080F00EAE12F /* Missile */; };
 		E781803F20E008D100EAE12F /* Font in Resources */ = {isa = PBXBuildFile; fileRef = E781803E20E008D100EAE12F /* Font */; };
 		E781804220E00C4F00EAE12F /* beams in Resources */ = {isa = PBXBuildFile; fileRef = E781804120E00C4F00EAE12F /* beams */; };
+		E781804620E0148700EAE12F /* Obstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E781804520E0148700EAE12F /* Obstacle.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -161,6 +162,10 @@
 		E781803E20E008D100EAE12F /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Font; sourceTree = "<group>"; };
 		E781804020E0096300EAE12F /* Obstacle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Obstacle.h; sourceTree = "<group>"; };
 		E781804120E00C4F00EAE12F /* beams */ = {isa = PBXFileReference; lastKnownFileType = folder; path = beams; sourceTree = "<group>"; };
+		E781804520E0148700EAE12F /* Obstacle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Obstacle.cpp; sourceTree = "<group>"; };
+		E781804720E0207A00EAE12F /* Grass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Grass.h; sourceTree = "<group>"; };
+		E781804820E022C000EAE12F /* River.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = River.h; sourceTree = "<group>"; };
+		E781804920E0231900EAE12F /* Wall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wall.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +275,10 @@
 				B2CBF5D520D95C7C006DAFA4 /* Level.h */,
 				B2CBF5B920D958BE006DAFA4 /* Menu.h */,
 				B2CBF5B620D95802006DAFA4 /* Object.h */,
+				E781804920E0231900EAE12F /* Wall.h */,
+				E781804820E022C000EAE12F /* River.h */,
+				E781804720E0207A00EAE12F /* Grass.h */,
+				E781804520E0148700EAE12F /* Obstacle.cpp */,
 				E781804020E0096300EAE12F /* Obstacle.h */,
 				B2CBF5B120D956DE006DAFA4 /* Slider.h */,
 				B2CBF5BC20D95BBC006DAFA4 /* StartBackground.jpg */,
@@ -408,6 +417,7 @@
 				B2CBF5A720D955E7006DAFA4 /* GameWindow.cpp in Sources */,
 				B2CBF5B020D956CB006DAFA4 /* Slider.cpp in Sources */,
 				B2CBF5B820D958A6006DAFA4 /* Menu.cpp in Sources */,
+				E781804620E0148700EAE12F /* Obstacle.cpp in Sources */,
 				B2CBF67A20DED676006DAFA4 /* BaseTank.cpp in Sources */,
 				B2CBF5AA20D9563C006DAFA4 /* global.cpp in Sources */,
 				B2CBF5B420D95789006DAFA4 /* Attack.cpp in Sources */,
