@@ -27,6 +27,7 @@ public:
         score = 1000;
         
         strncpy(class_name, "BlueTank/Geep", 20);
+        attack_img = al_load_bitmap("./beams/blue_beam.png");
         
         Load_Move();
     }

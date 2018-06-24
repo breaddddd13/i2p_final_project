@@ -25,7 +25,7 @@ BaseTank::BaseTank(int x, int y){
     attackCircle = new Circle;
     attackCircle->x = x;
     attackCircle->y = y;
-    attackCircle->r = 1000;
+    attackCircle->r = 500;
 
     direction_count[LEFT] = 2;
     direction_count[RIGHT] = 2;
@@ -101,7 +101,7 @@ BaseTank::Draw()
     
     
 //    al_draw_rotated_bitmap(moveImg[offset + sprite_pos], 0, 0, 100, 100, 0.5, 0);
-    //al_draw_filled_circle(circle->x, circle->y, circle->r, al_map_rgba(196, 79, 79, 200));
+//    al_draw_filled_circle(attackCircle->x, attackCircle->y, attackCircle->r, al_map_rgba(196, 79, 79, 200));
 }
 
 void
@@ -114,6 +114,8 @@ BaseTank::Move(){
     
     circle->x += speed * axis_x[direction];
     circle->y += speed * axis_y[direction];
+    attackCircle->x += speed * axis_x[direction];
+    attackCircle->y += speed * axis_y[direction];
 
 }
 
@@ -148,6 +150,14 @@ BaseTank::UpdateAttack()
             this->attack_set.erase(this->attack_set.begin() + i);
             i--;
             delete attack;
+        } else if (this->attack_set[i]->getX() < game_start_x || this->attack_set[i]->getX() > game_end_x || this->attack_set[i]->getY() < game_start_y || this->attack_set[i]->getY() > game_end_y) {
+            
+            Attack *attack = this->attack_set[i];
+            
+            this->attack_set.erase(this->attack_set.begin() + i);
+            i--;
+            delete attack;
+            
         }
     }
 }

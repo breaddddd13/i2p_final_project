@@ -23,6 +23,8 @@ public:
     // override virtual function "Object::Draw"
     void Draw();
     int getHarmPoint() { return harm_point; }
+    float getX() {return pos_x; }
+    float getY() {return pos_y; }
     
     static float volume;
     
@@ -35,9 +37,9 @@ protected:
 private:
     int attack_velocity = 15;
     int harm_point = 5;
-    float pos_x, pos_y;
     float direction_x, direction_y;
     int direction;
+    float pos_x, pos_y;
 };
 
 #endif // ATTACK_H_INCLUDED
