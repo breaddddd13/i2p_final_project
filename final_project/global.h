@@ -21,5 +21,6 @@
 
 
 enum {LEFT = 0, RIGHT, UP, DOWN};
+enum {GRASS = 0, RIVER, WALL};
 
 #endif // GLOBAL_H_INCLUDED
