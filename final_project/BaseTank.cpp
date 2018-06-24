@@ -88,8 +88,8 @@ BaseTank::Draw()
     }
     
     // draw bitmap align grid edge
-    al_draw_bitmap(moveImg[offset + sprite_pos], circle->x /*- grid_width/2*/, circle->y /*- grid_height/2*/, 0);
-    
+    al_draw_bitmap(moveImg[offset + sprite_pos], circle->x - grid_width/2, circle->y - grid_height/2, 0);
+//    al_draw_rotated_bitmap(moveImg[offset + sprite_pos], 0, 0, 100, 100, 0.5, 0);
     //al_draw_filled_circle(circle->x, circle->y, circle->r, al_map_rgba(196, 79, 79, 200));
 }
 
