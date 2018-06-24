@@ -14,10 +14,10 @@
 class Grass : public Obstacle
 {
 public:
-    Grass(int x, int y) : Obstacle(int x, int y)
+    Grass(int x, int y) : Obstacle(x, y)
     {
         type = GRASS;
-        circle = new Circle(x, y, 60);
+        circle = new Circle(x, y, grid_width/2);
         img = al_load_bitmap("./obstacle/grass.png");
         tank_ava = true;
         bullet_ava = true;

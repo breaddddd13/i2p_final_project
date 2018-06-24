@@ -13,10 +13,10 @@
 class River : public Obstacle
 {
 public:
-    River(int x, int y) : Obstacle(int x, int y)
+    River(int x, int y) : Obstacle(x, y)
     {
         type = RIVER;
-        circle = new Circle(x, y, 60);
+        circle = new Circle(x, y, grid_width/2);
         img = al_load_bitmap("./obstacle/river.png");
         tank_ava = false;
         bullet_ava = true;

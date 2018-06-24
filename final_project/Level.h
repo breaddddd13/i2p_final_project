@@ -8,10 +8,6 @@
 #include <vector>
 #include "global.h"
 
-typedef struct Node {
-    int h, g, f;
-    int roadPoint;
-}Node;
 
 class LEVEL {
 public:
@@ -20,7 +16,7 @@ public:
     
     void setLevel(const int);
 //    bool isRoad(int index) { return levelMap[index].roadPoint; }
-    int isObstacle(int i,int j) {return levelMap[i][j];}
+    int getInfo(int i,int j) {return levelMap[i][j];}
     int getMonsterSpeed() { return MonsterSpeed; }
     int getLevel() { return level; }
     //void search_destination();

@@ -12,7 +12,9 @@
 #include "Slider.h"
 #include "Button.h"
 #include "BlueRoy.h"
-
+#include "Obstacle.h"
+#include "River.h"
+#include "Wall.h"
 
 #define GAME_INIT -1
 #define GAME_SETTING 0
@@ -120,6 +122,7 @@ private:
 //    std::vector<Monster*> monsterSet;
 //    std::list<Tower*> towerSet;
     BaseTank *P1 = NULL;
+    Obstacle *ob[13][15];
     
     int Coin_Inc_Count = 0;
     int mouse_x, mouse_y;

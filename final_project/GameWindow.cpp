@@ -192,7 +192,7 @@ GameWindow::GameWindow()
     al_install_mouse();    // install mouse event
     al_install_audio();    // install audio event
     
-    font = al_load_ttf_font("Caviar_Dreams_Bold.ttf",12,0); // load small font
+    font = al_load_ttf_font("./Font/BLKCHCRY.ttf",24,0); // load small font
     Medium_font = al_load_ttf_font("Caviar_Dreams_Bold.ttf",24,0); //load medium font
     Large_font = al_load_ttf_font("Caviar_Dreams_Bold.ttf",36,0); //load large font
     
@@ -217,6 +217,25 @@ GameWindow::game_begin()
 {
     printf(">>> Start Level[%d]\n", level->getLevel());
     P1 = new BlueRoy(game_start_x, game_start_y);
+    for(int i = 0; i < field_height/100; i++)
+    {
+        for(int j = 0; j < field_width/100 ; j++)
+        {
+            printf("123");
+            switch (level->getInfo(i, j)) {
+                case 3:
+                    ob[i][j] = new River(j * 100 + 70,i * 100 + 70);
+                    break;
+                    
+                case 1:
+                    ob[i][j] = new Wall(j * 100 + 70,i * 100 + 70);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+    }
     draw_running_map();
     
     al_play_sample_instance(startSound);
@@ -452,26 +471,28 @@ GameWindow::draw_running_map()
     unsigned int i, j;
     al_clear_to_color(al_map_rgb(100, 100, 100));
     //al_draw_bitmap(background, 0, 0, 0);
-    al_draw_filled_rectangle(70, 70, 1640, 1370, KHAKI);
+    al_draw_filled_rectangle(70, 70, 1570, 1370, KHAKI);
     
-    //    for(i = 0; i < field_height/40; i++)
-    //    {
-    //        for(j = 0; j < field_width/40; j++)
-    //        {
-    //            char buffer[50];
-    //            sprintf(buffer, "%d", i*15 + j);
+        for(i = 0; i < field_height/100; i++)
+        {
+            for(j = 0; j < field_width/100 ; j++)
+            {
+                if(level->getInfo(i, j) != 0)ob[i][j]->Draw();
+                char buffer[50];
+                sprintf(buffer, "%d", i*15 + j);
     //            if(level->isRoad(i*15 + j)) {
     //                al_draw_filled_rectangle(j*40, i*40, j*40+40, i*40+40, al_map_rgb(255, 244, 173));
     //            }
     //            // For debug usage, if you want to create a new map, you may turn off this comment.
-    //            // al_draw_text(font, al_map_rgb(0, 0, 0), j*40 + 20, i*40 + 14, ALLEGRO_ALIGN_CENTER, buffer);
-    //        }
-    //    }
+//                 al_draw_text(font, al_map_rgb(0, 0, 0), (j+1)*100 + 20, (i+1)*100 + 20, ALLEGRO_ALIGN_CENTER, buffer);
+            }
+            printf("\n");
+        }
     
     P1->Draw();
     
     
-    al_draw_filled_rectangle(field_width, 0, window_width, window_height, al_map_rgb(100, 100, 100));
+//    al_draw_filled_rectangle(field_width, 0, window_width, window_height, al_map_rgb(100, 100, 100));
     
     //    menu->Draw();
     

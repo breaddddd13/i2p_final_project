@@ -45,7 +45,7 @@ LEVEL::setLevel(const int level)
     while(fscanf(file, "%s\n",buffer) != EOF) {
         for (int j = 0; j < field_width/grid_width; j++) {
             this->levelMap[i][j] = (buffer[j] - 48);
-            printf("%d\n",levelMap[i][j]);
+//         
             
         }
         i++;

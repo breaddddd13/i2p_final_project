@@ -14,10 +14,10 @@
 class Wall : public Obstacle
 {
 public:
-    Wall(int x, int y) : Obstacle(int x, int y)
+    Wall(int x, int y) : Obstacle(x, y) 
     {
         type = WALL;
-        circle = new Circle(x, y, 60);
+        circle = new Circle(x, y, grid_width/2);
         img = al_load_bitmap("./obstacle/wall.png");
         tank_ava = false;
         bullet_ava = false;
