@@ -1,5 +1,6 @@
 #include "Level.h"
 
+using namespace std;
 LEVEL::LEVEL(const int level) {
     char buffer[50];
     
@@ -40,14 +41,14 @@ LEVEL::setLevel(const int level)
 //        fscanf(file, "%s", buffer);
 //        MonsterNum[i] = atoi(buffer);
 //    }
-    
-    while(fscanf(file, "%s", buffer) != EOF) {
-        for (int i = 0; i < field_height/grid_height; i++) {
-            for (int j = 0; j < field_width/grid_width; j++) {
-                levelMap[i][j].roadPoint = buffer[j];
-            }
+    int i = 0;
+    while(fscanf(file, "%s\n",buffer) != EOF) {
+        for (int j = 0; j < field_width/grid_width; j++) {
+            this->levelMap[i][j] = (buffer[j] - 48);
+            printf("%d\n",levelMap[i][j]);
+            
         }
+        i++;
     }
-    
     fclose(file);
 }

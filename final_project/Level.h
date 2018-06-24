@@ -20,7 +20,7 @@ public:
     
     void setLevel(const int);
 //    bool isRoad(int index) { return levelMap[index].roadPoint; }
-    int isObstacle(int i,int j) {return levelMap[i][j].roadPoint; }
+    int isObstacle(int i,int j) {return levelMap[i][j];}
     int getMonsterSpeed() { return MonsterSpeed; }
     int getLevel() { return level; }
     //void search_destination();
@@ -30,7 +30,7 @@ public:
     
     
 private:
-    Node levelMap[field_height/grid_height][field_width/grid_width];
+    int levelMap[field_height/grid_height][field_width/grid_width];
     std::vector<int> road_grid;
     // current level number
     int level = 1;
