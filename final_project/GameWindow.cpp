@@ -387,6 +387,10 @@ GameWindow::process_event()
                 P1->move_valid(DOWN);
                 redraw = true;
                 break;
+            case ALLEGRO_KEY_SPACE:
+                P1->TriggerAttack();
+                redraw = true;
+                break;
         }
     }
     else if(event.type == ALLEGRO_EVENT_KEY_UP) {
