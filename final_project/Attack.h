@@ -33,7 +33,7 @@ protected:
     
     
 private:
-    int attack_velocity = 8;
+    int attack_velocity = 15;
     int harm_point = 5;
     float pos_x, pos_y;
     float direction_x, direction_y;

@@ -28,6 +28,8 @@ public:
         
         strncpy(class_name, "BlueTank/Roy", 20);
         
+        attack_img = al_load_bitmap("./beams/blue_beam.png");
+        
         Load_Move();
     }
 };
