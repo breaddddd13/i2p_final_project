@@ -128,8 +128,8 @@ GameWindow::game_play()
      *     You may add some function to create starting scene before calling game_begin
      *     e.g: game_start_scene()
      */
-    game_start();
-    game_over();
+//    game_start();
+//    game_over();
     game_begin();
     
     /*

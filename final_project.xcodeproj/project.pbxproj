@@ -151,15 +151,11 @@
 		E781801C20DFABE800EAE12F /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Font; sourceTree = "<group>"; };
 		E781801D20DFABE800EAE12F /* Background */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Background; sourceTree = "<group>"; };
 		E781801E20DFABE900EAE12F /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; path = music; sourceTree = "<group>"; };
-		E781802A20DFD1DD00EAE12F /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Font; path = ../Font; sourceTree = "<group>"; };
-		E781802D20DFD73300EAE12F /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = music; path = ../music; sourceTree = "<group>"; };
-		E781802F20DFEE0100EAE12F /* Background */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Background; path = ../Background; sourceTree = "<group>"; };
 		E781803120DFF0C500EAE12F /* BlueGeep.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueGeep.h; sourceTree = "<group>"; };
 		E781803220DFF13800EAE12F /* BlueBread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueBread.h; sourceTree = "<group>"; };
 		E781803320DFF1F700EAE12F /* BlueDuck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueDuck.h; sourceTree = "<group>"; };
 		E781803620E0080E00EAE12F /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; path = music; sourceTree = "<group>"; };
 		E781803720E0080F00EAE12F /* Background */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Background; sourceTree = "<group>"; };
-		E781803820E0080F00EAE12F /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Font; path = ../Font; sourceTree = "<group>"; };
 		E781803920E0080F00EAE12F /* Missile */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Missile; sourceTree = "<group>"; };
 		E781803E20E008D100EAE12F /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Font; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,12 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				E781803E20E008D100EAE12F /* Font */,
-				E781802F20DFEE0100EAE12F /* Background */,
 				E781803720E0080F00EAE12F /* Background */,
-				E781803820E0080F00EAE12F /* Font */,
 				E781803920E0080F00EAE12F /* Missile */,
-				E781802D20DFD73300EAE12F /* music */,
-				E781802A20DFD1DD00EAE12F /* Font */,
 				E781801D20DFABE800EAE12F /* Background */,
 				E781801A20DFA81400EAE12F /* Font */,
 				E781801820DFA78700EAE12F /* music */,

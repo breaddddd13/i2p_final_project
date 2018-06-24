@@ -28,6 +28,8 @@ public:
         
         strncpy(class_name, "BlueTank/Roy", 20);
         
+        attack_img = al_load_bitmap("./Missile/missile_red_up.png");
+        
         Load_Move();
     }
 };
