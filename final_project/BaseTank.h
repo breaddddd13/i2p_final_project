@@ -65,7 +65,7 @@ protected:
     int attack_frequency = 1;
     int attack_counter = 0;
     int attack_harm_point = 5;
-    int attack_velocity = 10;
+    int attack_velocity = 13;
     ALLEGRO_BITMAP *attack_img;
     std::vector<Attack*> attack_set;
 
