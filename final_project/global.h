@@ -19,4 +19,7 @@
 #define Num_TankType 4
 #define NumOfGrid (field_width / grid_width) * (field_height / grid_height) // 15 * 13 = 195
 
+
+enum {LEFT = 0, RIGHT, UP, DOWN};
+
 #endif // GLOBAL_H_INCLUDED

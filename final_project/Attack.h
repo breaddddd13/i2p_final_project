@@ -9,10 +9,10 @@
 #include <allegro5/allegro_audio.h>
 #include "Object.h"
 #include "Circle.h"
+#include "global.h"
 
 #define abs(x) ((x) > 0? (x) : -(x))
 
-enum {LEFT = 0, RIGHT, UP, DOWN};
 
 class Attack : public Object
 {
@@ -30,6 +30,7 @@ protected:
     ALLEGRO_BITMAP *attack_img;
     ALLEGRO_SAMPLE *sample;
     ALLEGRO_SAMPLE_INSTANCE *arrow = NULL;
+    
     
 private:
     int attack_velocity = 8;

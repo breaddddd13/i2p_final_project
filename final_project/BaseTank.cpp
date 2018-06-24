@@ -80,12 +80,17 @@ BaseTank::Draw()
     for(int i=0; i<direction; i++)
         offset += direction_count[i];
     
-//    if(!moveImg[offset + sprite_pos])
-//        return;
+    if(!moveImg[offset + sprite_pos])
+        return;
+    
+    attack_counter = (attack_counter + 1) % attack_frequency;
     
     if (move_flag) {
         Move();
     }
+    
+    for(unsigned int i=0; i<this->attack_set.size(); i++)
+        this->attack_set[i]->Draw();
     
     // draw bitmap align grid edge
     al_draw_bitmap(moveImg[offset + sprite_pos], circle->x - grid_width/2, circle->y - grid_height/2, 0);
@@ -104,6 +109,41 @@ BaseTank::Move(){
     circle->x += speed * axis_x[direction];
     circle->y += speed * axis_y[direction];
 
+}
+
+void
+BaseTank::TriggerAttack(){
+    
+    Attack *attack;
+    
+    if ( attack_counter == 0 ){
+        attack = new Attack(
+        this->circle,
+        this->direction,
+        this->attack_harm_point,
+        this->attack_velocity,
+        this->attack_img
+        );
+        
+        this->attack_set.push_back(attack);
+    }
+    
+}
+
+void
+BaseTank::UpdateAttack()
+{
+    for(unsigned int i=0; i < this->attack_set.size(); i++)
+    {
+        if(!Circle::isOverlap(this->attack_set[i]->getCircle(), this->circle))
+        {
+            Attack *attack = this->attack_set[i];
+            
+            this->attack_set.erase(this->attack_set.begin() + i);
+            i--;
+            delete attack;
+        }
+    }
 }
 
 bool

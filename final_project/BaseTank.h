@@ -17,9 +17,8 @@
 #include "Object.h"
 #include "Circle.h"
 #include "global.h"
+#include "Attack.h"
 using namespace std;
-
-enum {LEFT = 0, RIGHT, UP, DOWN};
 
 class BaseTank: public Object {
 public:
@@ -35,7 +34,11 @@ public:
     // And detect if it reaches end point but not destroyed
     void Move();
     
-    // functions that return informations of monster
+    void TriggerAttack();
+    void UpdateAttack();
+    
+    
+    // functions that return informations of Tank
     int getDir() { return direction; }
     int getWorth() { return worth; }
     int getScore() { return score; }
@@ -57,6 +60,16 @@ protected:
     int score = 100;
     char class_name[20];
     int move_flag;
+    
+    // setting of attack
+    int attack_frequency = 20;
+    int attack_counter = 0;
+    int attack_harm_point = 5;
+    int attack_velocity = 10;
+    ALLEGRO_BITMAP *attack_img;
+    std::vector<Attack*> attack_set;
+
+    
 private:
     int direction;
     // animation counter
