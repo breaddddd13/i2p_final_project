@@ -153,6 +153,9 @@
 		E781802A20DFD1DD00EAE12F /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Font; path = ../Font; sourceTree = "<group>"; };
 		E781802D20DFD73300EAE12F /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = music; path = ../music; sourceTree = "<group>"; };
 		E781802F20DFEE0100EAE12F /* Background */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Background; path = ../Background; sourceTree = "<group>"; };
+		E781803120DFF0C500EAE12F /* BlueGeep.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueGeep.h; sourceTree = "<group>"; };
+		E781803220DFF13800EAE12F /* BlueBread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueBread.h; sourceTree = "<group>"; };
+		E781803320DFF1F700EAE12F /* BlueDuck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueDuck.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +253,9 @@
 				B2CBF5B520D9579D006DAFA4 /* Attack.h */,
 				B2CBF67820DEC060006DAFA4 /* BaseTank.h */,
 				B2CBF68120DF0869006DAFA4 /* BlueRoy.h */,
+				E781803120DFF0C500EAE12F /* BlueGeep.h */,
+				E781803220DFF13800EAE12F /* BlueBread.h */,
+				E781803320DFF1F700EAE12F /* BlueDuck.h */,
 				B2CBF5B220D9570F006DAFA4 /* Button.h */,
 				B2CBF5AE20D956A4006DAFA4 /* Circle.h */,
 				B2CBF5A820D95608006DAFA4 /* GameWindow.h */,
