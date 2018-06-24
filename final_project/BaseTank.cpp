@@ -15,7 +15,7 @@ const int draw_frequency = 10;
 
 BaseTank::BaseTank(int x, int y){
     // default direction is right
-    direction = UP;
+    direction = RIGHT;
 
     circle = new Circle;
     circle->x = x;
@@ -29,7 +29,7 @@ BaseTank::BaseTank(int x, int y){
 
     sprite_pos = 0;
     counter = 0;
-    move_flag = false;
+    move_flag = 0;
     strncpy(class_name, "BlueTank", 20);
 }
 
@@ -58,7 +58,10 @@ BaseTank::Load_Move()
         for(int j=0; j<direction_count[i]; j++)
         {
             ALLEGRO_BITMAP *img;
+            //printf("%s\n", direction_name[i]);
             sprintf(buffer, "./%s/%s_%d.png", class_name, direction_name[i], j);
+            
+            printf("%s\n", buffer);
             
             img = al_load_bitmap(buffer);
             if(img)
@@ -71,22 +74,21 @@ void
 BaseTank::Draw()
 {
     
-    int w, h;
     int offset = 0;
     
     // calculate the number of pictures before current direction
     for(int i=0; i<direction; i++)
         offset += direction_count[i];
     
-    if(!moveImg[offset + sprite_pos])
-        return;
+//    if(!moveImg[offset + sprite_pos])
+//        return;
     
     if (move_flag) {
         Move();
     }
     
     // draw bitmap align grid edge
-    al_draw_bitmap(moveImg[offset + sprite_pos], circle->x /*- grid_width/2*/, circle->y /*- grid_height/2*/, ALLEGRO_ALIGN_CENTRE);
+    al_draw_bitmap(moveImg[offset + sprite_pos], circle->x /*- grid_width/2*/, circle->y /*- grid_height/2*/, 0);
     
     //al_draw_filled_circle(circle->x, circle->y, circle->r, al_map_rgba(196, 79, 79, 200));
 }

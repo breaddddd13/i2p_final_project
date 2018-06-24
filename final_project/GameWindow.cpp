@@ -119,7 +119,7 @@ GameWindow::game_play()
      *     You may add some function to create starting scene before calling game_begin
      *     e.g: game_start_scene()
      */
-    game_start();
+//    game_start();
     game_begin();
     
     /*
@@ -380,25 +380,25 @@ GameWindow::process_event()
         switch(event.keyboard.keycode) {
             case ALLEGRO_KEY_W:
                 P1->move_invalid();
+                redraw = true;
                 break;
             case ALLEGRO_KEY_A:
                 P1->move_invalid();
+                redraw = true;
                 break;
             case ALLEGRO_KEY_D:
                 P1->move_invalid();
+                redraw = true;
                 break;
             case ALLEGRO_KEY_S:
                 P1->move_invalid();
+                redraw = true;
                 break;
         }
     }
     else if(event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
         if(event.mouse.button == 1) {
-            
-            
-            
 
-            
             
             /*
              *  Check if any tower is clicked.
