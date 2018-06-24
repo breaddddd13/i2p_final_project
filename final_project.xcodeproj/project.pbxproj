@@ -60,6 +60,7 @@
 		E781802B20DFD1DD00EAE12F /* Font in Resources */ = {isa = PBXBuildFile; fileRef = E781802A20DFD1DD00EAE12F /* Font */; };
 		E781802E20DFD73300EAE12F /* music in Resources */ = {isa = PBXBuildFile; fileRef = E781802D20DFD73300EAE12F /* music */; };
 		E781803020DFEE0200EAE12F /* Background in Resources */ = {isa = PBXBuildFile; fileRef = E781802F20DFEE0100EAE12F /* Background */; };
+		E781803520E0056700EAE12F /* Missile in Resources */ = {isa = PBXBuildFile; fileRef = E781803420E0056600EAE12F /* Missile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -156,6 +157,7 @@
 		E781803120DFF0C500EAE12F /* BlueGeep.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueGeep.h; sourceTree = "<group>"; };
 		E781803220DFF13800EAE12F /* BlueBread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueBread.h; sourceTree = "<group>"; };
 		E781803320DFF1F700EAE12F /* BlueDuck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueDuck.h; sourceTree = "<group>"; };
+		E781803420E0056600EAE12F /* Missile */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Missile; path = ../Missile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 		8174242D20D17C8100BC35F7 = {
 			isa = PBXGroup;
 			children = (
+				E781803420E0056600EAE12F /* Missile */,
 				E781802F20DFEE0100EAE12F /* Background */,
 				E781802D20DFD73300EAE12F /* music */,
 				E781802A20DFD1DD00EAE12F /* Font */,
@@ -364,6 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E781803520E0056700EAE12F /* Missile in Resources */,
 				E781803020DFEE0200EAE12F /* Background in Resources */,
 				E781802E20DFD73300EAE12F /* music in Resources */,
 				E781802B20DFD1DD00EAE12F /* Font in Resources */,
