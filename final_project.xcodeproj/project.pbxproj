@@ -57,6 +57,9 @@
 		B2CBF67A20DED676006DAFA4 /* BaseTank.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF67920DED676006DAFA4 /* BaseTank.cpp */; };
 		B2CBF67E20DF02D3006DAFA4 /* BlueTank in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF67D20DF02D3006DAFA4 /* BlueTank */; };
 		B2CBF68020DF05E0006DAFA4 /* RedTank in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF67F20DF05E0006DAFA4 /* RedTank */; };
+		E781801F20DFABE900EAE12F /* Font in Resources */ = {isa = PBXBuildFile; fileRef = E781801C20DFABE800EAE12F /* Font */; };
+		E781802020DFABE900EAE12F /* Background in Resources */ = {isa = PBXBuildFile; fileRef = E781801D20DFABE800EAE12F /* Background */; };
+		E781802120DFABE900EAE12F /* music in Resources */ = {isa = PBXBuildFile; fileRef = E781801E20DFABE900EAE12F /* music */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -141,6 +144,12 @@
 		B2CBF67D20DF02D3006DAFA4 /* BlueTank */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueTank; sourceTree = "<group>"; };
 		B2CBF67F20DF05E0006DAFA4 /* RedTank */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RedTank; sourceTree = "<group>"; };
 		B2CBF68120DF0869006DAFA4 /* BlueRoy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueRoy.h; sourceTree = "<group>"; };
+		E781801620DFA77B00EAE12F /* Background */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Background; sourceTree = "<group>"; };
+		E781801820DFA78700EAE12F /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; path = music; sourceTree = "<group>"; };
+		E781801A20DFA81400EAE12F /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Font; sourceTree = "<group>"; };
+		E781801C20DFABE800EAE12F /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Font; sourceTree = "<group>"; };
+		E781801D20DFABE800EAE12F /* Background */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Background; sourceTree = "<group>"; };
+		E781801E20DFABE900EAE12F /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; path = music; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +192,12 @@
 		8174242D20D17C8100BC35F7 = {
 			isa = PBXGroup;
 			children = (
+				E781801D20DFABE800EAE12F /* Background */,
+				E781801A20DFA81400EAE12F /* Font */,
+				E781801820DFA78700EAE12F /* music */,
+				E781801620DFA77B00EAE12F /* Background */,
+				E781801C20DFABE800EAE12F /* Font */,
+				E781801E20DFABE900EAE12F /* music */,
 				B2CBF67F20DF05E0006DAFA4 /* RedTank */,
 				B2CBF67D20DF02D3006DAFA4 /* BlueTank */,
 				810D703320DD1CDD00EE8C46 /* obstacle */,
@@ -337,6 +352,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E781801F20DFABE900EAE12F /* Font in Resources */,
+				E781802020DFABE900EAE12F /* Background in Resources */,
+				E781802120DFABE900EAE12F /* music in Resources */,
 				B2CBF68020DF05E0006DAFA4 /* RedTank in Resources */,
 				B2CBF67E20DF02D3006DAFA4 /* BlueTank in Resources */,
 				810D703420DD1CDD00EE8C46 /* obstacle in Resources */,

@@ -29,7 +29,7 @@ GameWindow::game_init()
     
     icon = al_load_bitmap("./icon.png");
     background = al_load_bitmap("./StartBackground.jpg");
-    startBGD = al_load_bitmap("./startbackground.png");
+    startBGD = al_load_bitmap("./Background/startbackground.png");
     if(!startBGD)std::cout<<"failed"<<std::endl;
 //    for(int i = 0; i < Num_TowerType; i++)
 //    {
@@ -50,7 +50,7 @@ GameWindow::game_init()
     al_set_sample_instance_playmode(backgroundSound, ALLEGRO_PLAYMODE_ONCE);
     al_attach_sample_instance_to_mixer(backgroundSound, al_get_default_mixer());
     
-    sample = al_load_sample("startmusic.wav");
+    sample = al_load_sample("./music/startmusic.wav");
     startBGM = al_create_sample_instance(sample);
     al_set_sample_instance_playmode(startBGM, ALLEGRO_PLAYMODE_LOOP);
     al_attach_sample_instance_to_mixer(startBGM, al_get_default_mixer());
@@ -119,7 +119,7 @@ GameWindow::game_play()
      *     You may add some function to create starting scene before calling game_begin
      *     e.g: game_start_scene()
      */
-    //game_start();
+    game_start();
     game_begin();
     
     /*
@@ -186,7 +186,7 @@ GameWindow::GameWindow()
     Medium_font = al_load_ttf_font("Caviar_Dreams_Bold.ttf",24,0); //load medium font
     Large_font = al_load_ttf_font("Caviar_Dreams_Bold.ttf",36,0); //load large font
     
-    startFont = al_load_font("Cardiff.ttf", 280, 0);
+    startFont = al_load_font("./Font/Cardiff.ttf", 280, 0);
     if(!startFont) std::cout<<"fuck\n";
     al_register_event_source(event_queue, al_get_display_event_source(display));
     al_register_event_source(event_queue, al_get_keyboard_event_source());
@@ -474,47 +474,140 @@ GameWindow::draw_running_map()
 void GameWindow::game_start()
 {
     int flag=0;
-    
+    al_play_sample_instance(startBGM);
     while(flag==0)
     {
         flag = draw_start_scene();
     }
 }
 
+//int GameWindow::draw_start_scene()
+//{
+//    static Button start(window_width-350, window_height-600 ,300, 100, "START");
+//    static Button setting(window_width-350, window_height-450 ,300, 100, "SETTING");
+//    //al_clear_to_color(WHITE);
+//    al_draw_bitmap(startBGD, 0, 0, 0);
+//    al_draw_text(startFont, WHITE, window_width/2, 2*window_height/3+130, ALLEGRO_ALIGN_CENTER, "Tank Game");
+//    al_play_sample_instance(startBGM);
+//    start.Draw();
+//    setting.Draw();
+//    al_flip_display();
+//    al_wait_for_event(event_queue, &event);
+//
+//    if(event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) exit(9);
+//    else if(event.type == ALLEGRO_EVENT_MOUSE_AXES)
+//    {
+//        if(start.selectButton(event.mouse.x, event.mouse.y))
+//            start.setColor(BLACK);
+//
+//        else start.setColor(WHITE);
+//        //al_flip_display();
+//        if(setting.selectButton(event.mouse.x, event.mouse.y))
+//            setting.setColor(BLACK);
+//
+//        else setting.setColor(WHITE);
+//    }
+//    else if(event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN)
+//    {
+//        if(start.selectButton(event.mouse.x, event.mouse.y))
+//            return 1;
+//    }
+//
+//    start.Draw();
+//    setting.Draw();
+//    //al_flip_display();
+//    return 0;
+//}
+
 int GameWindow::draw_start_scene()
 {
-    static Button start(window_width-350, window_height-600 ,300, 100, "START");
-    static Button setting(window_width-350, window_height-450 ,300, 100, "SETTING");
+    const double tank_pos_x_fin = window_width/2-500;
+    const double game_pos_x_fin = window_width/2-50;
+    const double button_pos_x_fin = window_width-400;
+    static double tank_pos_x = -3000;
+    static double game_pos_x = -3000;
+    static double button_pos_x = window_width+3000;
+    static double t = 1;
+    static unsigned long long int counter = 0;
+    if(counter <=300000)counter+=1;
+    else counter = 0;
+    
+    static bool done1=false, done2=false, done3=false;
+    if(counter%2 == 0)
+    {
+        if(tank_pos_x<=tank_pos_x_fin)tank_pos_x += 3*t+0.5*t*t;
+        else done1 = true;
+        if(game_pos_x<=game_pos_x_fin)game_pos_x += 3*t+0.5*t*t;
+        else done2 = true;
+        if(button_pos_x>=button_pos_x_fin)button_pos_x -= 3*t+t*t;
+        else done3 = true;
+        t+=0.00000000000001;
+        //t= 0.5;
+    }
+    static Button start(button_pos_x, window_height-450 ,400,200, "START");
+    static Button setting(button_pos_x, window_height-150 ,400, 200, "SETTING");
     //al_clear_to_color(WHITE);
+    start.setPosition(button_pos_x, window_height-450);
+    setting.setPosition(button_pos_x, window_height-150);
     al_draw_bitmap(startBGD, 0, 0, 0);
-    al_draw_text(startFont, WHITE, window_width/2, 2*window_height/3+130, ALLEGRO_ALIGN_CENTER, "Tank Game");
+    al_draw_text(startFont, WHITE, tank_pos_x, 2*window_height/3-100, ALLEGRO_ALIGN_CENTER, "Tank");
+    al_draw_text(startFont, WHITE, game_pos_x, 2*window_height/3+150, ALLEGRO_ALIGN_CENTER, "Game");
     al_play_sample_instance(startBGM);
     start.Draw();
     setting.Draw();
     al_flip_display();
-    al_wait_for_event(event_queue, &event);
-    
-    if(event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) exit(9);
-    else if(event.type == ALLEGRO_EVENT_MOUSE_AXES)
+    if(done1&&done2&&done3)
     {
-        if(start.selectButton(event.mouse.x, event.mouse.y))
-            start.setColor(BLACK);
+        al_wait_for_event(event_queue, &event);
         
-        else start.setColor(WHITE);
-        //al_flip_display();
-        if(setting.selectButton(event.mouse.x, event.mouse.y))
-            setting.setColor(BLACK);
-        
-        else setting.setColor(WHITE);
+        if(event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) exit(9);
+        else if(event.type == ALLEGRO_EVENT_MOUSE_AXES)
+        {
+            if(start.selectButton(event.mouse.x, event.mouse.y))
+            {
+                start.setTextColor(BLACK);
+                if(!start.ButtonVoice())
+                {
+                    start.playButtonVoice();
+                    start.reButtonVoice();
+                }
+            }
+            
+            else
+            {
+                start.setTextColor(WHITE);
+                if(start.ButtonVoice())
+                    start.reButtonVoice();
+            }
+            
+            if(setting.selectButton(event.mouse.x, event.mouse.y))
+            {
+                setting.setTextColor(BLACK);
+                if(!setting.ButtonVoice())
+                {
+                    setting.playButtonVoice();
+                    setting.reButtonVoice();
+                }
+            }
+            
+            else
+            {
+                setting.setTextColor(WHITE);
+                if(setting.ButtonVoice())
+                    setting.reButtonVoice();
+            }
+        }
+        else if(event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN)
+        {
+            if(start.selectButton(event.mouse.x, event.mouse.y))
+            {
+                al_stop_sample_instance(startBGM);
+                return 1;
+            }
+        }
     }
-    else if(event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN)
-    {
-        if(start.selectButton(event.mouse.x, event.mouse.y))
-            return 1;
-    }
-    
     start.Draw();
     setting.Draw();
-    //al_flip_display();
+    
     return 0;
 }
