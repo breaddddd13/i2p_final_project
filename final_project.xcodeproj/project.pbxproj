@@ -57,9 +57,9 @@
 		B2CBF67A20DED676006DAFA4 /* BaseTank.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF67920DED676006DAFA4 /* BaseTank.cpp */; };
 		B2CBF67E20DF02D3006DAFA4 /* BlueTank in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF67D20DF02D3006DAFA4 /* BlueTank */; };
 		B2CBF68020DF05E0006DAFA4 /* RedTank in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF67F20DF05E0006DAFA4 /* RedTank */; };
-		E781802020DFABE900EAE12F /* Background in Resources */ = {isa = PBXBuildFile; fileRef = E781801D20DFABE800EAE12F /* Background */; };
 		E781802B20DFD1DD00EAE12F /* Font in Resources */ = {isa = PBXBuildFile; fileRef = E781802A20DFD1DD00EAE12F /* Font */; };
 		E781802E20DFD73300EAE12F /* music in Resources */ = {isa = PBXBuildFile; fileRef = E781802D20DFD73300EAE12F /* music */; };
+		E781803020DFEE0200EAE12F /* Background in Resources */ = {isa = PBXBuildFile; fileRef = E781802F20DFEE0100EAE12F /* Background */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -152,6 +152,7 @@
 		E781801E20DFABE900EAE12F /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; path = music; sourceTree = "<group>"; };
 		E781802A20DFD1DD00EAE12F /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Font; path = ../Font; sourceTree = "<group>"; };
 		E781802D20DFD73300EAE12F /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = music; path = ../music; sourceTree = "<group>"; };
+		E781802F20DFEE0100EAE12F /* Background */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Background; path = ../Background; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +195,7 @@
 		8174242D20D17C8100BC35F7 = {
 			isa = PBXGroup;
 			children = (
+				E781802F20DFEE0100EAE12F /* Background */,
 				E781802D20DFD73300EAE12F /* music */,
 				E781802A20DFD1DD00EAE12F /* Font */,
 				E781801D20DFABE800EAE12F /* Background */,
@@ -356,9 +358,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E781803020DFEE0200EAE12F /* Background in Resources */,
 				E781802E20DFD73300EAE12F /* music in Resources */,
 				E781802B20DFD1DD00EAE12F /* Font in Resources */,
-				E781802020DFABE900EAE12F /* Background in Resources */,
 				B2CBF68020DF05E0006DAFA4 /* RedTank in Resources */,
 				B2CBF67E20DF02D3006DAFA4 /* BlueTank in Resources */,
 				810D703420DD1CDD00EE8C46 /* obstacle in Resources */,

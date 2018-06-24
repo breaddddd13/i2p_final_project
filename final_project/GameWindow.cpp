@@ -31,6 +31,7 @@ GameWindow::game_init()
     background = al_load_bitmap("./StartBackground.jpg");
     startBGD = al_load_bitmap("./Background/startbackground.png");
     overBGD = al_load_bitmap("./Background/over_background.jpg");
+    settingBGD = al_load_bitmap("./Background/settingbackground.png");
     
     if(!startBGD)std::cout<<"failed"<<std::endl;
     //    for(int i = 0; i < Num_TowerType; i++)
@@ -415,6 +416,7 @@ GameWindow::process_event()
             
             
             
+            
             /*
              *  Check if any tower is clicked.
              *  If so, cancel the shown circle range of the tower.
@@ -583,6 +585,8 @@ int GameWindow::draw_start_scene()
                 al_stop_sample_instance(startBGM);
                 return 1;
             }
+            if(setting.selectButton(event.mouse.x, event.mouse.y))
+                Setting();
         }
     }
     start.Draw();
@@ -608,6 +612,7 @@ int GameWindow::draw_over_scene()
     static bool play1 = true;
     static bool play2 = true;
     static bool play3 = true;
+    static bool play4 = true;
     al_draw_bitmap(overBGD, 0, 0, 0);
     if(counter>=600)
     {
@@ -633,7 +638,17 @@ int GameWindow::draw_over_scene()
                     al_play_sample_instance(word_appear);
                     play3 = false;
                 }
-                canDo = true;
+                if(counter>=1800)
+                {
+                    al_draw_text(overFont, WHITE, window_width/2, window_height-200, ALLEGRO_ALIGN_CENTER, "press enter to continue");
+                    if(play4)
+                    {
+                        al_play_sample_instance(word_appear);
+                        play4 = false;
+                    }
+                    canDo = true;
+                }
+                //canDo = true;
             }
             //canDo = true;
         }
@@ -650,5 +665,24 @@ int GameWindow::draw_over_scene()
             if(event.keyboard.keycode == ALLEGRO_KEY_ENTER)
                 return 1;
     }
+    return 0;
+}
+
+void GameWindow::Setting()
+{
+    int flag = 0;
+    while(flag == 0)
+    {
+        flag = draw_setting_scene();
+    }
+}
+
+int GameWindow::draw_setting_scene()
+{
+    al_draw_bitmap(settingBGD, 0, 0, 0);
+    //al_draw_filled_rounded_rectangle(0, 0, window_width, window_height, 0, 0, al_map_rgba(0, 0, 0, 20));
+    al_flip_display();
+    al_wait_for_event(event_queue, &event);
+    if(event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) exit(9);
     return 0;
 }

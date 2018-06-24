@@ -76,6 +76,9 @@ public:
     void game_over();
     int draw_over_scene();
     
+    void Setting();
+    int draw_setting_scene();
+    
 public:
     bool initial = true;
     
@@ -86,6 +89,7 @@ private:
     ALLEGRO_BITMAP *background = NULL;
     ALLEGRO_BITMAP *startBGD = NULL;
     ALLEGRO_BITMAP *overBGD = NULL;
+    ALLEGRO_BITMAP *settingBGD = NULL;
     
     ALLEGRO_DISPLAY* display = NULL;
     ALLEGRO_FONT *font = NULL;
