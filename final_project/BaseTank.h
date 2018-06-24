@@ -41,10 +41,10 @@ public:
     int getScore() { return score; }
     void move_valid(int dir) {
         direction = dir;
-        move_flag = true;
+        move_flag += 1;
     }
     void move_invalid() {
-        move_flag = false;
+        move_flag -= 1;
     }
     
     bool Subtract_HP(int);
@@ -56,7 +56,7 @@ protected:
     int worth = 10;
     int score = 100;
     char class_name[20];
-    bool move_flag;
+    int move_flag;
 private:
     int direction;
     // animation counter

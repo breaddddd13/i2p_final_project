@@ -247,6 +247,7 @@
 				8174244420D17C8300BC35F7 /* final_project.entitlements */,
 				B2CBF5B520D9579D006DAFA4 /* Attack.h */,
 				B2CBF67820DEC060006DAFA4 /* BaseTank.h */,
+				B2CBF68120DF0869006DAFA4 /* BlueRoy.h */,
 				B2CBF5B220D9570F006DAFA4 /* Button.h */,
 				B2CBF5AE20D956A4006DAFA4 /* Circle.h */,
 				B2CBF5A820D95608006DAFA4 /* GameWindow.h */,
@@ -273,7 +274,6 @@
 				B2CBF5C320D95BF6006DAFA4 /* level_fail.wav */,
 				8174243C20D17C8300BC35F7 /* Assets.xcassets */,
 				8174243E20D17C8300BC35F7 /* MainMenu.xib */,
-				B2CBF68120DF0869006DAFA4 /* BlueRoy.h */,
 			);
 			path = final_project;
 			sourceTree = "<group>";
