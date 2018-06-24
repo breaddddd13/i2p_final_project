@@ -61,6 +61,7 @@
 		E781803B20E0081000EAE12F /* Background in Resources */ = {isa = PBXBuildFile; fileRef = E781803720E0080F00EAE12F /* Background */; };
 		E781803D20E0081000EAE12F /* Missile in Resources */ = {isa = PBXBuildFile; fileRef = E781803920E0080F00EAE12F /* Missile */; };
 		E781803F20E008D100EAE12F /* Font in Resources */ = {isa = PBXBuildFile; fileRef = E781803E20E008D100EAE12F /* Font */; };
+		E781804220E00C4F00EAE12F /* beams in Resources */ = {isa = PBXBuildFile; fileRef = E781804120E00C4F00EAE12F /* beams */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -158,6 +159,8 @@
 		E781803720E0080F00EAE12F /* Background */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Background; sourceTree = "<group>"; };
 		E781803920E0080F00EAE12F /* Missile */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Missile; sourceTree = "<group>"; };
 		E781803E20E008D100EAE12F /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Font; sourceTree = "<group>"; };
+		E781804020E0096300EAE12F /* Obstacle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Obstacle.h; sourceTree = "<group>"; };
+		E781804120E00C4F00EAE12F /* beams */ = {isa = PBXFileReference; lastKnownFileType = folder; path = beams; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +203,7 @@
 		8174242D20D17C8100BC35F7 = {
 			isa = PBXGroup;
 			children = (
+				E781804120E00C4F00EAE12F /* beams */,
 				E781803E20E008D100EAE12F /* Font */,
 				E781803720E0080F00EAE12F /* Background */,
 				E781803920E0080F00EAE12F /* Missile */,
@@ -266,6 +270,7 @@
 				B2CBF5D520D95C7C006DAFA4 /* Level.h */,
 				B2CBF5B920D958BE006DAFA4 /* Menu.h */,
 				B2CBF5B620D95802006DAFA4 /* Object.h */,
+				E781804020E0096300EAE12F /* Obstacle.h */,
 				B2CBF5B120D956DE006DAFA4 /* Slider.h */,
 				B2CBF5BC20D95BBC006DAFA4 /* StartBackground.jpg */,
 				B2CBF5CA20D95C00006DAFA4 /* BackgroundMusic.ogg */,
@@ -367,6 +372,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E781804220E00C4F00EAE12F /* beams in Resources */,
 				E781803F20E008D100EAE12F /* Font in Resources */,
 				E781803A20E0081000EAE12F /* music in Resources */,
 				E781803B20E0081000EAE12F /* Background in Resources */,
