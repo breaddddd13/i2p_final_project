@@ -12,10 +12,12 @@
 
 #define abs(x) ((x) > 0? (x) : -(x))
 
+enum {LEFT = 0, RIGHT, UP, DOWN};
+
 class Attack : public Object
 {
 public:
-    Attack(Circle*, Circle*, int, int, ALLEGRO_BITMAP*);
+    Attack(Circle*, int, int, int, ALLEGRO_BITMAP*);
     ~Attack();
     
     // override virtual function "Object::Draw"
@@ -34,6 +36,7 @@ private:
     int harm_point = 5;
     float pos_x, pos_y;
     float direction_x, direction_y;
+    int direction;
 };
 
 #endif // ATTACK_H_INCLUDED
