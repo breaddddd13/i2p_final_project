@@ -59,8 +59,8 @@
 		B2CBF68020DF05E0006DAFA4 /* RedTank in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF67F20DF05E0006DAFA4 /* RedTank */; };
 		E781803A20E0081000EAE12F /* music in Resources */ = {isa = PBXBuildFile; fileRef = E781803620E0080E00EAE12F /* music */; };
 		E781803B20E0081000EAE12F /* Background in Resources */ = {isa = PBXBuildFile; fileRef = E781803720E0080F00EAE12F /* Background */; };
-		E781803C20E0081000EAE12F /* Font in Resources */ = {isa = PBXBuildFile; fileRef = E781803820E0080F00EAE12F /* Font */; };
 		E781803D20E0081000EAE12F /* Missile in Resources */ = {isa = PBXBuildFile; fileRef = E781803920E0080F00EAE12F /* Missile */; };
+		E781803F20E008D100EAE12F /* Font in Resources */ = {isa = PBXBuildFile; fileRef = E781803E20E008D100EAE12F /* Font */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -161,6 +161,7 @@
 		E781803720E0080F00EAE12F /* Background */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Background; sourceTree = "<group>"; };
 		E781803820E0080F00EAE12F /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Font; path = ../Font; sourceTree = "<group>"; };
 		E781803920E0080F00EAE12F /* Missile */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Missile; sourceTree = "<group>"; };
+		E781803E20E008D100EAE12F /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Font; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +204,7 @@
 		8174242D20D17C8100BC35F7 = {
 			isa = PBXGroup;
 			children = (
+				E781803E20E008D100EAE12F /* Font */,
 				E781802F20DFEE0100EAE12F /* Background */,
 				E781803720E0080F00EAE12F /* Background */,
 				E781803820E0080F00EAE12F /* Font */,
@@ -373,9 +375,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E781803F20E008D100EAE12F /* Font in Resources */,
 				E781803A20E0081000EAE12F /* music in Resources */,
 				E781803B20E0081000EAE12F /* Background in Resources */,
-				E781803C20E0081000EAE12F /* Font in Resources */,
 				E781803D20E0081000EAE12F /* Missile in Resources */,
 				B2CBF68020DF05E0006DAFA4 /* RedTank in Resources */,
 				B2CBF67E20DF02D3006DAFA4 /* BlueTank in Resources */,
