@@ -62,13 +62,14 @@ protected:
     int move_flag;
     
     // setting of attack
-    int attack_frequency = 20;
+    int attack_frequency = 1;
     int attack_counter = 0;
     int attack_harm_point = 5;
     int attack_velocity = 10;
     ALLEGRO_BITMAP *attack_img;
     std::vector<Attack*> attack_set;
 
+    Circle *attackCircle = NULL;
     
 private:
     int direction;

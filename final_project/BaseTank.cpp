@@ -21,6 +21,11 @@ BaseTank::BaseTank(int x, int y){
     circle->x = x;
     circle->y = y;
     circle->r = grid_width/2;
+    
+    attackCircle = new Circle;
+    attackCircle->x = x;
+    attackCircle->y = y;
+    attackCircle->r = 1000;
 
     direction_count[LEFT] = 2;
     direction_count[RIGHT] = 2;
@@ -58,10 +63,9 @@ BaseTank::Load_Move()
         for(int j=0; j<direction_count[i]; j++)
         {
             ALLEGRO_BITMAP *img;
-            //printf("%s\n", direction_name[i]);
-            sprintf(buffer, "./%s/%s_%d.png", class_name, direction_name[i], j);
             
-            printf("%s\n", buffer);
+            sprintf(buffer, "./%s/%s_%d.png", class_name, direction_name[i], j);
+
             
             img = al_load_bitmap(buffer);
             if(img)
@@ -94,6 +98,8 @@ BaseTank::Draw()
     
     // draw bitmap align grid edge
     al_draw_bitmap(moveImg[offset + sprite_pos], circle->x - grid_width/2, circle->y - grid_height/2, 0);
+    
+    
 //    al_draw_rotated_bitmap(moveImg[offset + sprite_pos], 0, 0, 100, 100, 0.5, 0);
     //al_draw_filled_circle(circle->x, circle->y, circle->r, al_map_rgba(196, 79, 79, 200));
 }
@@ -135,7 +141,7 @@ BaseTank::UpdateAttack()
 {
     for(unsigned int i=0; i < this->attack_set.size(); i++)
     {
-        if(!Circle::isOverlap(this->attack_set[i]->getCircle(), this->circle))
+        if(!Circle::isOverlap(this->attack_set[i]->getCircle(), this->attackCircle))
         {
             Attack *attack = this->attack_set[i];
             

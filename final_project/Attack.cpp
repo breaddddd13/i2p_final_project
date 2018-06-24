@@ -36,12 +36,12 @@ void
 Attack::Draw()
 {
     al_draw_bitmap(attack_img, pos_x - circle->r, pos_y - circle->r, 0);
-    pos_x += attack_velocity * direction;
-    pos_y += attack_velocity * direction;
+    pos_x += attack_velocity * axis_x[direction];
+    pos_y += attack_velocity * axis_y[direction];
 
     circle->x = (int)pos_x;
     circle->y = (int)pos_y;
     
-    //al_draw_filled_circle(pos_x, pos_y, circle->r, al_map_rgba(196, 79, 79, 200));
+//    al_draw_filled_circle(pos_x, pos_y, circle->r, al_map_rgba(196, 79, 79, 200));
 }
 

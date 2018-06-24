@@ -262,6 +262,7 @@ GameWindow::game_update()
     /*3. Remember to set isDestroyed to "true" if monster is killed*/
     /*Hint: Tower::TriggerAttack*/
     
+    P1->UpdateAttack();
     
     /*TODO:*/
     /*1. Update the attack set of each tower*/
@@ -366,6 +367,10 @@ GameWindow::process_event()
                 else
                     al_play_sample_instance(backgroundSound);
                 break;
+            case ALLEGRO_KEY_SPACE:
+                P1->TriggerAttack();
+                redraw = true;
+                break;
             case ALLEGRO_KEY_ESCAPE:
                 return GAME_EXIT;
             case ALLEGRO_KEY_RIGHT:
@@ -387,10 +392,7 @@ GameWindow::process_event()
                 P1->move_valid(DOWN);
                 redraw = true;
                 break;
-            case ALLEGRO_KEY_SPACE:
-                P1->TriggerAttack();
-                redraw = true;
-                break;
+            
         }
     }
     else if(event.type == ALLEGRO_EVENT_KEY_UP) {
@@ -415,25 +417,10 @@ GameWindow::process_event()
     }
     else if(event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
         if(event.mouse.button == 1) {
-            
-            
-            
-            
-            
-            
-            /*
-             *  Check if any tower is clicked.
-             *  If so, cancel the shown circle range of the tower.
-             *  In addition, we also re-check if any circle range should show up.
-             */
-            
-            
-            
+                        
             // check if user wants to create some kind of tower
             // if so, show tower image attached to cursor
-            
-            
-            
+
         } else if (event.mouse.button == 2) {
             
             return GAME_CONTINUE;
