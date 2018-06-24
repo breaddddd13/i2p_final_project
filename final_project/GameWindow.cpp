@@ -335,7 +335,7 @@ GameWindow::process_event()
     }
     else if(event.type == ALLEGRO_EVENT_KEY_DOWN) {
         switch(event.keyboard.keycode) {
-                
+            
             case ALLEGRO_KEY_P:
                 /* ToDo
                  * You can add some variable to control if game is paused.
@@ -358,6 +358,38 @@ GameWindow::process_event()
             case ALLEGRO_KEY_RIGHT:
                 
                 return GAME_CONTINUE;
+            case ALLEGRO_KEY_W:
+                P1->move_valid(UP);
+                redraw = true;
+                break;
+            case ALLEGRO_KEY_A:
+                P1->move_valid(LEFT);
+                redraw = true;
+                break;
+            case ALLEGRO_KEY_D:
+                P1->move_valid(RIGHT);
+                redraw = true;
+                break;
+            case ALLEGRO_KEY_S:
+                P1->move_valid(DOWN);
+                redraw = true;
+                break;
+        }
+    }
+    else if(event.type == ALLEGRO_EVENT_KEY_UP) {
+        switch(event.keyboard.keycode) {
+            case ALLEGRO_KEY_W:
+                P1->move_invalid();
+                break;
+            case ALLEGRO_KEY_A:
+                P1->move_invalid();
+                break;
+            case ALLEGRO_KEY_D:
+                P1->move_invalid();
+                break;
+            case ALLEGRO_KEY_S:
+                P1->move_invalid();
+                break;
         }
     }
     else if(event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {

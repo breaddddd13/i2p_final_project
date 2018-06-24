@@ -11,6 +11,8 @@ const int axis_x[] = {-1, 1, 0, 0};
 const int axis_y[] = {0, 0, -1, 1};
 const char direction_name[][10] = {"LEFT", "RIGHT", "UP", "DOWN"};
 
+const int draw_frequency = 10;
+
 BaseTank::BaseTank(int x, int y){
     // default direction is right
     direction = UP;
@@ -20,13 +22,14 @@ BaseTank::BaseTank(int x, int y){
     circle->y = y;
     circle->r = grid_width/2;
 
-    direction_count[LEFT] = 1;
-    direction_count[RIGHT] = 1;
-    direction_count[UP] = 1;
-    direction_count[DOWN] = 1;
+    direction_count[LEFT] = 2;
+    direction_count[RIGHT] = 2;
+    direction_count[UP] = 2;
+    direction_count[DOWN] = 2;
 
     sprite_pos = 0;
     counter = 0;
+    move_flag = false;
     strncpy(class_name, "BlueTank", 20);
 }
 
@@ -78,13 +81,28 @@ BaseTank::Draw()
     if(!moveImg[offset + sprite_pos])
         return;
     
+    if (move_flag) {
+        Move();
+    }
+    
     // draw bitmap align grid edge
     al_draw_bitmap(moveImg[offset + sprite_pos], circle->x /*- grid_width/2*/, circle->y /*- grid_height/2*/, ALLEGRO_ALIGN_CENTRE);
     
     //al_draw_filled_circle(circle->x, circle->y, circle->r, al_map_rgba(196, 79, 79, 200));
 }
 
+void
+BaseTank::Move(){
+    
+    counter = (counter + 1) % draw_frequency;
+    
+    if(counter == 0)
+        sprite_pos = (sprite_pos + 1) % direction_count[direction];
+    
+    circle->x += speed * axis_x[direction];
+    circle->y += speed * axis_y[direction];
 
+}
 
 bool
 BaseTank::Subtract_HP(int harm_point)

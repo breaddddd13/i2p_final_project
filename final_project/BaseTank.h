@@ -33,12 +33,19 @@ public:
     void Load_Move();
     // Update monster position per frame
     // And detect if it reaches end point but not destroyed
-    //virtual void Move() = 0;
+    void Move();
     
     // functions that return informations of monster
     int getDir() { return direction; }
     int getWorth() { return worth; }
     int getScore() { return score; }
+    void move_valid(int dir) {
+        direction = dir;
+        move_flag = true;
+    }
+    void move_invalid() {
+        move_flag = false;
+    }
     
     bool Subtract_HP(int);
     
@@ -49,6 +56,7 @@ protected:
     int worth = 10;
     int score = 100;
     char class_name[20];
+    bool move_flag;
 private:
     int direction;
     // animation counter
