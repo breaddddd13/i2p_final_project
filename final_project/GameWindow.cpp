@@ -216,7 +216,7 @@ void
 GameWindow::game_begin()
 {
     printf(">>> Start Level[%d]\n", level->getLevel());
-    P1 = new BlueRoy(game_start_x, game_start_y);
+    P1 = new BlueRoy(game_start_x + 500, game_start_y + 500);
     draw_running_map();
     
     al_play_sample_instance(startSound);
@@ -398,19 +398,19 @@ GameWindow::process_event()
     else if(event.type == ALLEGRO_EVENT_KEY_UP) {
         switch(event.keyboard.keycode) {
             case ALLEGRO_KEY_W:
-                P1->move_invalid();
+                P1->move_invalid(UP);
                 redraw = true;
                 break;
             case ALLEGRO_KEY_A:
-                P1->move_invalid();
+                P1->move_invalid(LEFT);
                 redraw = true;
                 break;
             case ALLEGRO_KEY_D:
-                P1->move_invalid();
+                P1->move_invalid(RIGHT);
                 redraw = true;
                 break;
             case ALLEGRO_KEY_S:
-                P1->move_invalid();
+                P1->move_invalid(DOWN);
                 redraw = true;
                 break;
         }
@@ -454,19 +454,19 @@ GameWindow::draw_running_map()
     //al_draw_bitmap(background, 0, 0, 0);
     al_draw_filled_rectangle(70, 70, 1640, 1370, KHAKI);
     
-    //    for(i = 0; i < field_height/40; i++)
-    //    {
-    //        for(j = 0; j < field_width/40; j++)
-    //        {
-    //            char buffer[50];
-    //            sprintf(buffer, "%d", i*15 + j);
-    //            if(level->isRoad(i*15 + j)) {
-    //                al_draw_filled_rectangle(j*40, i*40, j*40+40, i*40+40, al_map_rgb(255, 244, 173));
-    //            }
-    //            // For debug usage, if you want to create a new map, you may turn off this comment.
-    //            // al_draw_text(font, al_map_rgb(0, 0, 0), j*40 + 20, i*40 + 14, ALLEGRO_ALIGN_CENTER, buffer);
-    //        }
-    //    }
+//        for(i = 0; i < field_height/40; i++)
+//        {
+//            for(j = 0; j < field_width/40; j++)
+//            {
+//                char buffer[50];
+//                sprintf(buffer, "%d", i*15 + j);
+//                if(level->isRoad(i*15 + j)) {
+//                    al_draw_filled_rectangle(j*40, i*40, j*40+40, i*40+40, al_map_rgb(255, 244, 173));
+//                }
+//                // For debug usage, if you want to create a new map, you may turn off this comment.
+//                 al_draw_text(font, al_map_rgb(0, 0, 0), j*40 + 20, i*40 + 14, ALLEGRO_ALIGN_CENTER, buffer);
+//            }
+//        }
     
     P1->Draw();
     

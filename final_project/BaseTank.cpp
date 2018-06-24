@@ -15,7 +15,7 @@ const int draw_frequency = 10;
 
 BaseTank::BaseTank(int x, int y){
     // default direction is right
-    direction = RIGHT;
+    direction = UP;
 
     circle = new Circle;
     circle->x = x;
@@ -26,15 +26,20 @@ BaseTank::BaseTank(int x, int y){
     attackCircle->x = x;
     attackCircle->y = y;
     attackCircle->r = 500;
-
+    
     direction_count[LEFT] = 2;
     direction_count[RIGHT] = 2;
     direction_count[UP] = 2;
     direction_count[DOWN] = 2;
+    
+    move_flag = 0;
+    upDown = 0;
+    leftRight = 0;
+    rd = 0.0;
 
     sprite_pos = 0;
     counter = 0;
-    move_flag = 0;
+    
     strncpy(class_name, "BlueTank", 20);
 }
 
@@ -78,11 +83,11 @@ void
 BaseTank::Draw()
 {
     
-    int offset = 0;
+    int offset = 4;
     
     // calculate the number of pictures before current direction
-    for(int i=0; i<direction; i++)
-        offset += direction_count[i];
+//    for(int i=0; i<direction; i++)
+//        offset += direction_count[i];
     
     if(!moveImg[offset + sprite_pos])
         return;
@@ -91,6 +96,7 @@ BaseTank::Draw()
     
     if (move_flag) {
         Move();
+        printf("%f\n", rd);
     }
     
     for(unsigned int i=0; i<this->attack_set.size(); i++)
@@ -100,8 +106,8 @@ BaseTank::Draw()
     al_draw_bitmap(moveImg[offset + sprite_pos], circle->x - grid_width/2, circle->y - grid_height/2, 0);
     
     
-//    al_draw_rotated_bitmap(moveImg[offset + sprite_pos], 0, 0, 100, 100, 0.5, 0);
-//    al_draw_filled_circle(attackCircle->x, attackCircle->y, attackCircle->r, al_map_rgba(196, 79, 79, 200));
+//    al_draw_rotated_bitmap(moveImg[offset + sprite_pos], circle->x , circle->y , circle->x + 20, circle->y + 20, rd, 0);
+//    al_draw_filled_circle(circle->x, circle->y, circle->r, al_map_rgba(196, 79, 79, 100));
 }
 
 void
@@ -111,12 +117,58 @@ BaseTank::Move(){
     
     if(counter == 0)
         sprite_pos = (sprite_pos + 1) % direction_count[direction];
-    
-    circle->x += speed * axis_x[direction];
-    circle->y += speed * axis_y[direction];
-    attackCircle->x += speed * axis_x[direction];
-    attackCircle->y += speed * axis_y[direction];
+    if (leftRight != 3) {
+        attackCircle->x = circle->x += speed * axis_x[leftRight];
+        rd += rad * axis_x[leftRight];
+    }
+    if (upDown != 0) {
+        attackCircle->y = circle->y += speed * axis_y[upDown];
+    }
 
+}
+
+void
+BaseTank::move_invalid(int dir) {
+    move_flag -= 1;
+    switch (dir) {
+        case UP:
+            upDown = 0;
+            break;
+        case DOWN:
+            upDown = 0;
+            break;
+        case LEFT:
+            leftRight = 3;
+            break;
+        case RIGHT:
+            leftRight = 3;
+            break;
+        default:
+            break;
+    }
+}
+
+void
+BaseTank::move_valid(int dir) {
+    direction = dir;
+    move_flag += 1;
+    switch (dir) {
+        case UP:
+            upDown = UP;
+            break;
+        case DOWN:
+            upDown = DOWN;
+            break;
+        case LEFT:
+            leftRight = LEFT;
+            break;
+        case RIGHT:
+            leftRight = RIGHT;
+            break;
+        default:
+            break;
+    }
+    
 }
 
 void
