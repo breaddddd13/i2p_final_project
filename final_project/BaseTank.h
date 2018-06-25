@@ -42,6 +42,7 @@ public:
     // And detect if it reaches end point but not destroyed
     void Move();
     
+    bool DetectAttack(std::vector<Attack*> atk_set);
     void TriggerAttack();
     void UpdateAttack();
     
@@ -54,6 +55,8 @@ public:
     void move_invalid(int dir);
     
     bool Subtract_HP(int);
+    
+    std::vector<Attack*> attack_set;
     
 protected:
     int direction_count[4];
@@ -72,7 +75,7 @@ protected:
     int attack_harm_point = 5;
     int attack_velocity = 13;
     ALLEGRO_BITMAP *attack_img;
-    std::vector<Attack*> attack_set;
+    
 
     Circle *attackCircle = NULL;
     

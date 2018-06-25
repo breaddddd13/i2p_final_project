@@ -43,10 +43,10 @@ GameWindow::game_init()
     al_set_display_icon(display, icon);
     al_reserve_samples(5);
     
-    sample = al_load_sample("growl.wav");
-    startSound = al_create_sample_instance(sample);
-    al_set_sample_instance_playmode(startSound, ALLEGRO_PLAYMODE_ONCE);
-    al_attach_sample_instance_to_mixer(startSound, al_get_default_mixer());
+//    sample = al_load_sample("growl.wav");
+//    startSound = al_create_sample_instance(sample);
+//    al_set_sample_instance_playmode(startSound, ALLEGRO_PLAYMODE_ONCE);
+//    al_attach_sample_instance_to_mixer(startSound, al_get_default_mixer());
     
     sample = al_load_sample("8+9.ogg");
     backgroundSound = al_create_sample_instance(sample);
@@ -240,8 +240,8 @@ GameWindow::game_begin()
     }
     draw_running_map();
     
-    al_play_sample_instance(startSound);
-    while(al_get_sample_instance_playing(startSound));
+    //al_play_sample_instance(startSound);
+    //while(al_get_sample_instance_playing(startSound));
     al_play_sample_instance(backgroundSound);
     
     al_start_timer(timer);
@@ -287,6 +287,13 @@ GameWindow::game_update()
     P1->UpdateAttack();
     P2->UpdateAttack();
     
+    if (P1->DetectAttack(P2->attack_set)){
+        return GAME_EXIT;
+    }
+    if (P2->DetectAttack(P1->attack_set)){
+        return GAME_EXIT;
+    }
+    
     /*TODO:*/
     /*1. Update the attack set of each tower*/
     /*Hint: Tower::UpdateAttack*/
@@ -309,7 +316,7 @@ GameWindow::game_reset()
     
     // stop sample instance
     al_stop_sample_instance(backgroundSound);
-    al_stop_sample_instance(startSound);
+    //al_stop_sample_instance(startSound);
     
     // stop timer
     al_stop_timer(timer);
@@ -334,7 +341,7 @@ GameWindow::game_destroy()
     al_destroy_bitmap(background);
     
     al_destroy_sample(sample);
-    al_destroy_sample_instance(startSound);
+    //al_destroy_sample_instance(startSound);
     al_destroy_sample_instance(backgroundSound);
     
     delete level;
@@ -503,6 +510,7 @@ GameWindow::process_event()
         
         // Re-draw map
         draw_running_map();
+        
         redraw = false;
     }
     

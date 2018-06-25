@@ -38,6 +38,7 @@
 		B206E57620D18CCC00E4D2B1 /* liballegro_main.5.2.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B206E56920D18CCB00E4D2B1 /* liballegro_main.5.2.4.dylib */; };
 		B206E57720D18CCC00E4D2B1 /* liballegro_color.5.2.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B206E56A20D18CCB00E4D2B1 /* liballegro_color.5.2.4.dylib */; };
 		B206E57820D18CCC00E4D2B1 /* liballegro.5.2.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B206E56B20D18CCB00E4D2B1 /* liballegro.5.2.4.dylib */; };
+		B2564F9C20E09C5100251EBD /* RedRoy.h in Sources */ = {isa = PBXBuildFile; fileRef = B2564F9B20E09C5100251EBD /* RedRoy.h */; };
 		B2CBF5A720D955E7006DAFA4 /* GameWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5A620D955E7006DAFA4 /* GameWindow.cpp */; };
 		B2CBF5AA20D9563C006DAFA4 /* global.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5A920D9563C006DAFA4 /* global.cpp */; };
 		B2CBF5AD20D9568A006DAFA4 /* Circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5AC20D9568A006DAFA4 /* Circle.cpp */; };
@@ -80,8 +81,6 @@
 
 /* Begin PBXFileReference section */
 		810D703320DD1CDD00EE8C46 /* obstacle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = obstacle; sourceTree = "<group>"; };
-		810D704520E0898F00EE8C46 /* 8+9.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; name = "8+9.ogg"; path = "../../Downloads/8+9.ogg"; sourceTree = "<group>"; };
-		810D704720E090ED00EE8C46 /* 8+9.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; name = "8+9.ogg"; path = "../../Downloads/8+9.ogg"; sourceTree = "<group>"; };
 		810D704920E0910A00EE8C46 /* 8+9.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "8+9.ogg"; sourceTree = "<group>"; };
 		8174243620D17C8100BC35F7 /* final_project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = final_project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8174243C20D17C8300BC35F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,6 +114,7 @@
 		B206E56920D18CCB00E4D2B1 /* liballegro_main.5.2.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liballegro_main.5.2.4.dylib; sourceTree = "<group>"; };
 		B206E56A20D18CCB00E4D2B1 /* liballegro_color.5.2.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liballegro_color.5.2.4.dylib; sourceTree = "<group>"; };
 		B206E56B20D18CCB00E4D2B1 /* liballegro.5.2.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liballegro.5.2.4.dylib; sourceTree = "<group>"; };
+		B2564F9B20E09C5100251EBD /* RedRoy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RedRoy.h; path = final_project/RedRoy.h; sourceTree = "<group>"; };
 		B2CBF5A620D955E7006DAFA4 /* GameWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameWindow.cpp; sourceTree = "<group>"; };
 		B2CBF5A820D95608006DAFA4 /* GameWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameWindow.h; sourceTree = "<group>"; };
 		B2CBF5A920D9563C006DAFA4 /* global.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = global.cpp; sourceTree = "<group>"; };
@@ -220,8 +220,7 @@
 		8174242D20D17C8100BC35F7 = {
 			isa = PBXGroup;
 			children = (
-				810D704520E0898F00EE8C46 /* 8+9.ogg */,
-				810D704720E090ED00EE8C46 /* 8+9.ogg */,
+				B2564F9B20E09C5100251EBD /* RedRoy.h */,
 				810D704920E0910A00EE8C46 /* 8+9.ogg */,
 				E781804120E00C4F00EAE12F /* beams */,
 				B2CBF67D20DF02D3006DAFA4 /* BlueTank */,
@@ -425,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2564F9C20E09C5100251EBD /* RedRoy.h in Sources */,
 				8174248120D18C1400BC35F7 /* main.cpp in Sources */,
 				B2CBF5AD20D9568A006DAFA4 /* Circle.cpp in Sources */,
 				B2CBF5D420D95C63006DAFA4 /* Level.cpp in Sources */,
