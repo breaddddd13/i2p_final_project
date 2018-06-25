@@ -704,3 +704,9 @@ int GameWindow::draw_setting_scene()
     if(event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) exit(9);
     return 0;
 }
+
+/*bool GameWindow::move_judge(BaseTank* tank, Obstacle* obs)
+{
+    if(obs->TankAva(<#BaseTank *Tank#>))
+    return true;
+}*/

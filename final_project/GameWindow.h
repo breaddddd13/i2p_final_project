@@ -82,6 +82,8 @@ public:
     void Setting();
     int draw_setting_scene();
     
+    bool move_judge(BaseTank* tank, Obstacle* obs);
+    
 public:
     bool initial = true;
     
