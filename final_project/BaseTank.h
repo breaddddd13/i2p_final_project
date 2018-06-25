@@ -72,6 +72,8 @@ protected:
     std::vector<Attack*> attack_set;
 
     Circle *attackCircle = NULL;
+    Circle *front = NULL;
+    Circle *back = NULL;
     
 private:
     int degree;
