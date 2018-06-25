@@ -25,8 +25,8 @@ public:
     ~Obstacle(){};
     
     void Draw();
-    bool BulletAva();
-    bool TankAva(BaseTank * Tank);
+    bool BulletAva(Attack* beam);
+    bool TankAva(BaseTank* tank);
     void setImg(ALLEGRO_BITMAP * new_img){img = new_img;}
 protected:
     bool bullet_ava = true;

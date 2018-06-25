@@ -26,6 +26,7 @@
 using namespace std;
 
 class BaseTank: public Object {
+public:
     Circle *front = NULL;
     Circle *back = NULL;
 public:

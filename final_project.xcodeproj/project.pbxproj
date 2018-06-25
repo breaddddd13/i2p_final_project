@@ -111,6 +111,7 @@
 		B206E56920D18CCB00E4D2B1 /* liballegro_main.5.2.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liballegro_main.5.2.4.dylib; sourceTree = "<group>"; };
 		B206E56A20D18CCB00E4D2B1 /* liballegro_color.5.2.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liballegro_color.5.2.4.dylib; sourceTree = "<group>"; };
 		B206E56B20D18CCB00E4D2B1 /* liballegro.5.2.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liballegro.5.2.4.dylib; sourceTree = "<group>"; };
+		B2564F9A20E086F000251EBD /* RedRoy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedRoy.h; sourceTree = "<group>"; };
 		B2CBF5A620D955E7006DAFA4 /* GameWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameWindow.cpp; sourceTree = "<group>"; };
 		B2CBF5A820D95608006DAFA4 /* GameWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameWindow.h; sourceTree = "<group>"; };
 		B2CBF5A920D9563C006DAFA4 /* global.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = global.cpp; sourceTree = "<group>"; };
@@ -207,11 +208,9 @@
 		8174242D20D17C8100BC35F7 = {
 			isa = PBXGroup;
 			children = (
-				E781801620DFA77B00EAE12F /* Background */,
 				E781804120E00C4F00EAE12F /* beams */,
 				B2CBF67D20DF02D3006DAFA4 /* BlueTank */,
 				8174243820D17C8100BC35F7 /* final_project */,
-				E781801C20DFABE800EAE12F /* Font */,
 				8174244A20D184D900BC35F7 /* Frameworks */,
 				B206E56820D18CCB00E4D2B1 /* liballegro_acodec.5.2.4.dylib */,
 				B206E56220D18CCA00E4D2B1 /* liballegro_audio.5.2.4.dylib */,
@@ -228,7 +227,6 @@
 				B206E56B20D18CCB00E4D2B1 /* liballegro.5.2.4.dylib */,
 				E781803920E0080F00EAE12F /* Missile */,
 				E781801D20DFABE800EAE12F /* Background */,
-				E781803620E0080E00EAE12F /* music */,
 				810D703320DD1CDD00EE8C46 /* obstacle */,
 				8174243720D17C8100BC35F7 /* Products */,
 				B2CBF67F20DF05E0006DAFA4 /* RedTank */,
@@ -237,6 +235,7 @@
 				E781801C20DFABE800EAE12F /* Font */,
 				E781801E20DFABE900EAE12F /* music */,
 				E781803620E0080E00EAE12F /* music */,
+				B2564F9920E0798E00251EBD /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -259,27 +258,28 @@
 				B2CBF5D320D95C63006DAFA4 /* Level.cpp */,
 				8174248020D18C1400BC35F7 /* main.cpp */,
 				B2CBF5B720D958A6006DAFA4 /* Menu.cpp */,
+				E781804520E0148700EAE12F /* Obstacle.cpp */,
 				B2CBF5AF20D956CB006DAFA4 /* Slider.cpp */,
 				8174244420D17C8300BC35F7 /* final_project.entitlements */,
 				B2CBF5B520D9579D006DAFA4 /* Attack.h */,
 				B2CBF67820DEC060006DAFA4 /* BaseTank.h */,
-				B2CBF68120DF0869006DAFA4 /* BlueRoy.h */,
-				E781803120DFF0C500EAE12F /* BlueGeep.h */,
 				E781803220DFF13800EAE12F /* BlueBread.h */,
 				E781803320DFF1F700EAE12F /* BlueDuck.h */,
+				E781803120DFF0C500EAE12F /* BlueGeep.h */,
+				B2CBF68120DF0869006DAFA4 /* BlueRoy.h */,
 				B2CBF5B220D9570F006DAFA4 /* Button.h */,
 				B2CBF5AE20D956A4006DAFA4 /* Circle.h */,
 				B2CBF5A820D95608006DAFA4 /* GameWindow.h */,
 				B2CBF5AB20D95654006DAFA4 /* global.h */,
+				E781804720E0207A00EAE12F /* Grass.h */,
 				B2CBF5D520D95C7C006DAFA4 /* Level.h */,
 				B2CBF5B920D958BE006DAFA4 /* Menu.h */,
 				B2CBF5B620D95802006DAFA4 /* Object.h */,
-				E781804920E0231900EAE12F /* Wall.h */,
-				E781804820E022C000EAE12F /* River.h */,
-				E781804720E0207A00EAE12F /* Grass.h */,
-				E781804520E0148700EAE12F /* Obstacle.cpp */,
 				E781804020E0096300EAE12F /* Obstacle.h */,
+				B2564F9A20E086F000251EBD /* RedRoy.h */,
+				E781804820E022C000EAE12F /* River.h */,
 				B2CBF5B120D956DE006DAFA4 /* Slider.h */,
+				E781804920E0231900EAE12F /* Wall.h */,
 				B2CBF5BC20D95BBC006DAFA4 /* StartBackground.jpg */,
 				B2CBF5CA20D95C00006DAFA4 /* BackgroundMusic.ogg */,
 				B2CBF5BF20D95BE1006DAFA4 /* Dancing.otf */,
@@ -320,6 +320,15 @@
 				8174245720D184D900BC35F7 /* liballegro.5.2.4.dylib */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2564F9920E0798E00251EBD /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				E781803E20E008D100EAE12F /* Font */,
+				E781803720E0080F00EAE12F /* Background */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

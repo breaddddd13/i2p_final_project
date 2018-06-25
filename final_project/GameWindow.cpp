@@ -216,7 +216,8 @@ void
 GameWindow::game_begin()
 {
     printf(">>> Start Level[%d]\n", level->getLevel());
-    P1 = new BlueRoy((game_start_x + game_end_x)/2, (game_start_y + game_end_y)/2);
+    P1 = new BlueRoy((game_start_x + game_end_x)/4, (game_start_y + game_end_y)/2);
+    P2 = new RedRoy(3*(game_start_x + game_end_x)/4, (game_start_y + game_end_y)/2);
     for(int i = 0; i < field_height/100; i++)
     {
         for(int j = 0; j < field_width/100 ; j++)
@@ -284,6 +285,7 @@ GameWindow::game_update()
     /*Hint: Tower::TriggerAttack*/
     
     P1->UpdateAttack();
+    P2->UpdateAttack();
     
     /*TODO:*/
     /*1. Update the attack set of each tower*/
@@ -496,6 +498,7 @@ GameWindow::draw_running_map()
         }
     
     P1->Draw();
+    P2->Draw();
     
     
 //    al_draw_filled_rectangle(field_width, 0, window_width, window_height, al_map_rgb(100, 100, 100));
@@ -707,6 +710,7 @@ int GameWindow::draw_setting_scene()
 
 /*bool GameWindow::move_judge(BaseTank* tank, Obstacle* obs)
 {
-    if(obs->TankAva(<#BaseTank *Tank#>))
+    if(obs->TankAva())
+        
     return true;
 }*/
