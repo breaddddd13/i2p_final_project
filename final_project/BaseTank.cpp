@@ -27,10 +27,12 @@ BaseTank::BaseTank(int x, int y){
     attackCircle->y = y;
     attackCircle->r = 500;
     
+    front = new Circle;
     front->x = x;
     front->y = y - grid_height/2;
     front->r = grid_width/2 - 10;
     
+    back = new Circle;
     back->x = x;
     back->y = y + grid_height/2;
     back->r = grid_width/2 -10;
