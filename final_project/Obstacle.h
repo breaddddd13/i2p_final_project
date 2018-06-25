@@ -26,7 +26,7 @@ public:
     void Draw();
     bool BulletAva(){return bullet_ava;}
     bool TankAva(){return tank_ava;}
-    void setImg(ALLEGRO_BITMAP * new_img){img = new_img};
+    void setImg(ALLEGRO_BITMAP * new_img){img = new_img;}
 protected:
     bool bullet_ava = true;
     bool tank_ava = true;
