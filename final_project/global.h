@@ -13,7 +13,7 @@
 #define field_height 1300
 #define game_start_x 70
 #define game_start_y 70
-#define game_end_x 1620
+#define game_end_x 1570
 #define game_end_y 1370
 
 #define Num_TankType 4

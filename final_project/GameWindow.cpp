@@ -366,8 +366,16 @@ GameWindow::process_event()
             Coin_Inc_Count = (Coin_Inc_Count + 1) % CoinSpeed;
             
             // All monsters are created and destroyed -> Game Exit
-            if(!move_judge(P1))P1->move_invalid(P1->getDir());
+            if (P1->getX() - grid_width/2 < 1570 && P1->getY()  - grid_width/2< 1370 && P1->getX()  - grid_width/2> 70 && P1->getY() - grid_width/2 > 70) {
+                if(!move_judge(P1))P1->move_invalid(P1->getDir());
+            }else{
+                P1->move_invalid(P1->getDir());
+            }
+            if (P2->getX()  - grid_width/2< 1570 && P2->getY() - grid_width/2 < 1370 && P2->getX()  - grid_width/2> 70 && P2->getY() - grid_width/2 > 70) {
             if(!move_judge(P2))P2->move_invalid(P2->getDir());
+            }else{
+                P2->move_invalid(P2->getDir());
+            }
             
         }
         else {
