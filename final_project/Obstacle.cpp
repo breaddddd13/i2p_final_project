@@ -29,6 +29,7 @@ bool Obstacle::TankAva(BaseTank * Tank){
     //if(tank_ava)return true;
     if(type==-1) return true;
     std::cout<<"enter\n";
+    
     if(Circle::isOverlap(this->circle, Tank->getCircle()) )
     {
         std::cout<<"overlap\n";
