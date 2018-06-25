@@ -693,7 +693,7 @@ int GameWindow::draw_over_scene()
         }
         if(counter>=1000)
         {
-            al_draw_text(overFont, WHITE, 100, 300, ALLEGRO_ALIGN_CENTER, "p1:");
+            al_draw_text(overFont, WHITE, 100, 300, ALLEGRO_ALIGN_CENTER, "p1:lose");
             if(play2)
             {
                 al_play_sample_instance(word_appear);
@@ -701,7 +701,7 @@ int GameWindow::draw_over_scene()
             }
             if(counter>=1400)
             {
-                al_draw_text(overFont, WHITE, 100, 700, ALLEGRO_ALIGN_CENTER, "p2:");
+                al_draw_text(overFont, WHITE, 100, 700, ALLEGRO_ALIGN_CENTER, "p2:lose");
                 if(play3)
                 {
                     al_play_sample_instance(word_appear);
@@ -709,7 +709,7 @@ int GameWindow::draw_over_scene()
                 }
                 if(counter>=1800)
                 {
-                    al_draw_text(overFont, WHITE, window_width/2, window_height-200, ALLEGRO_ALIGN_CENTER, "press enter to continue");
+                    al_draw_text(overFont, WHITE, window_width/2, window_height-200, ALLEGRO_ALIGN_CENTER, "everyone is loser");
                     if(play4)
                     {
                         al_play_sample_instance(word_appear);
@@ -750,7 +750,7 @@ int GameWindow::draw_setting_scene()
 {
     al_draw_bitmap(settingBGD, 0, 0, 0);
     //al_draw_filled_rounded_rectangle(0, 0, window_width, window_height, 0, 0, al_map_rgba(0, 0, 0, 20));
-    static Slider* s = new Slider(window_width/2,window_height/2);
+    static Slider* s = new Slider(window_width/2-250,window_height/2);
     al_wait_for_event(event_queue, &event);
     
     if(event.type == ALLEGRO_EVENT_MOUSE_AXES){
@@ -774,7 +774,7 @@ int GameWindow::draw_setting_scene()
             return -1;
     
     if(s->isDragged())
-        al_set_sample_instance_gain(backgroundSound, s->Drag(mouse_x, mouse_y));
+        al_set_sample_instance_gain(startBGM, s->Drag(mouse_x, mouse_y));
     s->Draw();
     al_flip_display();
     
@@ -787,18 +787,10 @@ bool GameWindow::move_judge(BaseTank* tank)
     
     i =(tank->getCircle()->y-20)/100 -1;
     j =(tank->getCircle()->x-20)/100 ;
-    std::cout<<"i:"<<i<<" j:"<<j<<"\n";
-    //if(!ob[i][j+1]->TankAva(tank)) return false;
-    //if(!ob[i+1][j]->TankAva(tank)) return false;
     
     for(int I = 0; I<3; I++)
         for(int J = 0; J<3; J++)
-        {
             if(I>=0&& I<=12 && J>=0 && J<=14)
                 if(!ob[i+I][j+J]->TankAva(tank))return false;
-        }
-            //if(I>=0&& I<=12 && J>=0 && J<=14)
-                //sif(!ob[I][J]->TankAva(tank)) return false;
-
     return true;
 }
