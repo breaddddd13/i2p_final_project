@@ -21,11 +21,13 @@
 #include "global.h"
 #include "Attack.h"
 
-#define rad 3.14159/180
+
 
 using namespace std;
 
 class BaseTank: public Object {
+    Circle *front = NULL;
+    Circle *back = NULL;
 public:
     BaseTank(int x, int y);
     ~BaseTank();
@@ -72,6 +74,7 @@ protected:
     std::vector<Attack*> attack_set;
 
     Circle *attackCircle = NULL;
+    
     
 private:
     int degree;

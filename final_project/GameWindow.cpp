@@ -216,7 +216,7 @@ void
 GameWindow::game_begin()
 {
     printf(">>> Start Level[%d]\n", level->getLevel());
-    P1 = new BlueRoy(game_start_x, game_start_y);
+    P1 = new BlueRoy((game_start_x + game_end_x)/2, (game_start_y + game_end_y)/2);
     for(int i = 0; i < field_height/100; i++)
     {
         for(int j = 0; j < field_width/100 ; j++)
@@ -492,7 +492,7 @@ GameWindow::draw_running_map()
     //            // For debug usage, if you want to create a new map, you may turn off this comment.
 //                 al_draw_text(font, al_map_rgb(0, 0, 0), (j+1)*100 + 20, (i+1)*100 + 20, ALLEGRO_ALIGN_CENTER, buffer);
             }
-            printf("\n");
+//            printf("\n");
         }
     
     P1->Draw();
@@ -704,3 +704,9 @@ int GameWindow::draw_setting_scene()
     if(event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) exit(9);
     return 0;
 }
+
+/*bool GameWindow::move_judge(BaseTank* tank, Obstacle* obs)
+{
+    if(obs->TankAva(<#BaseTank *Tank#>))
+    return true;
+}*/

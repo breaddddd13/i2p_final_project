@@ -27,6 +27,14 @@ BaseTank::BaseTank(int x, int y){
     attackCircle->y = y;
     attackCircle->r = 500;
     
+    front->x = x;
+    front->y = y - grid_height/2;
+    front->r = grid_width/2 - 10;
+    
+    back->x = x;
+    back->y = y + grid_height/2;
+    back->r = grid_width/2 -10;
+    
     direction_count[LEFT] = 2;
     direction_count[RIGHT] = 2;
     direction_count[UP] = 2;
@@ -122,10 +130,14 @@ BaseTank::Move(){
     }
     if (!upDown.empty()) {
         if (upDown.back() == DOWN) {
+            printf("1 %d %f\n", circle->y, sin(degree*rad));
             attackCircle->y = circle->y -= 3*sin(degree*rad);
+            printf("2 %d %f\n", circle->y, sin(degree*rad));
             attackCircle->x = circle->x -= 3*cos(degree*rad);
         } else {
+            printf("1 %d %f\n", circle->y, sin(degree*rad));
             attackCircle->y = circle->y += 3*sin(degree*rad);
+            printf("2 %d %f\n", circle->y, sin(degree*rad));
             attackCircle->x = circle->x += 3*cos(degree*rad);
         }
     }
@@ -169,6 +181,7 @@ BaseTank::move_valid(int dir) {
     switch (dir) {
         case UP:
             upDown.push_back(UP);
+            printf("Z\n");
             break;
         case DOWN:
             upDown.push_back(DOWN);
@@ -193,7 +206,7 @@ BaseTank::TriggerAttack(){
     if ( attack_counter == 0 ){
         attack = new Attack(
         this->circle,
-        this->direction,
+        this->degree,
         this->attack_harm_point,
         this->attack_velocity,
         this->attack_img

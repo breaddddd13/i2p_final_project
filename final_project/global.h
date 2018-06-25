@@ -19,7 +19,7 @@
 #define Num_TankType 4
 #define NumOfGrid (field_width / grid_width) * (field_height / grid_height) // 15 * 13 = 195
 
-
+#define rad 3.14159/180
 enum {LEFT = 0, RIGHT, UP, DOWN};
 enum {GRASS = 0, RIVER, WALL};
 
