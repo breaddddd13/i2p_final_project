@@ -43,12 +43,12 @@ GameWindow::game_init()
     al_set_display_icon(display, icon);
     al_reserve_samples(5);
     
-    sample = al_load_sample("growl.wav");
-    startSound = al_create_sample_instance(sample);
-    al_set_sample_instance_playmode(startSound, ALLEGRO_PLAYMODE_ONCE);
-    al_attach_sample_instance_to_mixer(startSound, al_get_default_mixer());
+//    sample = al_load_sample("growl.wav");
+//    startSound = al_create_sample_instance(sample);
+//    al_set_sample_instance_playmode(startSound, ALLEGRO_PLAYMODE_ONCE);
+//    al_attach_sample_instance_to_mixer(startSound, al_get_default_mixer());
     
-    sample = al_load_sample("BackgroundMusic.ogg");
+    sample = al_load_sample("8+9.ogg");
     backgroundSound = al_create_sample_instance(sample);
     al_set_sample_instance_playmode(backgroundSound, ALLEGRO_PLAYMODE_ONCE);
     al_attach_sample_instance_to_mixer(backgroundSound, al_get_default_mixer());
@@ -240,8 +240,8 @@ GameWindow::game_begin()
     }
     draw_running_map();
     
-    al_play_sample_instance(startSound);
-    while(al_get_sample_instance_playing(startSound));
+    //al_play_sample_instance(startSound);
+    //while(al_get_sample_instance_playing(startSound));
     al_play_sample_instance(backgroundSound);
     
     al_start_timer(timer);
@@ -287,6 +287,13 @@ GameWindow::game_update()
     P1->UpdateAttack();
     P2->UpdateAttack();
     
+    if (P1->DetectAttack(P2->attack_set)){
+        return GAME_EXIT;
+    }
+    if (P2->DetectAttack(P1->attack_set)){
+        return GAME_EXIT;
+    }
+    
     /*TODO:*/
     /*1. Update the attack set of each tower*/
     /*Hint: Tower::UpdateAttack*/
@@ -309,7 +316,7 @@ GameWindow::game_reset()
     
     // stop sample instance
     al_stop_sample_instance(backgroundSound);
-    al_stop_sample_instance(startSound);
+    //al_stop_sample_instance(startSound);
     
     // stop timer
     al_stop_timer(timer);
@@ -334,7 +341,7 @@ GameWindow::game_destroy()
     al_destroy_bitmap(background);
     
     al_destroy_sample(sample);
-    al_destroy_sample_instance(startSound);
+    //al_destroy_sample_instance(startSound);
     al_destroy_sample_instance(backgroundSound);
     
     delete level;
@@ -381,8 +388,7 @@ GameWindow::process_event()
                  * In addition to add variable, you also have to modify draw_running_map() and game_update()
                  * Or, monsters and towers can still work without being paused
                  */
-                
-                
+        
                 break;
             case ALLEGRO_KEY_M:
                 mute = !mute;
@@ -391,15 +397,14 @@ GameWindow::process_event()
                 else
                     al_play_sample_instance(backgroundSound);
                 break;
+            case ALLEGRO_KEY_ESCAPE:
+                return GAME_EXIT;
+                
+            //P1
             case ALLEGRO_KEY_SPACE:
                 P1->TriggerAttack();
                 redraw = true;
                 break;
-            case ALLEGRO_KEY_ESCAPE:
-                return GAME_EXIT;
-            case ALLEGRO_KEY_RIGHT:
-                
-                return GAME_CONTINUE;
             case ALLEGRO_KEY_W:
                 //if(move_judge(P1))
                 //{
@@ -422,10 +427,34 @@ GameWindow::process_event()
                 redraw = true;
                 break;
             
+            //P2
+            case ALLEGRO_KEY_SLASH:
+                P2->TriggerAttack();
+                redraw = true;
+                break;
+            case ALLEGRO_KEY_UP:
+                P2->move_valid(UP);
+                
+                redraw = true;
+                break;
+            case ALLEGRO_KEY_LEFT:
+                P2->move_valid(LEFT);
+                redraw = true;
+                break;
+            case ALLEGRO_KEY_RIGHT:
+                P2->move_valid(RIGHT);
+                redraw = true;
+                break;
+            case ALLEGRO_KEY_DOWN:
+                P2->move_valid(DOWN);
+                redraw = true;
+                break;
+            
         }
     }
     else if(event.type == ALLEGRO_EVENT_KEY_UP) {
         switch(event.keyboard.keycode) {
+            //P1
             case ALLEGRO_KEY_W:
                 P1->move_invalid(UP);
                 redraw = true;
@@ -440,6 +469,23 @@ GameWindow::process_event()
                 break;
             case ALLEGRO_KEY_S:
                 P1->move_invalid(DOWN);
+                redraw = true;
+                break;
+            //P2
+            case ALLEGRO_KEY_UP:
+                P2->move_invalid(UP);
+                redraw = true;
+                break;
+            case ALLEGRO_KEY_LEFT:
+                P2->move_invalid(LEFT);
+                redraw = true;
+                break;
+            case ALLEGRO_KEY_RIGHT:
+                P2->move_invalid(RIGHT);
+                redraw = true;
+                break;
+            case ALLEGRO_KEY_DOWN:
+                P2->move_invalid(DOWN);
                 redraw = true;
                 break;
         }
@@ -469,6 +515,7 @@ GameWindow::process_event()
         
         // Re-draw map
         draw_running_map();
+        
         redraw = false;
     }
     
@@ -483,33 +530,34 @@ GameWindow::draw_running_map()
     //al_draw_bitmap(background, 0, 0, 0);
     al_draw_filled_rectangle(70, 70, 1570, 1370, KHAKI);
     
-        for(i = 0; i < field_height/100; i++)
-        {
-            for(j = 0; j < field_width/100 ; j++)
-            {
-                if(level->getInfo(i, j) != 0){
-                    ob[i][j]->Draw();
-                }
-                
-                char buffer[50];
-                sprintf(buffer, "%d", i*15 + j);
-    //            if(level->isRoad(i*15 + j)) {
-    //                al_draw_filled_rectangle(j*40, i*40, j*40+40, i*40+40, al_map_rgb(255, 244, 173));
-    //            }
-    //            // For debug usage, if you want to create a new map, you may turn off this comment.
-//                 al_draw_text(font, al_map_rgb(0, 0, 0), (j+1)*100 + 20, (i+1)*100 + 20, ALLEGRO_ALIGN_CENTER, buffer);
-            }
-//            printf("\n");
-        }
+    
+    
     
     P1->Draw();
     P2->Draw();
+    for(i = 0; i < field_height/100; i++)
+    {
+        for(j = 0; j < field_width/100 ; j++)
+        {
+            if(level->getInfo(i, j) != 0){
+                ob[i][j]->Draw();
+            }
+            
+            char buffer[50];
+            sprintf(buffer, "%d", i*15 + j);
+            //            if(level->isRoad(i*15 + j)) {
+            //                al_draw_filled_rectangle(j*40, i*40, j*40+40, i*40+40, al_map_rgb(255, 244, 173));
+            //            }
+            //            // For debug usage, if you want to create a new map, you may turn off this comment.
+            //                 al_draw_text(font, al_map_rgb(0, 0, 0), (j+1)*100 + 20, (i+1)*100 + 20, ALLEGRO_ALIGN_CENTER, buffer);
+        }
+        //            printf("\n");
     
     
 //    al_draw_filled_rectangle(field_width, 0, window_width, window_height, al_map_rgb(100, 100, 100));
     
     //    menu->Draw();
-    
+    }
     
     al_flip_display();
 }

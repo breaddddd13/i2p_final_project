@@ -25,7 +25,7 @@ BaseTank::BaseTank(int x, int y){
     attackCircle = new Circle;
     attackCircle->x = x;
     attackCircle->y = y;
-    attackCircle->r = 500;
+    attackCircle->r = 600;
     
     front = new Circle;
     front->x = x;
@@ -104,12 +104,13 @@ BaseTank::Draw()
     
     attack_counter = (attack_counter + 1) % attack_frequency;
     
+    
     if (move_flag) {
         Move();
     }
+    for(unsigned int i=0; i<attack_set.size(); i++)
+        attack_set[i]->Draw();
     
-    for(unsigned int i=0; i<this->attack_set.size(); i++)
-        this->attack_set[i]->Draw();
     
     // draw bitmap align grid edge
 //    al_draw_bitmap(moveImg[offset + sprite_pos], circle->x - grid_width/2, circle->y - grid_height/2, 0);
@@ -203,23 +204,47 @@ BaseTank::move_valid(int dir) {
     
 }
 
+bool
+BaseTank::DetectAttack(std::vector<Attack*> atk_set){
+    int destroyed = false;
+    for(unsigned int i=0; i < atk_set.size(); i++)
+    {
+        if(Circle::isOverlap(atk_set[i]->getCircle(), this->circle))
+        {
+            if (Subtract_HP(atk_set[i]->getHarmPoint())) {
+                destroyed = true;
+            }
+//            Attack *attack = atk_set[i];
+            
+            atk_set.erase(atk_set.begin() + i);
+            i--;
+            
+            //delete attack;
+            
+            printf("%d\n", atk_set.size());
+            return destroyed;
+        }
+    }
+    return false;
+}
+
 void
 BaseTank::TriggerAttack(){
     
     Attack *attack;
-    
-    if ( attack_counter == 0 ){
-        attack = new Attack(
-        this->circle,
-        this->degree,
-        this->attack_harm_point,
-        this->attack_velocity,
-        this->attack_img
-        );
-        
-        this->attack_set.push_back(attack);
-    }
-    
+//    while (attack_set.size() < 2) {
+        if ( attack_counter == 0 ){
+            attack = new Attack(
+                                this->circle,
+                                this->degree,
+                                this->attack_harm_point,
+                                this->attack_velocity,
+                                this->attack_img
+                                );
+            
+            this->attack_set.push_back(attack);
+        }
+//    }
 }
 
 void
@@ -230,7 +255,7 @@ BaseTank::UpdateAttack()
         if(!Circle::isOverlap(this->attack_set[i]->getCircle(), this->attackCircle))
         {
             Attack *attack = this->attack_set[i];
-            
+
             this->attack_set.erase(this->attack_set.begin() + i);
             i--;
             delete attack;
