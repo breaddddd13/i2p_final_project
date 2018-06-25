@@ -492,7 +492,7 @@ GameWindow::draw_running_map()
     //            // For debug usage, if you want to create a new map, you may turn off this comment.
 //                 al_draw_text(font, al_map_rgb(0, 0, 0), (j+1)*100 + 20, (i+1)*100 + 20, ALLEGRO_ALIGN_CENTER, buffer);
             }
-            printf("\n");
+//            printf("\n");
         }
     
     P1->Draw();
