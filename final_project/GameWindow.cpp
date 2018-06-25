@@ -420,19 +420,19 @@ GameWindow::process_event()
     else if(event.type == ALLEGRO_EVENT_KEY_UP) {
         switch(event.keyboard.keycode) {
             case ALLEGRO_KEY_W:
-                P1->move_invalid();
+                P1->move_invalid(UP);
                 redraw = true;
                 break;
             case ALLEGRO_KEY_A:
-                P1->move_invalid();
+                P1->move_invalid(LEFT);
                 redraw = true;
                 break;
             case ALLEGRO_KEY_D:
-                P1->move_invalid();
+                P1->move_invalid(RIGHT);
                 redraw = true;
                 break;
             case ALLEGRO_KEY_S:
-                P1->move_invalid();
+                P1->move_invalid(DOWN);
                 redraw = true;
                 break;
         }

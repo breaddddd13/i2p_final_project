@@ -26,15 +26,20 @@ BaseTank::BaseTank(int x, int y){
     attackCircle->x = x;
     attackCircle->y = y;
     attackCircle->r = 500;
-
+    
     direction_count[LEFT] = 2;
     direction_count[RIGHT] = 2;
     direction_count[UP] = 2;
     direction_count[DOWN] = 2;
+    
+    move_flag = 0;
+//    upDown = 0;
+//    leftRight = 3;
+    degree = 0;
 
     sprite_pos = 0;
     counter = 0;
-    move_flag = 0;
+    
     strncpy(class_name, "BlueTank", 20);
 }
 
@@ -78,11 +83,11 @@ void
 BaseTank::Draw()
 {
     
-    int offset = 0;
+    int offset = 2;
     
     // calculate the number of pictures before current direction
-    for(int i=0; i<direction; i++)
-        offset += direction_count[i];
+//    for(int i=0; i<direction; i++)
+//        offset += direction_count[i];
     
     if(!moveImg[offset + sprite_pos])
         return;
@@ -97,11 +102,11 @@ BaseTank::Draw()
         this->attack_set[i]->Draw();
     
     // draw bitmap align grid edge
-    al_draw_bitmap(moveImg[offset + sprite_pos], circle->x - grid_width/2, circle->y - grid_height/2, 0);
+//    al_draw_bitmap(moveImg[offset + sprite_pos], circle->x - grid_width/2, circle->y - grid_height/2, 0);
     
     
-//    al_draw_rotated_bitmap(moveImg[offset + sprite_pos], 0, 0, 100, 100, 0.5, 0);
-//    al_draw_filled_circle(attackCircle->x, attackCircle->y, attackCircle->r, al_map_rgba(196, 79, 79, 200));
+    al_draw_rotated_bitmap(moveImg[offset + sprite_pos], grid_width/2 , grid_height/2 , circle->x, circle->y, degree*rad, 0);
+//    al_draw_filled_circle(circle->x, circle->y, circle->r, al_map_rgba(196, 79, 79, 100));
 }
 
 void
@@ -111,12 +116,73 @@ BaseTank::Move(){
     
     if(counter == 0)
         sprite_pos = (sprite_pos + 1) % direction_count[direction];
-    
-    circle->x += speed * axis_x[direction];
-    circle->y += speed * axis_y[direction];
-    attackCircle->x += speed * axis_x[direction];
-    attackCircle->y += speed * axis_y[direction];
+    if (!leftRight.empty()) {
+        degree += axis_x[leftRight.back()];
+        
+    }
+    if (!upDown.empty()) {
+        if (upDown.back() == DOWN) {
+            attackCircle->y = circle->y -= 3*sin(degree*rad);
+            attackCircle->x = circle->x -= 3*cos(degree*rad);
+        } else {
+            attackCircle->y = circle->y += 3*sin(degree*rad);
+            attackCircle->x = circle->x += 3*cos(degree*rad);
+        }
+    }
 
+}
+
+void
+BaseTank::move_invalid(int dir) {
+    
+    move_flag -= 1;
+    switch (dir) {
+        case UP:
+            if (!upDown.empty()) {
+                upDown.erase(upDown.begin());
+            }
+            break;
+        case DOWN:
+            if (!upDown.empty()) {
+                upDown.erase(upDown.begin());
+            }
+            break;
+        case LEFT:
+            if (!leftRight.empty()) {
+                leftRight.erase(leftRight.begin());
+            }
+            break;
+        case RIGHT:
+            if (!leftRight.empty()) {
+                leftRight.erase(leftRight.begin());
+            }
+            break;
+        default:
+            break;
+    }
+}
+
+void
+BaseTank::move_valid(int dir) {
+    direction = dir;
+    move_flag += 1;
+    switch (dir) {
+        case UP:
+            upDown.push_back(UP);
+            break;
+        case DOWN:
+            upDown.push_back(DOWN);
+            break;
+        case LEFT:
+            leftRight.push_back(LEFT);
+            break;
+        case RIGHT:
+            leftRight.push_back(RIGHT);
+            break;
+        default:
+            break;
+    }
+    
 }
 
 void

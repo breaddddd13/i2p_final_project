@@ -14,10 +14,15 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_primitives.h>
 #include <vector>
+#include <set>
+#include <cmath>
 #include "Object.h"
 #include "Circle.h"
 #include "global.h"
 #include "Attack.h"
+
+#define rad 3.14159/180
+
 using namespace std;
 
 class BaseTank: public Object {
@@ -42,13 +47,8 @@ public:
     int getDir() { return direction; }
     int getWorth() { return worth; }
     int getScore() { return score; }
-    void move_valid(int dir) {
-        direction = dir;
-        move_flag += 1;
-    }
-    void move_invalid() {
-        move_flag -= 1;
-    }
+    void move_valid(int dir);
+    void move_invalid(int dir);
     
     bool Subtract_HP(int);
     
@@ -60,6 +60,8 @@ protected:
     int score = 100;
     char class_name[20];
     int move_flag;
+    vector<int> upDown;
+    vector<int> leftRight;
     
     // setting of attack
     int attack_frequency = 1;
@@ -72,6 +74,8 @@ protected:
     Circle *attackCircle = NULL;
     
 private:
+    int degree;
+    
     int direction;
     // animation counter
     int counter;
