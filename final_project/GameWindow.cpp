@@ -215,8 +215,8 @@ void
 GameWindow::game_begin()
 {
     printf(">>> Start Level[%d]\n", level->getLevel());
-    P1 = new BlueRoy((game_start_x + game_end_x)/4, (game_start_y + game_end_y)/2);
-    P2 = new RedRoy(3*(game_start_x + game_end_x)/4, (game_start_y + game_end_y)/2);
+    P1 = new BlueRoy(2*(game_start_x + game_end_x)/5, (game_start_y + game_end_y)/2);
+    P2 = new RedRoy(3*(game_start_x + game_end_x)/5, (game_start_y + game_end_y)/2);
     for(int i = 0; i < field_height/100; i++)
     {
         for(int j = 0; j < field_width/100 ; j++)
