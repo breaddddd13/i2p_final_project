@@ -390,15 +390,14 @@ GameWindow::process_event()
                 else
                     al_play_sample_instance(backgroundSound);
                 break;
+            case ALLEGRO_KEY_ESCAPE:
+                return GAME_EXIT;
+                
+            //P1
             case ALLEGRO_KEY_SPACE:
                 P1->TriggerAttack();
                 redraw = true;
                 break;
-            case ALLEGRO_KEY_ESCAPE:
-                return GAME_EXIT;
-            case ALLEGRO_KEY_RIGHT:
-                
-                return GAME_CONTINUE;
             case ALLEGRO_KEY_W:
                 P1->move_valid(UP);
                 
@@ -417,10 +416,34 @@ GameWindow::process_event()
                 redraw = true;
                 break;
             
+            //P2
+            case ALLEGRO_KEY_SLASH:
+                P2->TriggerAttack();
+                redraw = true;
+                break;
+            case ALLEGRO_KEY_UP:
+                P2->move_valid(UP);
+                
+                redraw = true;
+                break;
+            case ALLEGRO_KEY_LEFT:
+                P2->move_valid(LEFT);
+                redraw = true;
+                break;
+            case ALLEGRO_KEY_RIGHT:
+                P2->move_valid(RIGHT);
+                redraw = true;
+                break;
+            case ALLEGRO_KEY_DOWN:
+                P2->move_valid(DOWN);
+                redraw = true;
+                break;
+            
         }
     }
     else if(event.type == ALLEGRO_EVENT_KEY_UP) {
         switch(event.keyboard.keycode) {
+            //P1
             case ALLEGRO_KEY_W:
                 P1->move_invalid(UP);
                 redraw = true;
@@ -435,6 +458,23 @@ GameWindow::process_event()
                 break;
             case ALLEGRO_KEY_S:
                 P1->move_invalid(DOWN);
+                redraw = true;
+                break;
+            //P2
+            case ALLEGRO_KEY_UP:
+                P2->move_invalid(UP);
+                redraw = true;
+                break;
+            case ALLEGRO_KEY_LEFT:
+                P2->move_invalid(LEFT);
+                redraw = true;
+                break;
+            case ALLEGRO_KEY_RIGHT:
+                P2->move_invalid(RIGHT);
+                redraw = true;
+                break;
+            case ALLEGRO_KEY_DOWN:
+                P2->move_invalid(DOWN);
                 redraw = true;
                 break;
         }
