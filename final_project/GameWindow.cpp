@@ -495,7 +495,7 @@ GameWindow::draw_running_map()
             printf("\n");
         }
     
-   
+    P1->Draw();
     
     
 //    al_draw_filled_rectangle(field_width, 0, window_width, window_height, al_map_rgb(100, 100, 100));
