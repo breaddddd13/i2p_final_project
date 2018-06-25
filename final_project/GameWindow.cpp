@@ -707,6 +707,7 @@ int GameWindow::draw_setting_scene()
 
 /*bool GameWindow::move_judge(BaseTank* tank, Obstacle* obs)
 {
-    if(obs->TankAva(<#BaseTank *Tank#>))
+    if(obs->TankAva())
+        
     return true;
 }*/
