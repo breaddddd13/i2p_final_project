@@ -26,6 +26,8 @@
 using namespace std;
 
 class BaseTank: public Object {
+    Circle *front = NULL;
+    Circle *back = NULL;
 public:
     BaseTank(int x, int y);
     ~BaseTank();
@@ -72,8 +74,7 @@ protected:
     std::vector<Attack*> attack_set;
 
     Circle *attackCircle = NULL;
-    Circle *front = NULL;
-    Circle *back = NULL;
+    
     
 private:
     int degree;
