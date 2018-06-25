@@ -32,7 +32,7 @@ protected:
     bool bullet_ava = true;
     bool tank_ava = true;
     int health_point = 3;
-    int type;
+    int type=-1;
     ALLEGRO_BITMAP *img = NULL;
 };
 #endif /* Obstacle_h */

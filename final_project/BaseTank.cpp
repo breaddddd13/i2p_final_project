@@ -20,7 +20,7 @@ BaseTank::BaseTank(int x, int y){
     circle = new Circle;
     circle->x = x;
     circle->y = y;
-    circle->r = grid_width/2;
+    circle->r = grid_width/2+20;
     
     attackCircle = new Circle;
     attackCircle->x = x;
@@ -149,6 +149,7 @@ BaseTank::Move(){
 void
 BaseTank::move_invalid(int dir) {
     
+    if(move_flag<=0)return;
     move_flag -= 1;
     switch (dir) {
         case UP:

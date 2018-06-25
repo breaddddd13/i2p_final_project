@@ -367,7 +367,8 @@ GameWindow::process_event()
             Coin_Inc_Count = (Coin_Inc_Count + 1) % CoinSpeed;
             
             // All monsters are created and destroyed -> Game Exit
-            
+            if(!move_judge(P1))P1->move_invalid(P1->getDir());
+            if(!move_judge(P2))P2->move_invalid(P2->getDir());
             
         }
         else {
@@ -405,9 +406,13 @@ GameWindow::process_event()
                 redraw = true;
                 break;
             case ALLEGRO_KEY_W:
-                P1->move_valid(UP);
+                //if(move_judge(P1))
+                //{
+                    P1->move_valid(UP);
                 
-                redraw = true;
+                    redraw = true;
+                //wd}
+                //}
                 break;
             case ALLEGRO_KEY_A:
                 P1->move_valid(LEFT);
@@ -756,9 +761,24 @@ int GameWindow::draw_setting_scene()
     return 0;
 }
 
-/*bool GameWindow::move_judge(BaseTank* tank, Obstacle* obs)
+bool GameWindow::move_judge(BaseTank* tank)
 {
-    if(obs->TankAva())
-        
+    int i,j;
+    
+    i =(tank->getCircle()->y-20)/100 -1;
+    j =(tank->getCircle()->x-20)/100 ;
+    std::cout<<"i:"<<i<<" j:"<<j<<"\n";
+    //if(!ob[i][j+1]->TankAva(tank)) return false;
+    //if(!ob[i+1][j]->TankAva(tank)) return false;
+    
+    for(int I = 0; I<3; I++)
+        for(int J = 0; J<3; J++)
+        {
+            if(I>=0&& I<=12 && J>=0 && J<=14)
+                if(!ob[i+I][j+J]->TankAva(tank))return false;
+        }
+            //if(I>=0&& I<=12 && J>=0 && J<=14)
+                //sif(!ob[I][J]->TankAva(tank)) return false;
+
     return true;
-}*/
+}
