@@ -14,6 +14,8 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_primitives.h>
 #include <vector>
+#include <set>
+#include <cmath>
 #include "Object.h"
 #include "Circle.h"
 #include "global.h"
@@ -58,8 +60,8 @@ protected:
     int score = 100;
     char class_name[20];
     int move_flag;
-    int upDown;
-    int leftRight;
+    vector<int> upDown;
+    vector<int> leftRight;
     
     // setting of attack
     int attack_frequency = 1;
@@ -72,7 +74,7 @@ protected:
     Circle *attackCircle = NULL;
     
 private:
-    double rd;
+    int degree;
     
     int direction;
     // animation counter

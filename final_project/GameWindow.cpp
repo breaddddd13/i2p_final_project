@@ -216,7 +216,7 @@ void
 GameWindow::game_begin()
 {
     printf(">>> Start Level[%d]\n", level->getLevel());
-    P1 = new BlueRoy(game_start_x + 500, game_start_y + 500);
+    P1 = new BlueRoy(820 , 720 );
     draw_running_map();
     
     al_play_sample_instance(startSound);
