@@ -21,6 +21,10 @@ public:
         direction_count[UP] = 2;
         direction_count[DOWN] = 2;
         
+        this->offset = 2;
+        this->direction = LEFT;
+        this->degree = 180;
+        
         HealthPoint = 10;
         speed = 3;
         worth = 30;

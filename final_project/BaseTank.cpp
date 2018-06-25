@@ -45,7 +45,7 @@ BaseTank::BaseTank(int x, int y){
     move_flag = 0;
 //    upDown = 0;
 //    leftRight = 3;
-    degree = 0;
+//    adegree = 0;
 
     sprite_pos = 0;
     counter = 0;
@@ -93,7 +93,6 @@ void
 BaseTank::Draw()
 {
     
-    int offset = 2;
     
     // calculate the number of pictures before current direction
 //    for(int i=0; i<direction; i++)
@@ -117,7 +116,7 @@ BaseTank::Draw()
     
     
     al_draw_rotated_bitmap(moveImg[offset + sprite_pos], grid_width/2 , grid_height/2 , circle->x, circle->y, degree*rad, 0);
-//    al_draw_filled_circle(circle->x, circle->y, circle->r, al_map_rgba(196, 79, 79, 100));
+    al_draw_filled_circle(circle->x, circle->y, circle->r, al_map_rgba(196, 79, 79, 100));
 }
 
 void
@@ -179,7 +178,7 @@ BaseTank::move_invalid(int dir) {
 
 void
 BaseTank::move_valid(int dir) {
-    direction = dir;
+    //direction = dir;
     move_flag += 1;
     switch (dir) {
         case UP:
@@ -218,7 +217,6 @@ BaseTank::DetectAttack(std::vector<Attack*> atk_set){
             
             //delete attack;
             
-            printf("%d\n", atk_set.size());
             return destroyed;
         }
     }

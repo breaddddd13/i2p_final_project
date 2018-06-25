@@ -76,14 +76,16 @@ protected:
     int attack_velocity = 13;
     ALLEGRO_BITMAP *attack_img;
     
-
+    int offset;
+    int degree;
+    int direction;
     Circle *attackCircle = NULL;
     
     
 private:
-    int degree;
     
-    int direction;
+    
+    
     // animation counter
     int counter;
     // animation image of current direction
