@@ -148,7 +148,6 @@
 		B2CBF67F20DF05E0006DAFA4 /* RedTank */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RedTank; sourceTree = "<group>"; };
 		B2CBF68120DF0869006DAFA4 /* BlueRoy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueRoy.h; sourceTree = "<group>"; };
 		E781801620DFA77B00EAE12F /* Background */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Background; sourceTree = "<group>"; };
-		E781801820DFA78700EAE12F /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; path = music; sourceTree = "<group>"; };
 		E781801A20DFA81400EAE12F /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Font; sourceTree = "<group>"; };
 		E781801C20DFABE800EAE12F /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Font; sourceTree = "<group>"; };
 		E781801D20DFABE800EAE12F /* Background */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Background; sourceTree = "<group>"; };
@@ -208,20 +207,12 @@
 		8174242D20D17C8100BC35F7 = {
 			isa = PBXGroup;
 			children = (
-				E781804120E00C4F00EAE12F /* beams */,
-				E781803E20E008D100EAE12F /* Font */,
-				E781803720E0080F00EAE12F /* Background */,
-				E781803920E0080F00EAE12F /* Missile */,
-				E781801D20DFABE800EAE12F /* Background */,
-				E781801A20DFA81400EAE12F /* Font */,
-				E781801820DFA78700EAE12F /* music */,
 				E781801620DFA77B00EAE12F /* Background */,
-				E781801C20DFABE800EAE12F /* Font */,
-				E781801E20DFABE900EAE12F /* music */,
-				E781803620E0080E00EAE12F /* music */,
-				B2CBF67F20DF05E0006DAFA4 /* RedTank */,
+				E781804120E00C4F00EAE12F /* beams */,
 				B2CBF67D20DF02D3006DAFA4 /* BlueTank */,
-				810D703320DD1CDD00EE8C46 /* obstacle */,
+				8174243820D17C8100BC35F7 /* final_project */,
+				E781801C20DFABE800EAE12F /* Font */,
+				8174244A20D184D900BC35F7 /* Frameworks */,
 				B206E56820D18CCB00E4D2B1 /* liballegro_acodec.5.2.4.dylib */,
 				B206E56220D18CCA00E4D2B1 /* liballegro_audio.5.2.4.dylib */,
 				B206E56A20D18CCB00E4D2B1 /* liballegro_color.5.2.4.dylib */,
@@ -235,9 +226,17 @@
 				B206E56320D18CCA00E4D2B1 /* liballegro_ttf.5.2.4.dylib */,
 				B206E56120D18CCA00E4D2B1 /* liballegro_video.5.2.4.dylib */,
 				B206E56B20D18CCB00E4D2B1 /* liballegro.5.2.4.dylib */,
-				8174243820D17C8100BC35F7 /* final_project */,
-				8174244A20D184D900BC35F7 /* Frameworks */,
+				E781803920E0080F00EAE12F /* Missile */,
+				E781801D20DFABE800EAE12F /* Background */,
+				E781803620E0080E00EAE12F /* music */,
+				810D703320DD1CDD00EE8C46 /* obstacle */,
 				8174243720D17C8100BC35F7 /* Products */,
+				B2CBF67F20DF05E0006DAFA4 /* RedTank */,
+				E781801A20DFA81400EAE12F /* Font */,
+				E781801620DFA77B00EAE12F /* Background */,
+				E781801C20DFABE800EAE12F /* Font */,
+				E781801E20DFABE900EAE12F /* music */,
+				E781803620E0080E00EAE12F /* music */,
 			);
 			sourceTree = "<group>";
 		};
