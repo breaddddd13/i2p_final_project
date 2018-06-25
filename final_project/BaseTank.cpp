@@ -193,7 +193,7 @@ BaseTank::TriggerAttack(){
     if ( attack_counter == 0 ){
         attack = new Attack(
         this->circle,
-        this->direction,
+        this->degree,
         this->attack_harm_point,
         this->attack_velocity,
         this->attack_img

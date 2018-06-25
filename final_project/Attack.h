@@ -38,7 +38,7 @@ private:
     int attack_velocity = 15;
     int harm_point = 5;
     float direction_x, direction_y;
-    int direction;
+    int degree;
     float pos_x, pos_y;
 };
 

@@ -21,7 +21,7 @@
 #include "global.h"
 #include "Attack.h"
 
-#define rad 3.14159/180
+
 
 using namespace std;
 
