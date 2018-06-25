@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		810D703420DD1CDD00EE8C46 /* obstacle in Resources */ = {isa = PBXBuildFile; fileRef = 810D703320DD1CDD00EE8C46 /* obstacle */; };
-		810D704620E0899D00EE8C46 /* 8+9.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 810D704520E0898F00EE8C46 /* 8+9.ogg */; };
+		810D704A20E0910A00EE8C46 /* 8+9.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 810D704920E0910A00EE8C46 /* 8+9.ogg */; };
 		8174243D20D17C8300BC35F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8174243C20D17C8300BC35F7 /* Assets.xcassets */; };
 		8174244020D17C8300BC35F7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8174243E20D17C8300BC35F7 /* MainMenu.xib */; };
 		8174245820D184D900BC35F7 /* liballegro_image.5.2.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8174244B20D184D900BC35F7 /* liballegro_image.5.2.4.dylib */; };
@@ -81,6 +81,8 @@
 /* Begin PBXFileReference section */
 		810D703320DD1CDD00EE8C46 /* obstacle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = obstacle; sourceTree = "<group>"; };
 		810D704520E0898F00EE8C46 /* 8+9.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; name = "8+9.ogg"; path = "../../Downloads/8+9.ogg"; sourceTree = "<group>"; };
+		810D704720E090ED00EE8C46 /* 8+9.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; name = "8+9.ogg"; path = "../../Downloads/8+9.ogg"; sourceTree = "<group>"; };
+		810D704920E0910A00EE8C46 /* 8+9.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "8+9.ogg"; sourceTree = "<group>"; };
 		8174243620D17C8100BC35F7 /* final_project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = final_project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8174243C20D17C8300BC35F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8174243F20D17C8300BC35F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -219,6 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				810D704520E0898F00EE8C46 /* 8+9.ogg */,
+				810D704720E090ED00EE8C46 /* 8+9.ogg */,
+				810D704920E0910A00EE8C46 /* 8+9.ogg */,
 				E781804120E00C4F00EAE12F /* beams */,
 				B2CBF67D20DF02D3006DAFA4 /* BlueTank */,
 				8174243820D17C8100BC35F7 /* final_project */,
@@ -390,7 +394,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				810D704620E0899D00EE8C46 /* 8+9.ogg in Resources */,
+				810D704A20E0910A00EE8C46 /* 8+9.ogg in Resources */,
 				E781804220E00C4F00EAE12F /* beams in Resources */,
 				E781803F20E008D100EAE12F /* Font in Resources */,
 				E781803A20E0081000EAE12F /* music in Resources */,
