@@ -204,19 +204,19 @@ void
 BaseTank::TriggerAttack(){
     
     Attack *attack;
-    
-    if ( attack_counter == 0 ){
-        attack = new Attack(
-        this->circle,
-        this->degree,
-        this->attack_harm_point,
-        this->attack_velocity,
-        this->attack_img
-        );
-        
-        this->attack_set.push_back(attack);
+    while (attack_set.size() < 2) {
+        if ( attack_counter == 0 ){
+            attack = new Attack(
+                                this->circle,
+                                this->degree,
+                                this->attack_harm_point,
+                                this->attack_velocity,
+                                this->attack_img
+                                );
+            
+            this->attack_set.push_back(attack);
+        }
     }
-    
 }
 
 void
@@ -250,4 +250,5 @@ BaseTank::Subtract_HP(int harm_point)
     
     return (HealthPoint <= 0);
 }
+
 

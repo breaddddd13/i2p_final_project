@@ -23,6 +23,11 @@ Obstacle::Obstacle(int x,int y){
 }
 
 bool Obstacle::TankAva(BaseTank * Tank){
-    return (Circle::isOverlap(this->circle, Tank->getCircle())) ? false : true;
+    
+    return (Circle::isOverlap(this->circle, Tank->front) || Circle::isOverlap(this->circle, Tank->back)) ? false : true;
 }
 
+bool Obstacle::BulletAva(Attack * beam){
+    
+    return (Circle::isOverlap(this->circle, beam->getCircle())) ? false : true;
+}

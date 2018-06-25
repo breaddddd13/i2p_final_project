@@ -48,7 +48,7 @@ GameWindow::game_init()
     al_set_sample_instance_playmode(startSound, ALLEGRO_PLAYMODE_ONCE);
     al_attach_sample_instance_to_mixer(startSound, al_get_default_mixer());
     
-    sample = al_load_sample("BackgroundMusic.ogg");
+    sample = al_load_sample("8+9.ogg");
     backgroundSound = al_create_sample_instance(sample);
     al_set_sample_instance_playmode(backgroundSound, ALLEGRO_PLAYMODE_ONCE);
     al_attach_sample_instance_to_mixer(backgroundSound, al_get_default_mixer());
@@ -380,8 +380,7 @@ GameWindow::process_event()
                  * In addition to add variable, you also have to modify draw_running_map() and game_update()
                  * Or, monsters and towers can still work without being paused
                  */
-                
-                
+        
                 break;
             case ALLEGRO_KEY_M:
                 mute = !mute;
@@ -518,33 +517,34 @@ GameWindow::draw_running_map()
     //al_draw_bitmap(background, 0, 0, 0);
     al_draw_filled_rectangle(70, 70, 1570, 1370, KHAKI);
     
-        for(i = 0; i < field_height/100; i++)
-        {
-            for(j = 0; j < field_width/100 ; j++)
-            {
-                if(level->getInfo(i, j) != 0){
-                    ob[i][j]->Draw();
-                }
-                
-                char buffer[50];
-                sprintf(buffer, "%d", i*15 + j);
-    //            if(level->isRoad(i*15 + j)) {
-    //                al_draw_filled_rectangle(j*40, i*40, j*40+40, i*40+40, al_map_rgb(255, 244, 173));
-    //            }
-    //            // For debug usage, if you want to create a new map, you may turn off this comment.
-//                 al_draw_text(font, al_map_rgb(0, 0, 0), (j+1)*100 + 20, (i+1)*100 + 20, ALLEGRO_ALIGN_CENTER, buffer);
-            }
-//            printf("\n");
-        }
+    
+    
     
     P1->Draw();
     P2->Draw();
+    for(i = 0; i < field_height/100; i++)
+    {
+        for(j = 0; j < field_width/100 ; j++)
+        {
+            if(level->getInfo(i, j) != 0){
+                ob[i][j]->Draw();
+            }
+            
+            char buffer[50];
+            sprintf(buffer, "%d", i*15 + j);
+            //            if(level->isRoad(i*15 + j)) {
+            //                al_draw_filled_rectangle(j*40, i*40, j*40+40, i*40+40, al_map_rgb(255, 244, 173));
+            //            }
+            //            // For debug usage, if you want to create a new map, you may turn off this comment.
+            //                 al_draw_text(font, al_map_rgb(0, 0, 0), (j+1)*100 + 20, (i+1)*100 + 20, ALLEGRO_ALIGN_CENTER, buffer);
+        }
+        //            printf("\n");
     
     
 //    al_draw_filled_rectangle(field_width, 0, window_width, window_height, al_map_rgb(100, 100, 100));
     
     //    menu->Draw();
-    
+    }
     
     al_flip_display();
 }
@@ -750,6 +750,7 @@ int GameWindow::draw_setting_scene()
 
 /*bool GameWindow::move_judge(BaseTank* tank, Obstacle* obs)
 {
-    if(obs->TankAva(<#BaseTank *Tank#>))
+    if(obs->TankAva())
+        
     return true;
 }*/
