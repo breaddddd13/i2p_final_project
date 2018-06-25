@@ -42,7 +42,6 @@
 		B2CBF5A720D955E7006DAFA4 /* GameWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5A620D955E7006DAFA4 /* GameWindow.cpp */; };
 		B2CBF5AA20D9563C006DAFA4 /* global.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5A920D9563C006DAFA4 /* global.cpp */; };
 		B2CBF5AD20D9568A006DAFA4 /* Circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5AC20D9568A006DAFA4 /* Circle.cpp */; };
-		B2CBF5B020D956CB006DAFA4 /* Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5AF20D956CB006DAFA4 /* Slider.cpp */; };
 		B2CBF5B420D95789006DAFA4 /* Attack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5B320D95789006DAFA4 /* Attack.cpp */; };
 		B2CBF5B820D958A6006DAFA4 /* Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CBF5B720D958A6006DAFA4 /* Menu.cpp */; };
 		B2CBF5BB20D95BA5006DAFA4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B2CBF5BA20D95BA5006DAFA4 /* icon.png */; };
@@ -65,6 +64,7 @@
 		E781803F20E008D100EAE12F /* Font in Resources */ = {isa = PBXBuildFile; fileRef = E781803E20E008D100EAE12F /* Font */; };
 		E781804220E00C4F00EAE12F /* beams in Resources */ = {isa = PBXBuildFile; fileRef = E781804120E00C4F00EAE12F /* beams */; };
 		E781804620E0148700EAE12F /* Obstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E781804520E0148700EAE12F /* Obstacle.cpp */; };
+		E781805220E0B31400EAE12F /* Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E781805020E0B31400EAE12F /* Slider.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -121,7 +121,6 @@
 		B2CBF5AB20D95654006DAFA4 /* global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
 		B2CBF5AC20D9568A006DAFA4 /* Circle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Circle.cpp; sourceTree = "<group>"; };
 		B2CBF5AE20D956A4006DAFA4 /* Circle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
-		B2CBF5AF20D956CB006DAFA4 /* Slider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Slider.cpp; sourceTree = "<group>"; };
 		B2CBF5B120D956DE006DAFA4 /* Slider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Slider.h; sourceTree = "<group>"; };
 		B2CBF5B220D9570F006DAFA4 /* Button.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
 		B2CBF5B320D95789006DAFA4 /* Attack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Attack.cpp; sourceTree = "<group>"; };
@@ -169,6 +168,8 @@
 		E781804720E0207A00EAE12F /* Grass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Grass.h; sourceTree = "<group>"; };
 		E781804820E022C000EAE12F /* River.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = River.h; sourceTree = "<group>"; };
 		E781804920E0231900EAE12F /* Wall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wall.h; sourceTree = "<group>"; };
+		E781805020E0B31400EAE12F /* Slider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Slider.cpp; sourceTree = "<group>"; };
+		E781805120E0B31400EAE12F /* Slider.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Slider.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,7 +273,6 @@
 				B2CBF5D320D95C63006DAFA4 /* Level.cpp */,
 				8174248020D18C1400BC35F7 /* main.cpp */,
 				B2CBF5B720D958A6006DAFA4 /* Menu.cpp */,
-				B2CBF5AF20D956CB006DAFA4 /* Slider.cpp */,
 				8174244420D17C8300BC35F7 /* final_project.entitlements */,
 				B2CBF5B520D9579D006DAFA4 /* Attack.h */,
 				B2CBF67820DEC060006DAFA4 /* BaseTank.h */,
@@ -311,6 +311,8 @@
 				B2CBF5C320D95BF6006DAFA4 /* level_fail.wav */,
 				8174243C20D17C8300BC35F7 /* Assets.xcassets */,
 				8174243E20D17C8300BC35F7 /* MainMenu.xib */,
+				E781805020E0B31400EAE12F /* Slider.cpp */,
+				E781805120E0B31400EAE12F /* Slider.hpp */,
 			);
 			path = final_project;
 			sourceTree = "<group>";
@@ -428,8 +430,8 @@
 				8174248120D18C1400BC35F7 /* main.cpp in Sources */,
 				B2CBF5AD20D9568A006DAFA4 /* Circle.cpp in Sources */,
 				B2CBF5D420D95C63006DAFA4 /* Level.cpp in Sources */,
+				E781805220E0B31400EAE12F /* Slider.cpp in Sources */,
 				B2CBF5A720D955E7006DAFA4 /* GameWindow.cpp in Sources */,
-				B2CBF5B020D956CB006DAFA4 /* Slider.cpp in Sources */,
 				B2CBF5B820D958A6006DAFA4 /* Menu.cpp in Sources */,
 				E781804620E0148700EAE12F /* Obstacle.cpp in Sources */,
 				B2CBF67A20DED676006DAFA4 /* BaseTank.cpp in Sources */,

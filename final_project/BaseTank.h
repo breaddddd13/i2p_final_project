@@ -55,7 +55,9 @@ public:
     void move_invalid(int dir);
     
     bool Subtract_HP(int);
-
+    
+    std::vector<Attack*> attack_set;
+    
 protected:
     int direction_count[4];
     int HealthPoint = 20;

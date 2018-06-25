@@ -2,6 +2,7 @@
 #include "global.h"
 #include <iostream>
 #include "Button.h"
+#include "Slider.hpp"
 
 #define WHITE al_map_rgb(255, 255, 255)
 #define BLACK al_map_rgb(0, 0, 0)
@@ -128,17 +129,15 @@ GameWindow::game_play()
      *     You may add some function to create starting scene before calling game_begin
      *     e.g: game_start_scene()
      */
-//    game_start();
-//    game_over();
+    game_start();
     game_begin();
-    
     /*
      *  while game is running, the result of game_run will be returned to msg.
      *  If msg is GAME_EXIT, then tower game will terminate.
      */
     while(msg != GAME_EXIT)
         msg = game_run();
-    
+    game_over();
     show_err_msg(msg);
 }
 
@@ -406,13 +405,9 @@ GameWindow::process_event()
                 redraw = true;
                 break;
             case ALLEGRO_KEY_W:
-                //if(move_judge(P1))
-                //{
-                    P1->move_valid(UP);
+                P1->move_valid(UP);
                 
-                    redraw = true;
-                //wd}
-                //}
+                redraw = true;
                 break;
             case ALLEGRO_KEY_A:
                 P1->move_valid(LEFT);
@@ -755,9 +750,34 @@ int GameWindow::draw_setting_scene()
 {
     al_draw_bitmap(settingBGD, 0, 0, 0);
     //al_draw_filled_rounded_rectangle(0, 0, window_width, window_height, 0, 0, al_map_rgba(0, 0, 0, 20));
-    al_flip_display();
+    static Slider* s = new Slider(window_width/2,window_height/2);
     al_wait_for_event(event_queue, &event);
-    if(event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) exit(9);
+    
+    if(event.type == ALLEGRO_EVENT_MOUSE_AXES){
+        mouse_x = event.mouse.x;
+        mouse_y = event.mouse.y;
+    }
+    
+    if(event.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
+        exit(9);
+    
+    if(event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN)
+        if(s->isClicked(mouse_x, mouse_y))
+            s->toggleDrag();
+    
+    if(event.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP)
+        if(s->isDragged())
+            s->toggleDrag();
+    
+    if(event.type == ALLEGRO_EVENT_KEY_DOWN)
+        if(event.keyboard.keycode == ALLEGRO_KEY_ESCAPE)
+            return -1;
+    
+    if(s->isDragged())
+        al_set_sample_instance_gain(backgroundSound, s->Drag(mouse_x, mouse_y));
+    s->Draw();
+    al_flip_display();
+    
     return 0;
 }
 

@@ -1,31 +1,27 @@
 #include <stdio.h>
 #include <string.h>
-#include "Slider.h"
+#include "Slider.hpp"
 
 #define max(a, b) ((a) > (b)? (a) : (b))
 #define min(a, b) ((a) < (b)? (a) : (b))
 #define font_size 20
 
-const int widthOftarget = 15;
-const int heightOftarget = 30;
+const int widthOftarget = 50;
+const int heightOftarget = 100;
 
 Slider::Slider(int pos_x , int pos_y )
 {
-    center_x = pos_x;
-    center_y = pos_y;
-    
-    track_x = pos_x - lengthOftrack/2;
+    track_x = pos_x;
     track_y = pos_y;
     
     target_x = track_x + lengthOftrack;
-    
     target_y = track_y;
     target_color = al_map_rgb(0, 0, 0);
     
     degree = 1.0;
     
-    font = al_load_ttf_font("Caviar_Dreams_Bold.ttf", font_size, 0); // load font
-    strncpy(label, "label", 20);
+    font = al_load_ttf_font("./Font/Cardiff.ttf", 300, 0); // load font
+    strncpy(label, "BackgroundSound", 20);
 }
 
 Slider::~Slider()
@@ -38,7 +34,8 @@ Slider::Draw()
 {
     int draw_x = target_x - widthOftarget/2;
     int draw_y = target_y - heightOftarget/2;
-    al_draw_line(track_x, track_y, track_x + lengthOftrack, track_y, al_map_rgb(255, 255, 255), 2);
+    
+    al_draw_line(track_x , track_y, track_x+ lengthOftrack, track_y, al_map_rgb(255, 255, 255), 2);
     al_draw_filled_rectangle(draw_x, draw_y, draw_x + widthOftarget, draw_y + heightOftarget, target_color);
     al_draw_text(font, al_map_rgb(255, 255, 255), al_get_display_width(al_get_current_display()) / 2, track_y - 50, ALLEGRO_ALIGN_CENTER, label);
 }
