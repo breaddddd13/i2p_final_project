@@ -54,7 +54,7 @@ public:
     void move_invalid(int dir);
     
     bool Subtract_HP(int);
-    
+
 protected:
     int direction_count[4];
     int HealthPoint = 20;

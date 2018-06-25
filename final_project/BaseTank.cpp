@@ -20,7 +20,7 @@ BaseTank::BaseTank(int x, int y){
     circle = new Circle;
     circle->x = x;
     circle->y = y;
-    circle->r = grid_width/2;
+    circle->r = grid_width/2+20;
     
     attackCircle = new Circle;
     attackCircle->x = x;
@@ -116,7 +116,9 @@ BaseTank::Draw()
     
     
     al_draw_rotated_bitmap(moveImg[offset + sprite_pos], grid_width/2 , grid_height/2 , circle->x, circle->y, degree*rad, 0);
-//    al_draw_filled_circle(circle->x, circle->y, circle->r, al_map_rgba(196, 79, 79, 100));
+    al_draw_filled_circle(circle->x, circle->y, circle->r, al_map_rgba(196, 79, 79, 100));
+    //al_draw_filled_circle(front->x, front->y, front->r, al_map_rgba(196, 79, 79, 100));
+    //al_draw_filled_circle(back->x, back->y, back->r, al_map_rgba(196, 79, 79, 100));
 }
 
 void
@@ -149,6 +151,7 @@ BaseTank::Move(){
 void
 BaseTank::move_invalid(int dir) {
     
+    if(move_flag<=0)return;
     move_flag -= 1;
     switch (dir) {
         case UP:
