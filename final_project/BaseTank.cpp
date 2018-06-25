@@ -249,3 +249,4 @@ BaseTank::Subtract_HP(int harm_point)
     return (HealthPoint <= 0);
 }
 
+
