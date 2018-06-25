@@ -221,17 +221,18 @@ GameWindow::game_begin()
     {
         for(int j = 0; j < field_width/100 ; j++)
         {
-            printf("123");
             switch (level->getInfo(i, j)) {
                 case 3:
-                    ob[i][j] = new River(j * 100 + 70,i * 100 + 70);
+                    ob[i][j] = new River((j + 1) * 100 + 20,(i + 1) * 100 + 20);
                     break;
-                    
                 case 1:
-                    ob[i][j] = new Wall(j * 100 + 70,i * 100 + 70);
+                    ob[i][j] = new Wall((j + 1) * 100 + 20,(i + 1) * 100 + 20);
                     break;
-
+                case 7:
+                    ob[i][j] = new Grass((j + 1) * 100 + 20,(i + 1) * 100 + 20);
+                    break;
                 default:
+                    ob[i][j] = new Obstacle((j + 1) * 100 + 20,(i + 1) * 100 + 20);
                     break;
             }
         }
@@ -269,6 +270,7 @@ GameWindow::game_update()
     /*TODO:*/
     /*Allow towers to detect if monster enters its range*/
     /*Hint: Tower::DetectAttack*/
+    
     
     
     // update every monster
@@ -397,6 +399,7 @@ GameWindow::process_event()
                 return GAME_CONTINUE;
             case ALLEGRO_KEY_W:
                 P1->move_valid(UP);
+                
                 redraw = true;
                 break;
             case ALLEGRO_KEY_A:
@@ -477,7 +480,10 @@ GameWindow::draw_running_map()
         {
             for(j = 0; j < field_width/100 ; j++)
             {
-                if(level->getInfo(i, j) != 0)ob[i][j]->Draw();
+                if(level->getInfo(i, j) != 0){
+                    ob[i][j]->Draw();
+                }
+                
                 char buffer[50];
                 sprintf(buffer, "%d", i*15 + j);
     //            if(level->isRoad(i*15 + j)) {
@@ -489,7 +495,7 @@ GameWindow::draw_running_map()
             printf("\n");
         }
     
-    P1->Draw();
+   
     
     
 //    al_draw_filled_rectangle(field_width, 0, window_width, window_height, al_map_rgb(100, 100, 100));

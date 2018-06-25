@@ -10,7 +10,7 @@
 
 void Obstacle::Draw()
 {
-    al_draw_bitmap(img, getCircle()->x , getCircle()->y , 0);
+    al_draw_bitmap(img, getCircle()->x - 50 , getCircle()->y - 50 , ALLEGRO_ALIGN_CENTER);
     
 }
 Obstacle::Obstacle(int x,int y){
@@ -21,3 +21,8 @@ Obstacle::Obstacle(int x,int y){
 //    circle->y = y;
 //    circle->r = grid_width/2;
 }
+
+bool Obstacle::TankAva(BaseTank * Tank){
+    return (Circle::isOverlap(this->circle, Tank->getCircle())) ? false : true;
+}
+

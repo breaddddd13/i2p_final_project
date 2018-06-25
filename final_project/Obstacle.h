@@ -16,6 +16,7 @@
 #include "Object.h"
 #include "Circle.h"
 #include "global.h"
+#include "BaseTank.h"
 
 class Obstacle : public Object
 {
@@ -24,8 +25,8 @@ public:
     ~Obstacle(){};
     
     void Draw();
-    bool BulletAva(){return bullet_ava;}
-    bool TankAva(){return tank_ava;}
+    bool BulletAva();
+    bool TankAva(BaseTank * Tank);
     void setImg(ALLEGRO_BITMAP * new_img){img = new_img;}
 protected:
     bool bullet_ava = true;

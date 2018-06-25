@@ -15,6 +15,7 @@
 #include "Obstacle.h"
 #include "River.h"
 #include "Wall.h"
+#include "Grass.h"
 
 #define GAME_INIT -1
 #define GAME_SETTING 0
